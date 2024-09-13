@@ -12,8 +12,13 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Georgia', 'serif'], // Use Georgia as the primary font
             },
+            colors: {
+                customBorder: '#666666',
+                customGray: '#3C3B3B',
+                primary:'#2A4D69'
+              },
         },
     },
 
