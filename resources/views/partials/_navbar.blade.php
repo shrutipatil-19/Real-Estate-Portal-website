@@ -1,6 +1,6 @@
  <!-- Bottom Navbar with Bottom Border -->
  <nav class="bg-white">
-     <div class="container mx-auto flex justify-between items-center px-8 py-2 text-xl text-customGray">
+     <div class="container mx-auto flex justify-between items-center px-16 py-2 text-xl text-customGray">
          <div class="flex items-center font-normal">
              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                  <path
