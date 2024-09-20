@@ -148,9 +148,20 @@
         </section>
     </div>
 
-    <section>
-        <div class="bg-fixed" style="background-image: url('img/Frame.png')"></div>
+    <section class="py-28">
+        <div class="w-full h-[586px] bg-fixed bg-no-repeat bg-cover" style="background-image: url({{ Storage::url($parallaxEffect->image) }});">
+            <div class="flex flex-col items-center justify-center text-white space-y-4">
+                    <h1 class="text-4xl md:text-5xl font-bold mt-56">
+                        {{ $parallaxEffect->heading }}
+                    </h1>
+                    <p class="text-lg md:text-xl w-96">
+                        {{ $parallaxEffect->sub_heading }}
+                    </p>
+            </div>
+        </div>
     </section>
+
+
 
 
 
