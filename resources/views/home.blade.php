@@ -98,7 +98,8 @@
                 <!-- Ongoing tab (active) -->
                 <span class="relative text-gray-800 text-lg font-medium cursor-pointer">
                     Ongoing
-                    <span class="absolute left-0 right-0 -bottom-1 h-1 bg-orange-500"></span> <!-- Underline for active tab -->
+                    <span class="absolute left-0 right-0 -bottom-1 h-1 bg-orange-500"></span>
+                    <!-- Underline for active tab -->
                 </span>
 
                 <!-- Completed tab -->
@@ -115,63 +116,242 @@
 
             <div class="mt-6 grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3 py-10">
                 @foreach ($projects as $key => $project)
-                <div class="group relative">
-                    <img src="{{ Storage::url($project->image) }}"
-                        alt="{{ $project->location}}"
-                        class="object-cover object-center w-full h-full">
-                        <div class="absolute inset-0 flex items-center justify-center p-14 opacity-0 group-hover:opacity-100" aria-hidden="true">
+                    <div class="group relative">
+                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}"
+                            class="object-cover object-center w-full h-full">
+                        <div class="absolute inset-0 flex items-center justify-center p-14 opacity-0 group-hover:opacity-100"
+                            aria-hidden="true">
                             <div class="w-full bg-white text-center p-8">
                                 <span class="block text-xl text-[#3C3B3B]">{{ $project->name }}</span>
                                 <div class="flex items-center justify-center gap-1 text-[#727272] text-lg my-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                                     </svg>
                                     {{ $project->location }}
                                 </div>
-                                <span class="block text-2xl text-[#3C3B3B] font-bold flex items-center justify-center gap-1"><span class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price.' onwards' : '' }}</span>
+                                <span
+                                    class="block text-2xl text-[#3C3B3B] font-bold flex items-center justify-center gap-1"><span
+                                        class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}</span>
                             </div>
                         </div>
-                </div>
+                    </div>
                 @endforeach
             </div>
             <div class="flex flex-col items-center justify-center">
                 <a href="#"
-                class="bg-primary text-white font-bold px-6  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
-                View All Properties
-                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6804 0.743386C11.8412 0.587538 12.059 0.5 12.2862 0.5C12.5133 0.5 12.7312 0.587538 12.8919 0.743386L19.7493 7.40115C19.9098 7.55719 20 7.76872 20 7.98925C20 8.20979 19.9098 8.42132 19.7493 8.57736L12.8919 15.2351C12.8134 15.3169 12.7188 15.3825 12.6137 15.428C12.5085 15.4734 12.395 15.4979 12.2799 15.4999C12.1648 15.5018 12.0505 15.4813 11.9438 15.4394C11.837 15.3976 11.7401 15.3353 11.6587 15.2562C11.5773 15.1772 11.5131 15.0831 11.47 14.9795C11.4269 14.8758 11.4057 14.7648 11.4078 14.6531C11.4098 14.5414 11.435 14.4312 11.4818 14.3291C11.5287 14.227 11.5962 14.1351 11.6804 14.0589L17.0749 8.82148H0.857175C0.629838 8.82148 0.411812 8.7338 0.251061 8.57772C0.0903092 8.42165 0 8.20997 0 7.98925C0 7.76854 0.0903092 7.55686 0.251061 7.40079C0.411812 7.24471 0.629838 7.15703 0.857175 7.15703H17.0749L11.6804 1.91959C11.5199 1.76355 11.4298 1.55203 11.4298 1.33149C11.4298 1.11095 11.5199 0.899427 11.6804 0.743386Z" fill="white"/>
+                    class="bg-primary text-white font-bold px-6  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
+                    View All Properties
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.6804 0.743386C11.8412 0.587538 12.059 0.5 12.2862 0.5C12.5133 0.5 12.7312 0.587538 12.8919 0.743386L19.7493 7.40115C19.9098 7.55719 20 7.76872 20 7.98925C20 8.20979 19.9098 8.42132 19.7493 8.57736L12.8919 15.2351C12.8134 15.3169 12.7188 15.3825 12.6137 15.428C12.5085 15.4734 12.395 15.4979 12.2799 15.4999C12.1648 15.5018 12.0505 15.4813 11.9438 15.4394C11.837 15.3976 11.7401 15.3353 11.6587 15.2562C11.5773 15.1772 11.5131 15.0831 11.47 14.9795C11.4269 14.8758 11.4057 14.7648 11.4078 14.6531C11.4098 14.5414 11.435 14.4312 11.4818 14.3291C11.5287 14.227 11.5962 14.1351 11.6804 14.0589L17.0749 8.82148H0.857175C0.629838 8.82148 0.411812 8.7338 0.251061 8.57772C0.0903092 8.42165 0 8.20997 0 7.98925C0 7.76854 0.0903092 7.55686 0.251061 7.40079C0.411812 7.24471 0.629838 7.15703 0.857175 7.15703H17.0749L11.6804 1.91959C11.5199 1.76355 11.4298 1.55203 11.4298 1.33149C11.4298 1.11095 11.5199 0.899427 11.6804 0.743386Z"
+                            fill="white" />
                     </svg>
 
-            </a>
+                </a>
             </div>
         </section>
     </div>
 
     <section class="py-28">
-        <div class="w-full h-[586px] bg-fixed bg-no-repeat bg-cover" style="background-image: url({{ Storage::url($parallaxEffect->image) }});">
+        <div class="w-full h-[586px] bg-fixed bg-no-repeat bg-cover"
+            style="background-image: url({{ Storage::url($parallaxEffect->image) }});">
             <div class="flex flex-col items-center justify-center text-white space-y-4">
-                    <h1 class="text-4xl md:text-5xl font-bold mt-56">
-                        {{ $parallaxEffect->heading }}
-                    </h1>
-                    <p class="text-lg md:text-xl w-96">
-                        {{ $parallaxEffect->sub_heading }}
-                    </p>
+                <h1 class="text-4xl md:text-5xl font-bold mt-56">
+                    {{ $parallaxEffect->heading }}
+                </h1>
+                <p class="text-lg md:text-xl w-96">
+                    {{ $parallaxEffect->sub_heading }}
+                </p>
             </div>
         </div>
     </section>
 
 
+    <section id="Achievements" class="container mx-auto px-16">
+        <div class="flex flex-col items-center justify-center mb-3">
+            <span class="text-5xl font-bold leading-tight tracking-tight text-center text-[#3C3B3B]">
+                Achievements
+            </span>
+            <div class="flex  items-center justify-center text-center text-[#3C3B3B] w-80">
+                {{ $achievement->heading }}
+            </div>
+        </div>
+
+        <div class="swiper my-10">
+            <!-- Wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach ($achievement->achievement_images_details as $achievement)
+                    <div class="swiper-slide flex flex-col items-center justify-center">
+                        <!-- Image wrapped in a circle -->
+                        <div class="w-52 h-52 rounded-full bg-gray-300 flex items-center justify-center">
+                            <img src="{{ Storage::url($achievement['image']) }}" alt="{{ $achievement['image_title'] }}"
+                                class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <!-- Title -->
+                        <span class="mt-4 text-lg font-semibold">{{ $achievement['image_title'] }}</span>
+                        <!-- Subtitle -->
+                        <span class="text-gray-500">{{ $achievement['image_sub_title'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+            <!-- Navigation buttons -->
+            <div class="flex justify-center items-center py-14 space-x-10 ">
+                <div class="swiper-button-prev bg-white border border-[#2A4D69]  cursor-pointer">
+
+                </div>
+                <div class="swiper-button-next bg-white border border-[#2A4D69]  cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Testimonials" class="h-screen bg-cover bg-center overflow-hidden"
+        style="background-image: url('{{ asset('img/testimonial.png') }}');">
+        <div class="text-center mt-12">
+            <h2 class="text-5xl font-bold text-[#3C3B3B]">Testimonials</h2>
+            <p class="mt-4 text-[#3C3B3B] w-80 mx-auto">{{ $testimonial->heading }}</p>
+        </div>
+
+        <!-- Swiper Slider -->
+        <div class="swiper swiper_testimonial py-28 px-24">
+            <div class="swiper-wrapper">
+                @foreach ($testimonial->testimonial_images_details as $item)
+                    <div class="swiper-slide bg-white  p-10 space-x-10 space-y-10 relative">
+                        <!-- Testimonial Image (circle) -->
+                        <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-white absolute -top-16">
+                            <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- Testimonial Content -->
+                        <p class="text-gray-600 mt-12 text-xl">{{ $item['description'] }}</p>
+
+                        <div class="border-b  border-customBorder opacity-15"></div>
+
+                        <!-- Testimonial Author -->
+                        <div class="mt-6 flex justify-between">
+                            <div>
+                                <span class="font-semibold text-xl">{{ $item['name'] }}</span><br>
+                                <span class="text-gray-500 text-xl">{{ $item['occupation'] }}</span>
+                            </div>
+
+                            <!-- Rating -->
+                            <div class="">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    @if ($i <=  $item['star'])
+                                        <span class="text-yellow-400 text-xl">★</span>
+                                    @else
+                                        <span class="text-gray-300 text-xl">☆</span>
+                                    @endif
+                                @endfor
+                            </div>
+
+                        </div>
 
 
+                    </div>
+                @endforeach
+            </div>
 
-
-
-
-
-
-
-
+            <!-- Navigation Buttons -->
+            <div class="flex justify-center items-center py-14 space-x-10">
+                <div class="swiper-button-prev bg-white border border-[#2A4D69]  cursor-pointer">
+                </div>
+                <div class="swiper-button-next bg-white border border-[#2A4D69]  cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 @endsection
+
+
+<script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 5, // Shows 5 slides like in your design
+
+    });
+
+    // Second Swiper for 2 slides
+    const swiper2 = new Swiper('.swiper_testimonial', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 2, // Shows 2 slides
+        spaceBetween: 100, // Add some spacing between slides if necessary
+    });
+</script>
+<style>
+    .swiper-button-next,
+    .swiper-button-prev {
+
+        border: 1px solid #2A4D69 !important;
+        /* Border color for design consistency */
+        color: #2A4D69 !important;
+        /* Border color for design consistency */
+        background-color: white !important;
+        /* Background color */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 26px !important;
+        width: 70px !important;
+    }
+
+    /* Override Swiper navigation buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: relative !important;
+        /* Ensures relative positioning */
+        top: auto !important;
+        /* Removes any top alignment */
+        /* Add both margin-top values */
+        margin-top: none !important;
+        /* Override with static value */
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2A4D69 !important;
+        /* Maintain button color */
+    }
+
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: auto !important;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+        box-sizing: content-box;
+    }
+
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-family: swiper-icons;
+        text-transform: none !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+        font-size: 18px !important;
+    }
+</style>
