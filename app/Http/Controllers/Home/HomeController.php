@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\Achievement;
 use App\Models\Banner;
+use App\Models\Media;
 use App\Models\ParallaxEffect;
 use App\Models\Project;
 use App\Models\Testimonial;
@@ -21,6 +22,8 @@ class HomeController extends Controller
         $parallaxEffect = ParallaxEffect::first();
         $achievement = Achievement::first();
         $testimonial = Testimonial::first();
-        return view('home',compact('banner','about_us','projects','parallaxEffect','achievement','testimonial'));
+        $media = Media::latest()->limit(2)->get();
+        $mediaLimit = Media::latest()->limit(3)->get();
+        return view('home',compact('banner','about_us','projects','parallaxEffect','achievement','testimonial','media','mediaLimit'));
     }
 }
