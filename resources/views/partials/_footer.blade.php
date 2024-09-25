@@ -18,11 +18,11 @@
             <div class="hidden lg:block">
                 <h3 class="text-lg font-sans mb-4">SITEMAP</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Home</a></li>
-                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="/" class="hover:underline">Home</a></li>
+                    <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
                     <li><a href="#" class="hover:underline">Projects</a></li>
                     <li><a href="#" class="hover:underline">Buyers Guide</a></li>
-                    <li><a href="#" class="hover:underline">Testimonials</a></li>
+                    <li><a href="{{ route('testimonials.index') }}" class="hover:underline">Testimonials</a></li>
                     <li><a href="#" class="hover:underline">Media</a></li>
                 </ul>
             </div>
@@ -92,11 +92,11 @@
                             <span id="sitemap-icon" class="text-2xl font-bold">+</span>
                         </div>
                         <ul id="sitemap" class="space-y-2 text-sm hidden">
-                            <li><a href="#" class="hover:underline">Home</a></li>
-                            <li><a href="#" class="hover:underline">About Us</a></li>
+                            <li><a href="/" class="hover:underline">Home</a></li>
+                            <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
                             <li><a href="#" class="hover:underline">Projects</a></li>
                             <li><a href="#" class="hover:underline">Buyers Guide</a></li>
-                            <li><a href="#" class="hover:underline">Testimonials</a></li>
+                            <li><a href="{{ route('testimonials.index') }}" class="hover:underline">Testimonials</a></li>
                             <li><a href="#" class="hover:underline">Media</a></li>
                         </ul>
                     </div>
