@@ -31,7 +31,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-11 items-center">
                 <!-- Image Section -->
                 <div>
-                    <img src="{{ Storage::url($about_us->aboutUsImage) }}" alt="About Us Image" class="w-full">
+                    <img src="{{ Storage::url($about_us->aboutUsImage) }}" alt="About Us Image" class="w-full h-full">
                 </div>
 
                 <!-- Content Section -->
@@ -120,7 +120,7 @@
                     <div class="group relative">
                         <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}"
                             class="object-cover object-center w-full h-full">
-                        <div class="hidden lg:block absolute inset-0 flex items-center justify-center p-14 opacity-0 group-hover:opacity-100"
+                        <div class="hidden lg:block absolute inset-0 flex items-center justify-center  mt-8 p-8  opacity-0 group-hover:opacity-100"
                             aria-hidden="true">
                             <div class="w-full bg-white text-center p-8">
                                 <span class="block text-xl text-[#3C3B3B]">{{ $project->name }}</span>

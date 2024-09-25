@@ -44,7 +44,7 @@
         </button>
 
         <ul class="mt-8 space-y-4 p-4">
-            <li><a href="#" class="text-gray-700 hover:text-blue-600">Home</a></li>
+            <li><a href="{{ route('about-us.index') }}" class="text-gray-700 hover:text-blue-600">Home</a></li>
             <li><a href="#" class="text-gray-700 hover:text-blue-600">About Us</a></li>
             <li>
                 <button class="text-gray-700 hover:text-blue-600 w-full text-left focus:outline-none">Projects</button>
@@ -70,8 +70,8 @@
 
      <!-- Desktop & Mobile Menu -->
      <div class="container mx-auto flex-col lg:flex lg:flex-row lg:justify-center lg:space-x-8 hidden lg:flex py-3 gap-28 text-customGray text-sm">
-         <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
-         <a href="#" class="text-gray-600 hover:text-gray-900">About us</a>
+         <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+         <a href="{{ route('about-us.index') }}" class="text-gray-600 hover:text-gray-900">About us</a>
          <div class="relative">
              <button class="text-gray-600 hover:text-gray-900 inline-flex items-center">
                  Projects
