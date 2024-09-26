@@ -3,10 +3,10 @@
 @section('content')
 
     <div class="relative">
-        <img src="img/testimonials1.png" alt="Testimonials Banner" class="mx-auto w-full md:h-auto h-full object-cover">
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
-            <h1 class="text-3xl md:text-4xl lg:text-6xl font-bold">Testimonials</h1>
-            <span class="text-lg md:text-xl lg:text-2xl mt-2 text-center">Lorem ipsum dolor sit amet consectetur.</span>
+        <img src="img/testimonials1.png" alt="Testimonials Banner" class="mx-auto w-full md:h-auto object-cover">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 space-y-3">
+            <h1 class="text-3xl md:text-2xl lg:text-[40px] font-bold">Testimonials</h1>
+            <span class="text-lg md:text-base lg:text-2xl mt-2 text-center">Lorem ipsum dolor sit amet consectetur.</span>
         </div>
     </div>
 
@@ -21,65 +21,65 @@
         </div>
 
 
-            <div class="text-center mt-12 w-[530px]">
-                <h2 class="lg:text-5xl text-2xl font-bold text-[#3C3B3B] text-left">Lorem ipsum dolor sit amet consectetur.</h2>
-            </div>
+        <div class="text-center mt-12 w-full  px-4">
+            <h2 class="text-2xl lg:text-[42px] font-bold text-[#3C3B3B] text-left">Lorem ipsum dolor sit amet consectetur.</h2>
+        </div>
 
-            <!-- Swiper Slider -->
-            <div class="swiper swiper_testimonial py-10">
-                <div class="swiper-wrapper">
-                    @foreach ($testimonial->testimonial_images_details as $item)
-                        <div class="swiper-slide bg-white">
-                            <!-- Testimonial Content -->
-                            <div class="flex items-center">
-                                <!-- Testimonial Image (circle) -->
-                                <div class="w-24 h-24 lg:w-[371px] lg:h-[371px] rounded-full border-4 border-white overflow-hidden flex-shrink-0">
-                                    <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}" class="w-full h-full object-cover">
-                                </div>
+        <!-- Swiper Slider -->
+        <div class="swiper swiper_testimonial py-10">
+            <div class="swiper-wrapper">
+                @foreach ($testimonial->testimonial_images_details as $item)
+                    <div class="swiper-slide bg-white">
+                        <!-- Testimonial Content -->
+                        <div class="flex flex-col lg:flex-row items-center lg:items-start">
+                            <!-- Testimonial Image (circle) -->
+                            <div class="w-44 h-44 lg:w-92 lg:h-92 rounded-full border-4 border-white overflow-hidden flex-shrink-0">
+                                <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}" class="w-full h-full object-cover">
+                            </div>
 
-                                <!-- Testimonial Details -->
-                                <div class="flex-grow p-20">
-                                    <p class="text-gray-600 lg:text-2xl text-sm">Lorem ipsum dolor sit amet consectetur. Morbi facilisi et sem enim vulputate vestibulum vitae aliquet elit. Magnis aliquet sed amet neque. Morbi facilisi et sem enim vulputate vestibulum vitae</p>
-                                    <div class="border-b border-customBorder opacity-15 my-4"></div>
 
-                                    <!-- Testimonial Author -->
-                                    <div class="py-6 flex justify-between items-center">
-                                        <div>
-                                            <span class="font-semibold lg:text-xl text-sm">{{ $item['name'] }}</span><br>
-                                            <span class="text-gray-500 lg:text-xl text-xs">{{ $item['occupation'] }}</span>
-                                        </div>
+                            <!-- Testimonial Details -->
+                            <div class="lg:flex-grow  p-4 lg:p-20">
+                                <p class="text-[#3C3B3B] text-base lg:text-2xl">Lorem ipsum dolor sit amet consectetur. Morbi facilisi et sem enim vulputate vestibulum vitae aliquet elit. Magnis aliquet sed amet neque. Morbi facilisi et sem enim vulputate vestibulum vitae</p>
+                                <div class="border-b border-customBorder opacity-15 my-4"></div>
 
-                                        <!-- Rating -->
-                                        <div>
-                                            @for ($i = 1; $i <= 5; $i++)
-                                                <span class="{{ $i <= $item['star'] ? 'text-yellow-400' : 'text-gray-300' }} lg:text-xl text-sm">
-                                                    {{ $i <= $item['star'] ? '★' : '☆' }}
-                                                </span>
-                                            @endfor
-                                        </div>
+                                <!-- Testimonial Author -->
+                                <div class="py-6 flex lg:flex-col lg:flex-row justify-between items-center lg:items-start">
+                                    <div>
+                                        <span class="font-semibold text-xl ">{{ $item['name'] }}</span><br>
+                                        <span class="text-[#666666] text-base">{{ $item['occupation'] }}</span>
+                                    </div>
+
+                                    <!-- Rating -->
+                                    <div class="mt-4 lg:mt-0">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            <span class="{{ $i <= $item['star'] ? 'text-yellow-400' : 'text-gray-300' }} text-sm lg:text-xl">
+                                                {{ $i <= $item['star'] ? '★' : '☆' }}
+                                            </span>
+                                        @endfor
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                @endforeach
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-end items-center space-x-4 mr-6 lg:mr-20">
+                <div class="swiper-button-prev1 bg-white border border-[#2A4D69] cursor-pointer p-2 lg:p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#3C3B3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                    </svg>
                 </div>
-
-                <!-- Navigation Buttons -->
-                <div class="flex justify-end items-center space-x-4 mr-20">
-                    <div class="swiper-button-prev1 bg-white border border-[#2A4D69] cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#3C3B3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                          </svg>
-
-                    </div>
-                    <div class="swiper-button-next1 bg-white border border-[#2A4D69] cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#3C3B3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                          </svg>
-
-                    </div>
+                <div class="swiper-button-next1 bg-white border border-[#2A4D69] cursor-pointer p-2 lg:p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#3C3B3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
                 </div>
             </div>
+        </div>
+
 
 
     </section>

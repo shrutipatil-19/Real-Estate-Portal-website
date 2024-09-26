@@ -47,7 +47,7 @@
             <li><a href="{{ route('about-us.index') }}" class="text-gray-700 hover:text-blue-600">Home</a></li>
             <li><a href="#" class="text-gray-700 hover:text-blue-600">About Us</a></li>
             <li>
-                <button class="text-gray-700 hover:text-blue-600 w-full text-left focus:outline-none">Projects</button>
+                <a href="{{ route('projects.index') }}" class="text-gray-700 hover:text-blue-600 w-full text-left focus:outline-none">Projects</a>
                 <ul class="ml-4 mt-2 space-y-2">
                     <li><a href="#" class="text-gray-600 hover:text-blue-400">Ongoing</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-blue-400">Completed</a></li>
@@ -55,7 +55,7 @@
                 </ul>
             </li>
             <li><a href="#" class="text-gray-700 hover:text-blue-600">Buyer's Guide</a></li>
-            <li><a href="#" class="text-gray-700 hover:text-blue-600">Media</a></li>
+            <li><a href="{{ route('media.index') }}" class="text-gray-700 hover:text-blue-600">Media</a></li>
         </ul>
 
         <div class="absolute bottom-4 left-4">
@@ -73,13 +73,13 @@
          <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
          <a href="{{ route('about-us.index') }}" class="text-gray-600 hover:text-gray-900">About us</a>
          <div class="relative">
-             <button class="text-gray-600 hover:text-gray-900 inline-flex items-center">
+             <a href="{{ route('projects.index') }}" class="text-gray-600 hover:text-gray-900 inline-flex items-center">
                  Projects
                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                  </svg>
-             </button>
+             </a>
              <!-- Dropdown -->
              <div class="absolute hidden bg-white shadow-lg mt-2 py-2 w-40 text-sm text-gray-600">
                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">Project 1</a>
@@ -100,7 +100,7 @@
                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">Guide 2</a>
              </div>
          </div>
-         <a href="#" class="text-gray-600 hover:text-gray-900">Media</a>
+         <a href="{{ route('media.index') }}" class="text-gray-600 hover:text-gray-900">Media</a>
      </div>
 
 
