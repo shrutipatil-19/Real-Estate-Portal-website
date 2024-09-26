@@ -20,10 +20,10 @@
                 <ul class="space-y-2 text-sm">
                     <li><a href="/" class="hover:underline">Home</a></li>
                     <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
-                    <li><a href="#" class="hover:underline">Projects</a></li>
+                    <li><a href="{{ route('projects.index') }}" class="hover:underline">Projects</a></li>
                     <li><a href="#" class="hover:underline">Buyers Guide</a></li>
                     <li><a href="{{ route('testimonials.index') }}" class="hover:underline">Testimonials</a></li>
-                    <li><a href="#" class="hover:underline">Media</a></li>
+                    <li><a href="{{ route('media.index') }}" class="hover:underline">Media</a></li>
                 </ul>
             </div>
 
@@ -94,10 +94,10 @@
                         <ul id="sitemap" class="space-y-2 text-sm hidden">
                             <li><a href="/" class="hover:underline">Home</a></li>
                             <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
-                            <li><a href="#" class="hover:underline">Projects</a></li>
+                            <li><a href="{{ route('projects.index') }}" class="hover:underline">Projects</a></li>
                             <li><a href="#" class="hover:underline">Buyers Guide</a></li>
                             <li><a href="{{ route('testimonials.index') }}" class="hover:underline">Testimonials</a></li>
-                            <li><a href="#" class="hover:underline">Media</a></li>
+                            <li><a href="{{ route('media.index') }}" class="hover:underline">Media</a></li>
                         </ul>
                     </div>
 
