@@ -32,7 +32,7 @@
                 <h3 class="text-lg font-sans mb-4">IMPORTANT LINKS</h3>
                 <ul class="space-y-2 text-sm">
                     <li><a href="#" class="hover:underline">Loan Calculator</a></li>
-                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                    <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -109,7 +109,7 @@
                         </div>
                         <ul id="important-links" class="space-y-2 text-sm hidden">
                             <li><a href="#" class="hover:underline">Loan Calculator</a></li>
-                            <li><a href="#" class="hover:underline">Contact Us</a></li>
+                            <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                         </ul>
                     </div>
                 <!-- Social Icons -->
