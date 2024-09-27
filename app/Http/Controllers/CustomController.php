@@ -36,4 +36,9 @@ class CustomController extends Controller
         $mediaLimit = Media::latest()->paginate(2);
         return view('media',compact('media','mediaLimit'));
     }
+
+    public function ContactUsIndex()
+    {
+        return view('contact-us');
+    }
 }
