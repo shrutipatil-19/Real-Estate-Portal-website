@@ -23,6 +23,7 @@ Route::get('/testimonials', [CustomController::class, 'TestimonialsIndex'])->nam
 Route::get('/projects', [CustomController::class, 'ProjectsIndex'])->name('projects.index');
 Route::get('/media', [CustomController::class, 'MediaIndex'])->name('media.index');
 Route::get('/contact-us', [CustomController::class, 'ContactUsIndex'])->name('ContactUs.index');
+Route::get('/buyers-guide', [CustomController::class, 'BuyersGuideIndex'])->name('buyers_guide.index');
 
 
 require __DIR__.'/auth.php';
