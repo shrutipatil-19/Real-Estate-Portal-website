@@ -1,4 +1,4 @@
-<footer class="bg-[#2A4D69] text-white py-6">
+<footer class="bg-primary text-white py-6">
     <div class="container mx-auto lg:px-16 px-4 mt-4">
         <div class="grid lg:grid-cols-5 gap-8">
             <!-- Company Info -->
@@ -21,7 +21,7 @@
                     <li><a href="/" class="hover:underline">Home</a></li>
                     <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
                     <li><a href="{{ route('projects.index') }}" class="hover:underline">Projects</a></li>
-                    <li><a href="#" class="hover:underline">Buyers Guide</a></li>
+                    <li><a href="{{route('buyers_guide.index')}}" class="hover:underline">Buyers Guide</a></li>
                     <li><a href="{{ route('testimonials.index') }}" class="hover:underline">Testimonials</a></li>
                     <li><a href="{{ route('media.index') }}" class="hover:underline">Media</a></li>
                 </ul>
@@ -31,7 +31,7 @@
             <div class="hidden lg:block">
                 <h3 class="text-lg font-sans mb-4">IMPORTANT LINKS</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Loan Calculator</a></li>
+                    <li><a href="{{route('buyers_guide.index')}}" class="hover:underline">Loan Calculator</a></li>
                     <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                 </ul>
             </div>
@@ -95,7 +95,7 @@
                             <li><a href="/" class="hover:underline">Home</a></li>
                             <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
                             <li><a href="{{ route('projects.index') }}" class="hover:underline">Projects</a></li>
-                            <li><a href="#" class="hover:underline">Buyers Guide</a></li>
+                            <li><a href="{{route('buyers_guide.index')}}" class="hover:underline">Buyers Guide</a></li>
                             <li><a href="{{ route('testimonials.index') }}" class="hover:underline">Testimonials</a></li>
                             <li><a href="{{ route('media.index') }}" class="hover:underline">Media</a></li>
                         </ul>
@@ -108,7 +108,7 @@
                             <span id="important-links-icon" class="text-2xl font-bold">+</span>
                         </div>
                         <ul id="important-links" class="space-y-2 text-sm hidden">
-                            <li><a href="#" class="hover:underline">Loan Calculator</a></li>
+                            <li><a href="{{route('buyers_guide.index')}}" class="hover:underline">Loan Calculator</a></li>
                             <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                         </ul>
                     </div>

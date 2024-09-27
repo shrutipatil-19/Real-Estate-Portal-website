@@ -13,32 +13,37 @@ class CustomController extends Controller
     public function aboutIndex()
     {
         $achievement = Achievement::first();
-        return view('about-us',compact('achievement'));
+        return view('about-us', compact('achievement'));
     }
 
 
     public function TestimonialsIndex()
     {
         $testimonial = Testimonial::first();
-        return view('testimonials',compact('testimonial'));
+        return view('testimonials', compact('testimonial'));
     }
 
 
     public function ProjectsIndex()
     {
         $projects = Project::paginate(3);
-        return view('project',compact('projects'));
+        return view('project', compact('projects'));
     }
 
     public function MediaIndex()
     {
         $media = Media::latest()->limit(5)->get();
         $mediaLimit = Media::latest()->paginate(2);
-        return view('media',compact('media','mediaLimit'));
+        return view('media', compact('media', 'mediaLimit'));
     }
 
     public function ContactUsIndex()
     {
         return view('contact-us');
+    }
+
+    public function BuyersGuideIndex()
+    {
+        return view('buyers-guide');
     }
 }

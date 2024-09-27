@@ -20,9 +20,9 @@
             <p class="text-[16px] lg:text-xl max-w-[733px]">
                 {{ $banner->sub_heading }}
             </p>
-            <button class="px-6 py-3 text-[16px] bg-primary font-bold hover:bg-primary">
+            <a href="/contact-us#1" class="px-6 py-3 text-[16px] bg-primary font-bold hover:bg-primary">
                 Get a Quote
-            </button>
+            </a>
         </div>
     </section>
 
@@ -43,7 +43,7 @@
                     <p class="text-lg text-[#727272] mb-8 lg:mb-12 leading-8">
                         {{ $about_us->description }}
                     </p>
-                    <a href="#"
+                    <a href="/about-us"
                         class="bg-primary text-white font-bold px-6 py-2 w-36 h-12 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300 mb-10">
                         Read More
                     </a>
@@ -159,7 +159,7 @@
                 @endforeach
             </div>
             <div class="flex flex-col items-center justify-center">
-                <a href="#"
+                <a href="/projects"
                     class="bg-primary text-white font-bold px-6  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
                     View All Properties
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
@@ -334,7 +334,7 @@
 
             <!-- View All Button -->
             <div class="flex flex-col items-center justify-center py-8">
-                <a href="#"
+                <a href="/media"
                     class="bg-primary text-white font-bold px-6  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
                     View All
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none"

@@ -80,7 +80,7 @@
     <div class="border-b border-[#D9D9D9] lg:mt-6 hidden lg:block"></div>
 
     <div class="container mx-auto lg:px-16 px-4">
-        <div class="xl:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
+        <div  id="1" class="xl:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
             <div class="lg:py-[140px] py-[40px]">
                 <h2 class="lg:text-[42px] text-2xl  font-bold text-customGray">Contact us</h2>
                 <p class="lg:text-2xl text-base text-customGray mt-3">Lorem ipsum dolor sit amet consectetur. Libero integer integer
@@ -90,7 +90,7 @@
                     at sed. Integer posuere at risus gravida eu.</p>
             </div>
 
-            <div>
+            <div >
 
                 <form class="space-y-4  rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-8">
                     <!-- Full Name Input -->

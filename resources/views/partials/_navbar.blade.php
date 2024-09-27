@@ -54,7 +54,7 @@
                     <li><a href="#" class="text-gray-600 hover:text-blue-400">Upcoming</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="text-gray-700 hover:text-blue-600">Buyer's Guide</a></li>
+            <li><a href="{{route('buyers_guide.index')}}" class="text-gray-700 hover:text-blue-600">Buyer's Guide</a></li>
             <li><a href="{{ route('media.index') }}" class="text-gray-700 hover:text-blue-600">Media</a></li>
         </ul>
 
@@ -87,13 +87,9 @@
              </div>
          </div>
          <div class="relative">
-             <button class="text-gray-600 hover:text-gray-900 inline-flex items-center">
+             <a href="{{route('buyers_guide.index')}}" class="text-gray-600 hover:text-gray-900 inline-flex items-center">
                  Buyers Guide
-                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                 </svg>
-             </button>
+             </a>
              <!-- Dropdown -->
              <div class="absolute hidden bg-white shadow-lg mt-2 py-2 w-40 text-sm text-gray-600">
                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">Guide 1</a>
