@@ -46,4 +46,13 @@ class CustomController extends Controller
     {
         return view('buyers-guide');
     }
+
+
+    public function MediaView(Request $request)
+    {
+
+       $media =  Media::find($request->media_id);
+
+        return view('media-view',compact('media'));
+    }
 }

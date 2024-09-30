@@ -12,17 +12,17 @@
 
     <section class="container mx-auto lg:px-16 px-4 mt-7">
         <div class="flex gap-3 items-center">
-            <span class="text-base text-[#3C3B3B]">Home</span>
+            <span class="text-base text-customGray">Home</span>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
                     fill="#3C3B3B" />
             </svg>
-            <span class="text-sm text-[#3C3B3B]">Testimonials</span>
+            <span class="text-sm text-customGray">Testimonials</span>
         </div>
 
 
         <div class="text-center mt-12 w-full  px-4">
-            <h2 class="text-2xl lg:text-[42px] font-bold text-[#3C3B3B] text-left">Lorem ipsum dolor sit amet consectetur.</h2>
+            <h2 class="text-2xl lg:text-[42px] font-bold text-customGray text-left">Lorem ipsum dolor sit amet consectetur.</h2>
         </div>
 
         <!-- Swiper Slider -->
@@ -40,7 +40,7 @@
 
                             <!-- Testimonial Details -->
                             <div class="lg:flex-grow  p-4 lg:p-20">
-                                <p class="text-[#3C3B3B] text-base lg:text-2xl">Lorem ipsum dolor sit amet consectetur. Morbi facilisi et sem enim vulputate vestibulum vitae aliquet elit. Magnis aliquet sed amet neque. Morbi facilisi et sem enim vulputate vestibulum vitae</p>
+                                <p class="text-customGray text-base lg:text-2xl">Lorem ipsum dolor sit amet consectetur. Morbi facilisi et sem enim vulputate vestibulum vitae aliquet elit. Magnis aliquet sed amet neque. Morbi facilisi et sem enim vulputate vestibulum vitae</p>
                                 <div class="border-b border-customBorder opacity-15 my-4"></div>
 
                                 <!-- Testimonial Author -->
@@ -67,12 +67,12 @@
 
             <!-- Navigation Buttons -->
             <div class="flex justify-end items-center space-x-4 mr-6 lg:mr-20">
-                <div class="swiper-button-prev1 bg-white border border-[#2A4D69] cursor-pointer p-2 lg:p-0">
+                <div class="swiper-button-prev1 bg-white border border-primary cursor-pointer p-2 lg:p-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#3C3B3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
                     </svg>
                 </div>
-                <div class="swiper-button-next1 bg-white border border-[#2A4D69] cursor-pointer p-2 lg:p-0">
+                <div class="swiper-button-next1 bg-white border border-primary cursor-pointer p-2 lg:p-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#3C3B3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 lg:w-8 lg:h-8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                     </svg>

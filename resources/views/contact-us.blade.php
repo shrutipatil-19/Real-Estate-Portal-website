@@ -13,12 +13,12 @@
 
     <div class="container mx-auto xl:px-16 px-4 mt-7">
         <div class="flex gap-3 items-center">
-            <span class="text-base text-[#3C3B3B]">Home</span>
+            <span class="text-base text-customGray">Home</span>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
                     fill="#3C3B3B" />
             </svg>
-            <span class="text-sm text-[#3C3B3B]">Contact Us</span>
+            <span class="text-sm text-customGray">Contact Us</span>
         </div>
 
         <div class="xl:mt-[112px] mt-[56px]">
@@ -37,7 +37,7 @@
 
                     </div>
                     <div class="ml-4">
-                        <p class="lg:text-2xl text-xl font-bold text-[#3C3B3B]">Phone</p>
+                        <p class="lg:text-2xl text-xl font-bold text-customGray">Phone</p>
                         <p class="text-base text-[#666666]">(+91) 740 821 55 79</p>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
 
                     </div>
                     <div class="ml-4">
-                        <p class="lg:text-2xl text-xl text-[#3C3B3B] font-bold">Location</p>
+                        <p class="lg:text-2xl text-xl text-customGray font-bold">Location</p>
                         <p class="text-base text-[#666666]">Lorem ipsum dolor sit amet consectetur.</p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                         </svg>
                     </div>
                     <div class="ml-4">
-                        <p class="lg:text-2xl text-xl font-bold text-[#3C3B3B]">Email</p>
+                        <p class="lg:text-2xl text-xl font-bold text-customGray">Email</p>
                         <p class="text-base text-[#666666]">info@Lorem ipsum.com</p>
                     </div>
                 </div>

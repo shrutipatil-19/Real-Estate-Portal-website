@@ -22,6 +22,7 @@ Route::get('/about-us', [CustomController::class, 'aboutIndex'])->name('about-us
 Route::get('/testimonials', [CustomController::class, 'TestimonialsIndex'])->name('testimonials.index');
 Route::get('/projects', [CustomController::class, 'ProjectsIndex'])->name('projects.index');
 Route::get('/media', [CustomController::class, 'MediaIndex'])->name('media.index');
+Route::get('/media-view', [CustomController::class, 'MediaView'])->name('media.view');
 Route::get('/contact-us', [CustomController::class, 'ContactUsIndex'])->name('ContactUs.index');
 Route::get('/buyers-guide', [CustomController::class, 'BuyersGuideIndex'])->name('buyers_guide.index');
 
