@@ -31,7 +31,7 @@
             <div class="hidden lg:block">
                 <h3 class="text-lg font-sans mb-4">IMPORTANT LINKS</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{route('buyers_guide.index')}}" class="hover:underline">Loan Calculator</a></li>
+                    <li><a href="buyers-guide#LoanCalculator_" class="hover:underline">Loan Calculator</a></li>
                     <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                 </ul>
             </div>
@@ -108,7 +108,7 @@
                             <span id="important-links-icon" class="text-2xl font-bold">+</span>
                         </div>
                         <ul id="important-links" class="space-y-2 text-sm hidden">
-                            <li><a href="{{route('buyers_guide.index')}}" class="hover:underline">Loan Calculator</a></li>
+                            <li><a href="buyers-guide#LoanCalculator_" class="hover:underline">Loan Calculator</a></li>
                             <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                         </ul>
                     </div>

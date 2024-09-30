@@ -13,12 +13,12 @@
 
     <section class="container mx-auto xl:px-16 px-4 mt-7 ">
         <div class="flex gap-3 items-center">
-            <span class="text-base text-[#3C3B3B]">Home</span>
+            <span class="text-base text-customGray">Home</span>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
                     fill="#3C3B3B" />
             </svg>
-            <span class="text-sm text-[#3C3B3B]">Projects</span>
+            <span class="text-sm text-customGray">Projects</span>
         </div>
 
         <section id="projects" class="xl:mt-[112px] mt-[57px]">
@@ -49,7 +49,7 @@
                                 <h4 class="text-lg mb-2">{{ $mediaLimitValue->title }}</h4>
                                 <p class="text-[#727272] text-base">
                                     {{ Str::limit($mediaLimitValue->description, 200) }}
-                                    <a href="#" class="text-[#2A4D69] hover:underline font-bold">Read More</a>
+                                    <a href="{{ route('media.view',['media_id' => $mediaLimitValue->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
                                 </p>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                 <h4 class="text-lg mb-2">{{ $mediaLimitValue->title }}</h4>
                                 <p class="text-[#727272] text-base">
                                     {{ Str::limit($mediaLimitValue->description, 150) }}
-                                    <a href="#" class="text-[#2A4D69] hover:underline font-bold">Read More</a>
+                                    <a href="{{ route('media.view',['media_id' => $mediaLimitValue->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
                                 </p>
                         </div>
                     @endforeach

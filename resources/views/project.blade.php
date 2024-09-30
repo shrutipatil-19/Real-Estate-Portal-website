@@ -11,12 +11,12 @@
     </div>
     <section class="container mx-auto xl:px-16 px-4 mt-7">
         <div class="flex gap-3 items-center">
-            <span class="text-base text-[#3C3B3B]">Home</span>
+            <span class="text-base text-customGray">Home</span>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
                     fill="#3C3B3B" />
             </svg>
-            <span class="text-sm text-[#3C3B3B]">Projects</span>
+            <span class="text-sm text-customGray">Projects</span>
         </div>
 
         <section id="projects" class="xl:mt-[119px] mt-[57px]">
@@ -48,7 +48,7 @@
                         <div class="hidden md:block absolute  inset-0 lg:px-2.5 px-8 flex items-center justify-center  opacity-0 group-hover:opacity-100"
                             aria-hidden="true">
                             <div class="w-full bg-white text-center md:mt-20 lg:mt-0 xl:mt-20 2xl:mt-28 lg:p-4 ">
-                                <span class="block text-xl text-[#3C3B3B]">{{ $project->name }}</span>
+                                <span class="block text-xl text-customGray">{{ $project->name }}</span>
                                 <div class="flex items-center justify-center gap-1 text-[#727272] text-md my-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -60,13 +60,13 @@
                                     {{ $project->location }}
                                 </div>
                                 <span
-                                    class="block text-2xl text-[#3C3B3B] font-bold flex items-center justify-center gap-1"><span
+                                    class="block text-2xl text-customGray font-bold flex items-center justify-center gap-1"><span
                                         class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="block md:hidden w-full bg-white text-center py-2">
-                        <span class="block text-xl text-[#3C3B3B]">{{ $project->name }}</span>
+                        <span class="block text-xl text-customGray">{{ $project->name }}</span>
                         <div class="flex items-center justify-center gap-1 text-[#727272] text-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -78,7 +78,7 @@
                             {{ $project->location }}
                         </div>
                         <span
-                            class="block text-2xl text-[#3C3B3B] font-bold flex items-center justify-center gap-1"><span
+                            class="block text-2xl text-customGray font-bold flex items-center justify-center gap-1"><span
                                 class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}</span>
                     </div>
                 @endforeach
