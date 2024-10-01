@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <section id="banner" class="relative lg:h-screen h-[720px] overflow-hidden">
+    <section id="banner" class="relative h-screen overflow-hidden">
         <!-- Background Image -->
         <img src="{{ Storage::url($banner->banner_image) }}" alt="banner" class="w-full h-full object-cover">
 
@@ -20,7 +20,7 @@
             <p class="text-[16px] lg:text-xl max-w-[733px]">
                 {{ $banner->sub_heading }}
             </p>
-            <a href="/contact-us#1" class="px-6 py-3 text-[16px] bg-primary font-bold hover:bg-primary">
+            <a href="/contact-us#1" class="px-6 py-3 lg:h-12 h-[44px] lg:text-base text-sm bg-primary font-bold hover:bg-primary">
                 Get a Quote
             </a>
         </div>
@@ -31,56 +31,56 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-[42px] items-center">
                 <!-- Image Section -->
                 <div>
-                    <img src="{{ Storage::url($about_us->aboutUsImage) }}" alt="About Us Image" class="w-full h-[574px]">
+                    <img src="{{ Storage::url($about_us->aboutUsImage) }}" alt="About Us Image" class="w-full lg:h-[574px] h-[387px]">
                 </div>
 
                 <!-- Content Section -->
                 <div>
-                    <h2 class="text-2xl lg:text-[42px]  font-bold mb-3 lg:mb-[42px] text-customGray">About Us</h2>
-                    <p class="text-base lg:text-2xl font-bold text-customGray mb-[14px] lg:mb-6 leading-7">
+                    <h2 class="text-2xl lg:text-[42px]  font-bold mb-[14px] lg:mb-[42px] text-customGray">About Us</h2>
+                    <p class="text-xl lg:text-2xl font-bold text-customBorder mb-[14px] lg:mb-6 leading-7">
                         {{ $about_us->title }}
                     </p>
-                    <p class="text-base text-[#727272] mb-[22px] lg:mb-[42px] leading-8">
+                    <p class="text-base text-customBorder mb-[22px] lg:mb-[42px] leading-8">
                         {{ $about_us->description }}
                     </p>
                     <a href="/about-us"
-                        class="bg-primary text-white font-bold px-6 py-2 w-36 h-12 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300 mb-[38px]">
+                        class="bg-primary text-white lg:text-base text-sm font-bold px-6 py-2 w-36 lg:h-12 h-[44px] flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300 lg:mb-[38px] mb-[22px]">
                         Read More
                     </a>
 
 
 
                     <!-- Stats Section -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-1 gap-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-1 gap-3">
                         <!-- Stat 1 -->
                         <div class="flex items-center">
-                            <div class="w-16 h-16">
-                                <img src="img/recommendation2.png" alt="" class=" bg-center">
+                            <div class="lg:w-16 w-12 lg:h-16 h-12">
+                                <img src="img/recommendation2.png" alt="" class="bg-center">
                             </div>
                             <div class="ml-4 text-customGray font-bold">
-                                <p class="text-[32px] font-bold">{{ $about_us->year_of_experience }} +</p>
+                                <p class="lg:text-[32px] text-2xl font-bold">{{ $about_us->year_of_experience }} +</p>
                                 <p class="text-sm">Years of Experience</p>
                             </div>
                         </div>
 
                         <!-- Stat 2 -->
                         <div class="flex items-center">
-                            <div class="w-16 h-16">
+                            <div class="lg:w-16 w-12 lg:h-16 h-12">
                                 <img src="img/customer-service2.png" alt="" class=" bg-center">
                             </div>
                             <div class="ml-4 text-customGray font-bold">
-                                <p class="text-[32px] font-bold text-customGray">{{ $about_us->projects_completed }} +</p>
+                                <p class="lg:text-[32px] text-2xl font-bold text-customGray">{{ $about_us->projects_completed }} +</p>
                                 <p class="text-sm">Projects Completed</p>
                             </div>
                         </div>
 
                         <!-- Stat 3 -->
                         <div class="flex items-center">
-                            <div class="w-16 h-16">
+                            <div class="lg:w-16 w-12 lg:h-16 h-12">
                                 <img src="img/sold.png" alt="" class="bg-center">
                             </div>
                             <div class="ml-4 text-customGray font-bold">
-                                <p class="text-[32px] font-bold">{{ $about_us->awards_won }} +</p>
+                                <p class="lg:text-[32px] text-2xl font-bold">{{ $about_us->awards_won }} +</p>
                                 <p class="text-sm">Awards Won</p>
                             </div>
                         </div>
@@ -90,77 +90,75 @@
         </section>
 
         <section id="projects">
-            <div class="flex flex-col items-center justify-center mb-6">
+            <div class="flex flex-col items-center justify-center lg:mb-6 mb-[14px]">
                 <span class="lg:text-[42px] text-2xl font-bold leading-[47.72px] text-center text-customGray">
                     Projects
                 </span>
             </div>
             <div class="flex items-center justify-center space-x-8">
                 <!-- Ongoing tab (active) -->
-                <span class="relative text-customGray text-base font-medium cursor-pointer">
+                <span class="relative text-customGray lg:text-base text-sm cursor-pointer">
                     Ongoing
                     <span class="absolute left-0 right-0 -bottom-1 h-1 bg-[#FBB249]"></span>
                     <!-- Underline for active tab -->
                 </span>
 
                 <!-- Completed tab -->
-                <span class="relative text-gray-500 text-base font-medium cursor-pointer hover:text-customGray">
+                <span class="relative text-customBorder lg:text-base text-sm cursor-pointer hover:text-customBorder">
                     Completed
                 </span>
 
                 <!-- Upcoming tab -->
-                <span class="relative text-gray-500 text-base font-medium cursor-pointer hover:text-customGray">
+                <span class="relative text-customBorder lg:text-base text-sm cursor-pointer hover:text-customBorder">
                     Upcoming
                 </span>
             </div>
 
 
-            <div class="grid grid-cols-1 lg:gap-12 gap-2 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-3 lg:py-[42px] py-5">
-                @foreach ($projects as $key => $project)
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-y-10 lg:gap-12 py-[30px] lg:py-[42px]">
+                @foreach ($projects as $project)
                     <div class="group relative">
-                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}"
-                            class="object-cover object-center w-full h-auto group-hover:brightness-50 transition duration-500">
-                        <div class="hidden lg:block absolute inset-0 flex items-center justify-center  top-16 px-[55.5px] py-10  opacity-0 group-hover:opacity-100 duration-700"
-                            aria-hidden="true">
-                            <div class="h-[194px] bg-white text-center p-8">
+                        <!-- Project Image -->
+                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] group-hover:brightness-50 transition duration-500">
+
+                        <!-- Hidden Info Section for Larger Screens -->
+                        <div class="hidden lg:flex absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700" aria-hidden="true">
+                            <div class="bg-white text-center p-8 h-[194px]">
                                 <span class="block text-[22px] text-customGray">{{ $project->name }}</span>
                                 <div class="flex items-center justify-center gap-1 text-[#727272] text-base my-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                                     </svg>
                                     {{ $project->location }}
                                 </div>
-                                <span
-                                    class="block text-xl text-customGray font-bold flex items-center justify-center gap-1"><span
-                                        class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}</span>
+                                <span class="block text-xl text-customGray font-bold flex items-center justify-center gap-1">
+                                    <span class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}
+                                </span>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Info Section for Smaller Screens -->
                     <div class="block lg:hidden w-full bg-white text-center py-2">
                         <span class="block text-xl text-customGray">{{ $project->name }}</span>
-                        <div class="flex items-center justify-center gap-1 text-[#727272] text-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        <div class="flex items-center justify-center gap-1 text-customBorder text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
                             {{ $project->location }}
                         </div>
-                        <span
-                            class="block text-2xl text-customGray font-bold flex items-center justify-center gap-1"><span
-                                class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}</span>
+                        <span class="block text-base text-customGray font-bold flex items-center justify-center gap-1">
+                            <span class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}
+                        </span>
                     </div>
                 @endforeach
             </div>
+
             <div class="flex flex-col items-center justify-center">
                 <a href="/projects"
-                    class="bg-primary text-white h-[48px] font-bold px-6 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
+                    class="bg-primary text-white lg:h-[48px] h-[44px] font-bold px-6 flex lg:text-base text-sm items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
                     View All Properties
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -174,11 +172,11 @@
         </section>
     </div>
 
-    <section class="lg:py-28 py-14">
-        <div class="w-full h-[586px] bg-fixed bg-no-repeat bg-cover"
+    <section class="lg:mt-28 mt-14">
+        <div class="w-full lg:h-[586px] h-[208px] bg-fixed bg-no-repeat bg-cover"
             style="background-image: url({{ Storage::url($parallaxEffect->image) }});">
-            <div class="flex flex-col items-center text-center justify-center text-white space-y-6">
-                <h1 class="text-2xl lg:text-[42px] font-bold mt-56">
+            <div class="flex flex-col items-center text-center justify-center text-white lg:space-y-6 space-y-3">
+                <h1 class="text-base lg:text-[42px] font-bold lg:mt-56 mt-[66px]">
                     {{ $parallaxEffect->heading }}
                 </h1>
                 <p class="text-xs lg:text-2xl lg:w-[475.63px]">
@@ -189,36 +187,36 @@
     </section>
 
 
-    <section id="Achievements" class="container mx-auto lg:px-5 px-4">
+    <section id="Achievements" class="container mx-auto lg:px-5 px-4 lg:py-28 py-14">
         <div class="flex flex-col items-center justify-center mb-3">
             <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray mb-6">
                 Achievements
             </span>
-            <div class="flex items-center justify-center text-center text-customGray lg:w-[604px] text-2xl">
+            <div class="flex items-center justify-center text-center text-customGray lg:w-[604px] lg:text-2xl text-base">
                 {{ $achievement->heading }}
             </div>
         </div>
 
-        <div class="swiper my-10">
+        <div class="swiper mt-[42px]">
             <!-- Wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 @foreach ($achievement->achievement_images_details as $achievement)
                     <div class="swiper-slide flex flex-col items-center justify-center">
                         <!-- Image wrapped in a circle -->
-                        <div class="w-[216px] h-[216px] rounded-full bg-gray-300 flex items-center justify-center">
+                        <div class="w-[216px] h-[216px] rounded-full  flex items-center justify-center">
                             <img src="{{ Storage::url($achievement['image']) }}" alt="{{ $achievement['image_title'] }}"
                                 class="w-full h-full object-cover rounded-full">
                         </div>
                         <!-- Title -->
-                        <span class="mt-3 text-lg font-semibold">{{ $achievement['image_title'] }}</span>
+                        <span class="mt-3 lg:text-lg text-base font-semibold text-customGray">{{ $achievement['image_title'] }}</span>
                         <!-- Subtitle -->
-                        <span class="text-gray-500 mt-[6px]">{{ $achievement['image_sub_title'] }}</span>
+                        <span class="text-customBorder mt-[6px] lg:text-base text-sm">{{ $achievement['image_sub_title'] }}</span>
                     </div>
                 @endforeach
             </div>
             <!-- Navigation buttons -->
-            <div class="flex justify-center items-center py-14 space-x-10 ">
+            <div class="flex justify-center items-center mt-14 space-x-10">
                 <div class="swiper-button-prev bg-white border border-primary  cursor-pointer">
 
                 </div>
@@ -232,16 +230,16 @@
         style="background-image: url('{{ asset('img/testimonial.png') }}');">
         <div class="text-center mt-[61px]">
             <h2 class="lg:text-[42px] text-2xl font-bold text-customGray">Testimonials</h2>
-            <p class="mt-6 text-customGray w-[1214px] mx-auto lg:text-2xl text-base">{{ $testimonial->heading }}</p>
+            <p class="mt-6 text-customGray lg:w-[1214px] mx-auto lg:text-2xl text-base">{{ $testimonial->heading }}</p>
         </div>
 
         <!-- Swiper Slider -->
-        <div class="swiper swiper_testimonial py-28 lg:px-[90px] px-2">
+        <div class="swiper swiper_testimonial lg:py-28 py-14 container mx-auto lg:px-16 px-4">
             <div class="swiper-wrapper">
                 @foreach ($testimonial->testimonial_images_details as $item)
                     <div class="swiper-slide bg-white lg:p-10 p-2 lg:space-x-10 space-x-8 space-y-10 relative">
                         <!-- Testimonial Image (circle) -->
-                        <div class="lg:w-28 w-14 lg:h-28 h-14 rounded-full overflow-hidden border-4 border-white absolute lg:-top-16 -top-[26px]">
+                        <div class="lg:w-28 w-[52px] lg:h-28 h-[52px] rounded-full overflow-hidden border-4 border-white absolute lg:-top-16 -top-[26px]">
                             <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}"
                                 class="w-full h-full object-cover">
                         </div>
@@ -254,8 +252,8 @@
                         <!-- Testimonial Author -->
                         <div class="flex justify-between">
                             <div>
-                                <span class="font-semibold lg:text-base text-sm">{{ $item['name'] }}</span><br>
-                                <span class="text-gray-500  lg:text-sm text-xs">{{ $item['occupation'] }}</span>
+                                <span class="font-semibold lg:text-base text-sm text-customGray">{{ $item['name'] }}</span><br>
+                                <span class="text-customBorder lg:text-sm text-xs">{{ $item['occupation'] }}</span>
                             </div>
 
                             <!-- Rating -->
@@ -264,7 +262,7 @@
                                     @if ($i <= $item['star'])
                                         <span class="text-yellow-400 lg:text-xl text-sm">★</span>
                                     @else
-                                        <span class="text-gray-300 lg:text-xl text-sm">☆</span>
+                                        <span class="text-gray-300 lg:text-xl text-sm">★</span>
                                     @endif
                                 @endfor
                             </div>
@@ -287,25 +285,25 @@
     </section>
 
     <section>
-        <div class="container mx-auto lg:mt-28 mt-12 lg:px-16 px-4">
+        <div class="container mx-auto lg:mt-28 mt-[30px] lg:px-16 px-4">
             <!-- Section Title -->
-            <h2 class="text-center text-3xl font-bold mb-8">Media</h2>
+            <h2 class="text-center text-3xl font-bold text-customGray">Media</h2>
 
             <!-- Media Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:py-[42px] py-[22px]">
                 <!-- Left Column: Two Large Media Cards -->
 
                 <!-- First Large Media Card -->
                 @foreach ($media as $value)
                     <div class="bg-white">
-                        <img class="w-full  h-[400px]"
+                        <img
                             src="{{ $value->image ? Storage::url($value->image) : 'https://via.placeholder.com/600x400' }}"
-                            alt="Media Image">
+                            alt="Media Image" class="w-full  h-[300px]">
 
                         <div class="mt-4">
                             <h3 class="text-xl text-customGray mb-2">{{ $value->title }}</h3>
-                            <p class="text-[#727272] text-sm mb-4">
-                                {{ Str::limit($value->description, 300) }}
+                            <p class="text-customBorder text-sm mb-4">
+                                {{ Str::limit($value->description, 196) }}
                                 <a href="{{ route('media.view',['media_id' => $value->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
                             </p>
                         </div>
@@ -317,12 +315,12 @@
                 <div class="space-y-6">
                     @foreach ($mediaLimit as $mediaLimitValue)
                         <div class="bg-white flex space-x-4">
-                            <img class="w-36 h-36 object-cover"
+                            <img class="w-36 lg:h-36 lg:[111px] object-cover"
                                 src="{{ Storage::url($mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image">
                             <div class="">
-                                <h4 class="text-lg mb-2">{{ Str::limit($mediaLimitValue->title, 40) }}</h4>
-                                <p class="text-[#727272] text-sm">
+                                <h4 class="text-lg mb-2 text-customGray">{{ Str::limit($mediaLimitValue->title, 40) }}</h4>
+                                <p class="text-customBorder text-sm">
                                     {{ Str::limit($mediaLimitValue->description, 100) }}
                                     <a href="{{ route('media.view',['media_id' => $mediaLimitValue->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
                                 </p>
@@ -333,9 +331,9 @@
             </div>
 
             <!-- View All Button -->
-            <div class="flex flex-col items-center justify-center py-8">
+            <div class="flex flex-col items-center justify-center lg:pb-14 pb-7">
                 <a href="/media"
-                    class="bg-primary text-white font-bold px-6  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
+                    class="bg-primary lg:h-12 h-[44px] text-white font-bold px-6 lg:text-base text-sm  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
                     View All
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
