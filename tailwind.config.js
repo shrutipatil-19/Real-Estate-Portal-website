@@ -17,7 +17,8 @@ export default {
             colors: {
                 customBorder: '#666666',
                 customGray: '#3C3B3B',
-                primary:'#2A4D69'
+                primary:'#2A4D69',
+                buttonColor:'#FBB249',
               },
         },
     },
