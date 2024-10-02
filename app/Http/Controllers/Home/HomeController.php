@@ -24,6 +24,7 @@ class HomeController extends Controller
         $testimonial = Testimonial::first();
         $media = Media::latest()->limit(2)->get();
         $mediaLimit = Media::latest()->limit(3)->get();
-        return view('home',compact('banner','about_us','projects','parallaxEffect','achievement','testimonial','media','mediaLimit'));
+        $mediaLimit1 = Media::latest()->first();
+        return view('home',compact('banner','about_us','projects','parallaxEffect','achievement','testimonial','media','mediaLimit','mediaLimit1'));
     }
 }

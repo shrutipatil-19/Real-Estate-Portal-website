@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <section id="banner" class="relative h-screen overflow-hidden">
+    <section id="banner" class="relative lg:h-screen  h-[800px] overflow-hidden">
         <!-- Background Image -->
         <img src="{{ Storage::url($banner->banner_image) }}" alt="banner" class="w-full h-full object-cover">
 
@@ -13,7 +13,7 @@
         </div>
 
         <!-- Text and Button Section -->
-        <div class="absolute inset-0 flex flex-col items-start justify-center text-white px-4 lg:px-40 space-y-[42px]">
+        <div class="absolute inset-0 flex flex-col items-start justify-center text-white px-4 lg:px-40 lg:space-y-[42px] space-y-[22px]">
             <h1 class="text-2xl lg:text-[46px] font-bold max-w-[733px] lg:leading-[52px]">
                 {{ $banner->heading }}
             </h1>
@@ -115,14 +115,14 @@
             </div>
 
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-y-10 lg:gap-12 py-[30px] lg:py-[42px]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-y-10 lg:gap-12 lg:mt-0 mt-[32px] lg:mb-0 mb-3 lg:py-[42px]">
                 @foreach ($projects as $project)
                     <div class="group relative">
                         <!-- Project Image -->
                         <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] group-hover:brightness-50 transition duration-500">
 
                         <!-- Hidden Info Section for Larger Screens -->
-                        <div class="hidden lg:flex absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700" aria-hidden="true">
+                        <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700" aria-hidden="true">
                             <div class="bg-white text-center p-8 h-[194px]">
                                 <span class="block text-[22px] text-customGray">{{ $project->name }}</span>
                                 <div class="flex items-center justify-center gap-1 text-[#727272] text-base my-4">
@@ -140,7 +140,7 @@
                     </div>
 
                     <!-- Info Section for Smaller Screens -->
-                    <div class="block lg:hidden w-full bg-white text-center py-2">
+                    <div class="block md:hidden w-full bg-white text-center mt-3 mb-4">
                         <span class="block text-xl text-customGray">{{ $project->name }}</span>
                         <div class="flex items-center justify-center gap-1 text-customBorder text-sm">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -179,7 +179,7 @@
                 <h1 class="text-base lg:text-[42px] font-bold lg:mt-56 mt-[66px]">
                     {{ $parallaxEffect->heading }}
                 </h1>
-                <p class="text-xs lg:text-2xl lg:w-[475.63px]">
+                <p class="text-xs lg:text-2xl lg:w-[475.63px] w-[300px]">
                     {{ $parallaxEffect->sub_heading }}
                 </p>
             </div>
@@ -189,7 +189,7 @@
 
     <section id="Achievements" class="container mx-auto lg:px-5 px-4 lg:py-28 py-14">
         <div class="flex flex-col items-center justify-center mb-3">
-            <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray mb-6">
+            <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray lg:mb-6 mb-[14px]">
                 Achievements
             </span>
             <div class="flex items-center justify-center text-center text-customGray lg:w-[604px] lg:text-2xl text-base">
@@ -226,20 +226,21 @@
         </div>
     </section>
 
-    <section id="Testimonials" class="bg-cover bg-center overflow-hidden"
+    <section id="Testimonials" class="bg-cover bg-center overflow-hidden h-531 md:h-auto"
         style="background-image: url('{{ asset('img/testimonial.png') }}');">
+
         <div class="text-center mt-[61px]">
             <h2 class="lg:text-[42px] text-2xl font-bold text-customGray">Testimonials</h2>
             <p class="mt-6 text-customGray lg:w-[1214px] mx-auto lg:text-2xl text-base">{{ $testimonial->heading }}</p>
         </div>
 
         <!-- Swiper Slider -->
-        <div class="swiper swiper_testimonial lg:py-28 py-14 container mx-auto lg:px-16 px-4">
+        <div class="swiper swiper_testimonial lg:py-28 py-12 container mx-auto lg:px-16 px-4">
             <div class="swiper-wrapper">
                 @foreach ($testimonial->testimonial_images_details as $item)
-                    <div class="swiper-slide bg-white lg:p-10 p-2 lg:space-x-10 space-x-8 space-y-10 relative">
+                    <div class="swiper-slide bg-white lg:p-10 p-2 lg:space-x-10 space-x-8 space-y-[18px] relative">
                         <!-- Testimonial Image (circle) -->
-                        <div class="lg:w-28 w-[52px] lg:h-28 h-[52px] rounded-full overflow-hidden border-4 border-white absolute lg:-top-16 -top-[26px]">
+                        <div class="lg:w-28 w-[52px] lg:h-28 h-[52px] rounded-full overflow-hidden  absolute lg:-top-16 -top-[26px]">
                             <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}"
                                 class="w-full h-full object-cover">
                         </div>
@@ -250,14 +251,14 @@
                         <div class="border-b  border-customBorder opacity-15"></div>
 
                         <!-- Testimonial Author -->
-                        <div class="flex justify-between">
+                        <div class="flex justify-between pb-5 items-center">
                             <div>
-                                <span class="font-semibold lg:text-base text-sm text-customGray">{{ $item['name'] }}</span><br>
+                                <span class="font-semibold lg:text-base text-sm text-customGray mb-1">{{ $item['name'] }}</span><br>
                                 <span class="text-customBorder lg:text-sm text-xs">{{ $item['occupation'] }}</span>
                             </div>
 
                             <!-- Rating -->
-                            <div class="">
+                            <div class="items-center">
                                 @for ($i = 1; $i <= 5; $i++)
                                     @if ($i <= $item['star'])
                                         <span class="text-yellow-400 lg:text-xl text-sm">★</span>
@@ -294,8 +295,8 @@
                 <!-- Left Column: Two Large Media Cards -->
 
                 <!-- First Large Media Card -->
-                @foreach ($media as $value)
-                    <div class="bg-white">
+                @foreach ($media as $key => $value)
+                    <div class="bg-white  hidden lg:block">
                         <img
                             src="{{ $value->image ? Storage::url($value->image) : 'https://via.placeholder.com/600x400' }}"
                             alt="Media Image" class="w-full  h-[300px]">
@@ -310,9 +311,25 @@
                     </div>
                 @endforeach
 
+
+                    <div class="bg-white block lg:hidden">
+                        <img
+                            src="{{ $media[0]->image ? Storage::url($media[0]->image) : 'https://via.placeholder.com/600x400' }}"
+                            alt="Media Image" class="w-full  h-[300px]">
+
+                        <div class="mt-4">
+                            <h3 class="text-xl text-customGray mb-2">{{ $media[0]->title }}</h3>
+                            <p class="text-customBorder text-sm mb-4">
+                                {{ Str::limit($media[0]->description, 196) }}
+                                <a href="{{ route('media.view',['media_id' => $media[0]->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+
+
                 <!-- Right Column: Four Small Media Cards -->
                 {{-- https://via.placeholder.com/150x150 --}}
-                <div class="space-y-6">
+                <div class="space-y-6 hidden lg:block">
                     @foreach ($mediaLimit as $mediaLimitValue)
                         <div class="bg-white flex space-x-4">
                             <img class="w-36 lg:h-36 lg:[111px] object-cover"
@@ -327,6 +344,22 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <div class="space-y-6 block lg:hidden">
+                    {{-- @foreach ($mediaLimit1 as $mediaLimitValue) --}}
+                        <div class="bg-white flex space-x-4">
+                            <img class="w-36 lg:h-36 h-[111px] object-cover"
+                                src="{{ Storage::url($mediaLimit1->image) ?? 'https://via.placeholder.com/150x150' }}"
+                                alt="Media Image">
+                            <div class="">
+                                <h4 class="text-lg mb-2 text-customGray">{{ Str::limit($mediaLimit1->title, 40) }}</h4>
+                                <p class="text-customBorder text-sm">
+                                    {{ Str::limit($mediaLimit1->description, 100) }}
+                                    <a href="{{ route('media.view',['media_id' => $mediaLimit1->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
+                                </p>
+                            </div>
+                        </div>
+                    {{-- @endforeach --}}
                 </div>
             </div>
 
@@ -376,11 +409,12 @@
                     },
                     // Small desktops
                     768: {
-                        slidesPerView: 4, // Show 4 slides for small desktops
+                        slidesPerView: 3, // Show 4 slides for small desktops
                     },
                     // Large desktops
                     1024: {
                         slidesPerView: 5, // Show 5 slides for large desktops
+
                     },
                 },
             });
@@ -414,7 +448,7 @@
                     },
                     // Small desktops
                     768: {
-                        slidesPerView: 1, // Show 4 slides for small desktops
+                        slidesPerView: 2, // Show 4 slides for small desktops
                     },
                     // Large desktops
                     1024: {

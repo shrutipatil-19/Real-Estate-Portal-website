@@ -2,7 +2,19 @@
     <div class="container mx-auto lg:px-16 px-4 lg:pt-[52px] pt-8">
         <div class="grid lg:grid-cols-5 lg:gap-8 gap-5">
             <!-- Company Info -->
-            <div class="col-span-2">
+            <div class="block lg:hidden">
+                <!-- Company Logo -->
+                <img src="img/adcore logo-2.png" alt="Company Logo" class="lg:mb-6 mb-5 w-40">
+                <!-- Company Info Text -->
+                <p class="text-sm lg:text-base leading-[18.18px] w-[292px]">
+                    Lorem ipsum dolor sit amet consectetur. In ut fusce ut odio. Nisl neque ultrices eu amet enim
+                    aliquet
+                    vulputate. Eget sed integer cras nibh vel. Quam interdum libero lectus eget aliquet et commodo
+                    praesent.
+                </p>
+            </div>
+
+            <div class="col-span-2 hidden lg:block">
                 <!-- Company Logo -->
                 <img src="img/adcore logo-2.png" alt="Company Logo" class="lg:mb-6 mb-5 w-40">
                 <!-- Company Info Text -->
@@ -97,10 +109,15 @@
                 <!-- Sitemap Links -->
 
                     <!-- Sitemap Section -->
-                    <div class="mb-4 block lg:hidden">
-                        <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('sitemap')">
-                            <h3 class="text-lg font-sans mb-4">SITEMAP</h3>
-                            <span id="sitemap-icon" class="text-2xl font-bold">+</span>
+                    <div class="block lg:hidden">
+                        <div class="flex justify-between cursor-pointer" onclick="toggleSection('sitemap')">
+                            <div class="text-lg font-sans mb-4">SITEMAP</div>
+                            <div id="sitemap-icon" class="text-2xl font-bold text-white">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="7.5" y1="2.18557e-08" x2="7.5" y2="14" stroke="white"/>
+                                    <line x1="-4.37114e-08" y1="7" x2="15" y2="7" stroke="white"/>
+                                    </svg>
+                            </div>
                         </div>
                         <ul id="sitemap" class="space-y-2 text-sm hidden">
                             <li><a href="/" class="hover:underline">Home</a></li>
@@ -114,9 +131,14 @@
 
                     <!-- Important Links Section -->
                     <div class="block lg:hidden">
-                        <div class="flex justify-between items-center cursor-pointer" onclick="toggleSection('important-links')">
+                        <div class="flex justify-between  cursor-pointer" onclick="toggleSection('important-links')">
                             <h3 class="text-lg font-sans mb-4">IMPORTANT LINKS</h3>
-                            <span id="important-links-icon" class="text-2xl font-bold">+</span>
+                            <span id="important-links-icon" class="text-2xl font-bold text-white">
+                                <svg width="15" height="14" viewBox="0 0 15 14" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="7.5" y1="2.18557e-08" x2="7.5" y2="14" stroke="#FFFFFF"/>
+                                    <line x1="-4.37114e-08" y1="7" x2="15" y2="7" stroke="#FFFFFF"/>
+                                    </svg>
+                            </span>
                         </div>
                         <ul id="important-links" class="space-y-2 text-sm hidden">
                             <li><a href="buyers-guide#LoanCalculator_" class="hover:underline">Loan Calculator</a></li>
@@ -129,7 +151,7 @@
         </div>
         <!-- Bottom Footer -->
     </div>
-    <div class="border-t border-white py-5 mt-[45px] text-sm text-left">
+    <div class="border-t border-white lg:py-5 py-3 lg:mt-[45px] mt-8 text-sm text-left">
         <p class="container mx-auto lg:px-16 px-4">Copyright © {{ date('Y') }} by <a href="{{ request()->getHost() }}">{{ config('app.name') }}</a></p>
     </div>
 </footer>
@@ -139,11 +161,17 @@
         const icon = document.getElementById(sectionId + '-icon');
 
         if (section.classList.contains('hidden')) {
-            section.classList.remove('hidden');
-            icon.textContent = '−';  // Change to minus when open
-        } else {
-            section.classList.add('hidden');
-            icon.textContent = '+';  // Change to plus when closed
-        }
+    section.classList.remove('hidden');
+    icon.innerHTML = `<svg width="15" height="1" viewBox="0 0 15 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0.5" x2="15" y2="0.5" stroke="white"/>
+    </svg>`; // Change to minus when open
+} else {
+    section.classList.add('hidden');
+    icon.innerHTML = `<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="7.5" y1="0" x2="7.5" y2="14" stroke="white"/>
+    <line x1="0" y1="7" x2="15" y2="7" stroke="white"/>
+    </svg>`;  // Change to plus when closed
+}
+
     }
 </script>
