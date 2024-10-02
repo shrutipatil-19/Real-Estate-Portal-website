@@ -352,9 +352,9 @@
                                 src="{{ Storage::url($mediaLimit1->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image">
                             <div class="">
-                                <h4 class="text-lg mb-2 text-customGray">{{ Str::limit($mediaLimit1->title, 40) }}</h4>
-                                <p class="text-customBorder text-sm">
-                                    {{ Str::limit($mediaLimit1->description, 100) }}
+                                <h4 class="text-base mb-2 text-customGray">{{ Str::limit($mediaLimit1->title, 30) }}</h4>
+                                <p class="text-customBorder text-xs">
+                                    {{ Str::limit($mediaLimit1->description, 85) }}
                                     <a href="{{ route('media.view',['media_id' => $mediaLimit1->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
                                 </p>
                             </div>
