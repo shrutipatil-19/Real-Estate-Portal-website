@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Achievement;
+use App\Models\ContactUs;
+use App\Models\Lead;
 use App\Models\Media;
 use App\Models\Project;
 use App\Models\Testimonial;
@@ -44,7 +46,23 @@ class CustomController extends Controller
 
     public function ContactUsIndex()
     {
-        return view('contact-us');
+        $contact_us =  ContactUs::first();
+        return view('contact-us',compact('contact_us'));
+    }
+
+    public function ContactUsStore(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'message' => 'required|string',
+            'terms_conditions' => 'required|integer', // Ensure checkbox is checked
+        ]);
+
+        // dd($request->all());
+
+        Lead::create($validatedData);
+        return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 
     public function BuyersGuideIndex()

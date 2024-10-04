@@ -24,6 +24,7 @@ Route::get('/projects', [CustomController::class, 'ProjectsIndex'])->name('proje
 Route::get('/media', [CustomController::class, 'MediaIndex'])->name('media.index');
 Route::get('/media-view', [CustomController::class, 'MediaView'])->name('media.view');
 Route::get('/contact-us', [CustomController::class, 'ContactUsIndex'])->name('ContactUs.index');
+Route::post('/contact-us/store', [CustomController::class, 'ContactUsStore'])->name('contact_us.store');
 Route::get('/buyers-guide', [CustomController::class, 'BuyersGuideIndex'])->name('buyers_guide.index');
 
 

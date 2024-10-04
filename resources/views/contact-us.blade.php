@@ -15,9 +15,10 @@
         <div class="flex gap-3 items-center">
             <a href="/" class="lg:text-base text-sm text-customGray">Home</a>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z" fill="#3C3B3B"/>
-                </svg>
-                <span class="lg:text-base text-sm text-customGray">Contact Us</span>
+                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
+                    fill="#3C3B3B" />
+            </svg>
+            <span class="lg:text-base text-sm text-customGray">Contact Us</span>
         </div>
 
         <div class="lg:mt-[112px] mt-[56px]">
@@ -37,7 +38,12 @@
                     </div>
                     <div class="ml-4">
                         <p class="lg:text-2xl text-xl font-bold text-customGray">Phone</p>
-                        <p class="text-base text-[#666666]">(+91) 740 821 55 79</p>
+                        @php
+                            $formattedPhoneNumber = substr($contact_us->phone, 0, 3) . ' ' .
+                        substr($contact_us->phone, 3, 3) . ' ' .
+                        substr($contact_us->phone, 6);
+                        @endphp
+                        <a href="tel:{{$contact_us->phone}}" class="text-base text-[#666666]">(+91) {{ $formattedPhoneNumber }}</a>
                     </div>
                 </div>
 
@@ -54,7 +60,7 @@
                     </div>
                     <div class="ml-4">
                         <p class="lg:text-2xl text-xl text-customGray font-bold">Location</p>
-                        <p class="text-base text-[#666666]">Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="text-base text-[#666666]">{{ $contact_us->location }}</p>
                     </div>
                 </div>
 
@@ -70,7 +76,7 @@
                     </div>
                     <div class="ml-4">
                         <p class="lg:text-2xl text-xl font-bold text-customGray">Email</p>
-                        <p class="text-base text-[#666666]">info@Lorem ipsum.com</p>
+                        <a  href="mailto:{{ $contact_us->email }}" class="text-base text-[#666666]">{{ $contact_us->email }}</a>
                     </div>
                 </div>
             </div>
@@ -79,73 +85,102 @@
     <div class="border-b border-[#D9D9D9] lg:mt-6 hidden lg:block"></div>
 
     <div class="container mx-auto lg:px-16 px-4">
-        <div  id="1" class="lg:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
+        <div id="1" class="lg:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
             <div class="lg:py-[140px] py-[40px]">
                 <h2 class="lg:text-[42px] text-2xl  font-bold text-customGray">Contact us</h2>
-                <p class="lg:text-2xl text-base text-customGray mt-3">Lorem ipsum dolor sit amet consectetur. Libero integer integer
+                <p class="lg:text-2xl text-base text-customGray mt-3">Lorem ipsum dolor sit amet consectetur. Libero integer
+                    integer
                     viverra enim.</p>
-                <p class="mt-[42px] text-customBorder lg:text-base text-xs">Lorem ipsum dolor sit amet consectetur. Ultricies at morbi
+                <p class="mt-[42px] text-customBorder lg:text-base text-xs">Lorem ipsum dolor sit amet consectetur.
+                    Ultricies at morbi
                     at sed. Integer posuere at risus gravida eu.Lorem ipsum dolor sit amet consectetur. Ultricies at morbi
                     at sed. Integer posuere at risus gravida eu.</p>
             </div>
 
-            <div >
+            <div>
 
-                <form class="rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-4">
-                    <!-- Full Name Input -->
-                    <div class="space-y-4">
-                        <div>
-                            <input type="text" placeholder="Enter Full name"
-                                class="text-base border border-customGray w-full lg:h-[53px] h-[37px]">
-                        </div>
+                @if(session('success'))
+                <div class="text-green-500">
+                    {{ session('success') }}
+                </div>
+            @endif
 
-                        <!-- Email Address Input -->
-                        <div>
-                            <input type="email" placeholder="Email Address"
-                                class="text-base border border-customGray w-full lg:h-[53px] h-[37px]">
-                        </div>
+            <form action="{{ route('contact_us.store') }}" method="POST" class="rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-4">
+                @csrf <!-- Include CSRF token for security -->
 
-                        <!-- Message Textarea -->
-                        <div>
-                            <textarea rows="4" placeholder="Message" class="text-base border border-customGray w-full lg:h-[140px] h-[81px]"></textarea>
-                        </div>
+                <!-- Full Name Input -->
+                <div class="space-y-4">
+                    <div>
+                        <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full name"
+                            class="text-base border border-customGray w-full lg:h-[53px] h-[37px] @error('name') border-red-500 @enderror">
+                        @error('name')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
 
-                    <!-- Terms and Conditions Checkbox -->
-                    <div class="flex items-center lg:mt-2 mt-[5px] mb-6">
-                        <input type="checkbox" id="terms" class="mr-2 ">
-                        <label for="terms" class="text-xs text-gray-600">Please Accept the Terms & Conditions</label>
+                    <!-- Email Address Input -->
+                    <div>
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Email Address"
+                            class="text-base border border-customGray w-full lg:h-[53px] h-[37px] @error('email') border-red-500 @enderror">
+                        @error('email')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
 
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit"
-                            class="bg-primary text-white font-bold px-6 py-3  opacity-100 hover:bg-primary-400 transition duration-300 lg:h-12 h-[44px] ">
-                            Send Message
-                        </button>
+                    <!-- Message Textarea -->
+                    <div>
+                        <textarea rows="4" name="message" placeholder="Message" class="text-base border border-customGray w-full lg:h-[140px] h-[81px] @error('message') border-red-500 @enderror">{{ old('message') }}</textarea>
+                        @error('message')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                        @enderror
                     </div>
-                </form>
+                </div>
+
+                <!-- Terms and Conditions Checkbox -->
+                <div class="flex items-center lg:mt-2 mt-[5px] mb-6">
+                    <input type="checkbox" id="terms_conditions" value="1" name="terms_conditions" class="mr-2 @error('terms_conditions') border-red-500 @enderror">
+                    <label for="terms_conditions" class="text-xs text-gray-600">Please Accept the Terms & Conditions</label>
+                </div>
+
+                @error('terms_conditions')
+                    <span class="text-red-500 text-sm">{{ $message }}</span>
+                @enderror
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-primary text-white font-bold px-6 py-3 opacity-100 hover:bg-primary-400 transition duration-300 lg:h-12 h-[44px]">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+
+
             </div>
         </div>
 
         <div class="flex flex-col items-center text-center justify-cente space-y-4">
             <h3 class="text-2xl lg:text-[42px] font-bold text-customGray">
-                Lorem ipsum dolor sit
+                {{ $contact_us->title }}
             </h3>
             <p class="text-sm lg:text-2xl lg:w-[855px] text-[#666666]">
-                Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes urna tempus et a eu in..
+                {{ $contact_us->description }}
             </p>
         </div>
+        @php
+
+
+            $parsed = explode('pb=', $contact_us->map_url);
+            $pb = isset($parsed[1]) ? $parsed[1] : '';
+        @endphp
+
+
 
         <div class="py-[56px]">
-            <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31098.109393530864!2d73.0583821!3d19.2094103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7958ef72d8707%3A0x84bf6ab96e280b08!2sDombivli%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1695804071977!5m2!1sen!2sus"
-            class="w-full lg:h-[565px] h-[264px]"
-            style="border:0;"
-            allowfullscreen="allowfullscreen"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb={{ $pb }}" class="w-full lg:h-[565px] h-[264px]"
+                style="border:0;" allowfullscreen="allowfullscreen" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
 
 
         </div>
