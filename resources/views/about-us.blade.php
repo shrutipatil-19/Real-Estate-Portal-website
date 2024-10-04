@@ -5,7 +5,7 @@
 <div class="relative">
     <img src="img/about-us-banner.png" alt="About Us Banner" class="mx-auto w-full lg:h-auto h-[177px] object-cover">
     <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
-        <h1 class="text-2xl lg:text-5xl lg:mb-3 mb-[6px]">About Us</h1>
+        <h1 class="text-2xl lg:text-[40px] lg:mb-3 mb-[6px]">About Us</h1>
         <span class="text-base lg:text-2xl text-center">Lorem ipsum dolor sit amet consectetur.</span>
     </div>
 </div>

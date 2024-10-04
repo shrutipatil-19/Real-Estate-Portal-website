@@ -20,9 +20,12 @@ class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
 
-    protected static ?string $cluster = Home::class;
+    protected static ?int $navigationSort = 2;
+
+
+    // protected static ?string $cluster = Home::class;
 
     public static function form(Form $form): Form
     {
@@ -47,9 +50,23 @@ class ProjectResource extends Resource
                                 'Upcoming' => 'Upcoming',
                             ])
                             ->native(false),
-                        Forms\Components\FileUpload::make('image')
-                            ->required()
-                            ->columnSpanFull(),
+                            Forms\Components\FileUpload::make('image')
+                                ->required()
+                                ->columnSpanFull(),
+                            Select::make('priority')
+                            ->options([
+                                '1' => '1',
+                                '2' => '2',
+                                '3' => '3',
+                                '4' => '4',
+                                '5' => '5',
+                                '6' => '6',
+                                '7' => '7',
+                                '8' => '8',
+                                '9' => '9',
+                                '10' => '10',
+                            ])
+                            ->native(false),
 
                     ])
                     ->columns(2),
@@ -67,7 +84,7 @@ class ProjectResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('price')
                     ->searchable(),
-                // Tables\Columns\TextColumn::make('status')
+                // Tables\Columns\TextColumn::make('priority')
                 //     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -2,17 +2,17 @@
     <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-center space-x-2">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <span class="w-10 h-10 flex items-center justify-center border border-primary rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                  </svg>
+            <span class="w-[35px] h-[35px] flex items-center justify-center border border-primary rounded-full">
+                <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.31956 0.243386C8.15884 0.0875378 7.94098 0 7.71382 0C7.48667 0 7.26881 0.0875378 7.10809 0.243386L0.250683 6.90115C0.0901623 7.05719 0 7.26872 0 7.48925C0 7.70979 0.0901623 7.92132 0.250683 8.07736L7.10809 14.7351C7.18656 14.8169 7.28119 14.8825 7.38634 14.928C7.49148 14.9734 7.60499 14.9979 7.72008 14.9999C7.83518 15.0018 7.9495 14.9813 8.05623 14.9394C8.16297 14.8976 8.25992 14.8353 8.34132 14.7562C8.42271 14.6772 8.48688 14.5831 8.52999 14.4795C8.5731 14.3758 8.59428 14.2648 8.59225 14.1531C8.59022 14.0414 8.56502 13.9312 8.51817 13.8291C8.47132 13.727 8.40378 13.6351 8.31956 13.5589L2.92507 8.32148H19.1428C19.3702 8.32148 19.5882 8.2338 19.7489 8.07772C19.9097 7.92165 20 7.70997 20 7.48925C20 7.26854 19.9097 7.05686 19.7489 6.90079C19.5882 6.74471 19.3702 6.65703 19.1428 6.65703H2.92507L8.31956 1.41959C8.48008 1.26355 8.57024 1.05203 8.57024 0.831488C8.57024 0.610949 8.48008 0.399427 8.31956 0.243386Z" fill="#3C3B3B"/>
+                    </svg>
 
             </span>
         @else
-            <a href="{{ $paginator->previousPageUrl() }}" class="w-10 h-10 flex items-center justify-center border border-primary rounded-full hover:bg-gray-100" aria-label="{{ __('pagination.previous') }}">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-customGray">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                  </svg>
+            <a href="{{ $paginator->previousPageUrl() }}" class="w-[35px] h-[35px] flex items-center justify-center border border-primary rounded-full hover:bg-gray-100" aria-label="{{ __('pagination.previous') }}">
+                <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.31956 0.243386C8.15884 0.0875378 7.94098 0 7.71382 0C7.48667 0 7.26881 0.0875378 7.10809 0.243386L0.250683 6.90115C0.0901623 7.05719 0 7.26872 0 7.48925C0 7.70979 0.0901623 7.92132 0.250683 8.07736L7.10809 14.7351C7.18656 14.8169 7.28119 14.8825 7.38634 14.928C7.49148 14.9734 7.60499 14.9979 7.72008 14.9999C7.83518 15.0018 7.9495 14.9813 8.05623 14.9394C8.16297 14.8976 8.25992 14.8353 8.34132 14.7562C8.42271 14.6772 8.48688 14.5831 8.52999 14.4795C8.5731 14.3758 8.59428 14.2648 8.59225 14.1531C8.59022 14.0414 8.56502 13.9312 8.51817 13.8291C8.47132 13.727 8.40378 13.6351 8.31956 13.5589L2.92507 8.32148H19.1428C19.3702 8.32148 19.5882 8.2338 19.7489 8.07772C19.9097 7.92165 20 7.70997 20 7.48925C20 7.26854 19.9097 7.05686 19.7489 6.90079C19.5882 6.74471 19.3702 6.65703 19.1428 6.65703H2.92507L8.31956 1.41959C8.48008 1.26355 8.57024 1.05203 8.57024 0.831488C8.57024 0.610949 8.48008 0.399427 8.31956 0.243386Z" fill="#3C3B3B"/>
+                    </svg>
 
             </a>
         @endif
@@ -21,16 +21,16 @@
         @foreach ($elements as $element)
             {{-- "Three Dots" Separator --}}
             @if (is_string($element))
-                <span class="w-10 h-10 flex items-center justify-center border border-primary rounded-full">{{ $element }}</span>
+                <span class="w-[35px] h-[35px] flex items-center justify-center border border-primary rounded-full text-xl">{{ $element }}</span>
             @endif
 
             {{-- Array Of Links --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <span class="w-10 h-10 flex items-center justify-center border rounded-full bg-primary text-white">{{ $page }}</span>
+                        <span class="w-[35px] h-[35px] flex items-center justify-center border rounded-full bg-primary text-white">{{ $page }}</span>
                     @else
-                        <a href="{{ $url }}" class="w-10 h-10 flex items-center justify-center border border-primary rounded-full hover:bg-gray-100" aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
+                        <a href="{{ $url }}" class="w-[35px] h-[35px] flex items-center justify-center border border-primary rounded-full hover:bg-gray-100" aria-label="{{ __('Go to page :page', ['page' => $page]) }}">
                             {{ $page }}
                         </a>
                     @endif
@@ -40,17 +40,17 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <a href="{{ $paginator->nextPageUrl() }}" class="w-10 h-10 flex items-center justify-center border border-primary rounded-full hover:bg-gray-100" aria-label="{{ __('pagination.next') }}">
-           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-customGray">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                  </svg>
+            <a href="{{ $paginator->nextPageUrl() }}" class="w-[35px] h-[35px] flex items-center justify-center border border-primary rounded-full hover:bg-gray-100" aria-label="{{ __('pagination.next') }}">
+                <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6804 0.243386C11.8412 0.0875378 12.059 0 12.2862 0C12.5133 0 12.7312 0.0875378 12.8919 0.243386L19.7493 6.90115C19.9098 7.05719 20 7.26872 20 7.48925C20 7.70979 19.9098 7.92132 19.7493 8.07736L12.8919 14.7351C12.8134 14.8169 12.7188 14.8825 12.6137 14.928C12.5085 14.9734 12.395 14.9979 12.2799 14.9999C12.1648 15.0018 12.0505 14.9813 11.9438 14.9394C11.837 14.8976 11.7401 14.8353 11.6587 14.7562C11.5773 14.6772 11.5131 14.5831 11.47 14.4795C11.4269 14.3758 11.4057 14.2648 11.4078 14.1531C11.4098 14.0414 11.435 13.9312 11.4818 13.8291C11.5287 13.727 11.5962 13.6351 11.6804 13.5589L17.0749 8.32148H0.857175C0.629838 8.32148 0.411812 8.2338 0.251061 8.07772C0.0903092 7.92165 0 7.70997 0 7.48925C0 7.26854 0.0903092 7.05686 0.251061 6.90079C0.411812 6.74471 0.629838 6.65703 0.857175 6.65703H17.0749L11.6804 1.41959C11.5199 1.26355 11.4298 1.05203 11.4298 0.831488C11.4298 0.610949 11.5199 0.399427 11.6804 0.243386Z" fill="#3C3B3B"/>
+                    </svg>
 
             </a>
         @else
-            <span class="w-10 h-10 flex items-center justify-center border border-primary rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                  </svg>
+            <span class="w-[35px] h-[35px] flex items-center justify-center border border-primary rounded-full">
+                <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6804 0.243386C11.8412 0.0875378 12.059 0 12.2862 0C12.5133 0 12.7312 0.0875378 12.8919 0.243386L19.7493 6.90115C19.9098 7.05719 20 7.26872 20 7.48925C20 7.70979 19.9098 7.92132 19.7493 8.07736L12.8919 14.7351C12.8134 14.8169 12.7188 14.8825 12.6137 14.928C12.5085 14.9734 12.395 14.9979 12.2799 14.9999C12.1648 15.0018 12.0505 14.9813 11.9438 14.9394C11.837 14.8976 11.7401 14.8353 11.6587 14.7562C11.5773 14.6772 11.5131 14.5831 11.47 14.4795C11.4269 14.3758 11.4057 14.2648 11.4078 14.1531C11.4098 14.0414 11.435 13.9312 11.4818 13.8291C11.5287 13.727 11.5962 13.6351 11.6804 13.5589L17.0749 8.32148H0.857175C0.629838 8.32148 0.411812 8.2338 0.251061 8.07772C0.0903092 7.92165 0 7.70997 0 7.48925C0 7.26854 0.0903092 7.05686 0.251061 6.90079C0.411812 6.74471 0.629838 6.65703 0.857175 6.65703H17.0749L11.6804 1.41959C11.5199 1.26355 11.4298 1.05203 11.4298 0.831488C11.4298 0.610949 11.5199 0.399427 11.6804 0.243386Z" fill="#3C3B3B"/>
+                    </svg>
             </span>
         @endif
     </nav>

@@ -1,27 +1,26 @@
 @extends('layouts.app')
-@section('title', 'Home')
+@section('title', 'Contact Us')
 @section('content')
 
     <div class="relative">
-        <img src="img/contact-us.png" alt="Contact Us Banner" class="mx-auto w-full h-auto object-cover">
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 space-y-[6px]">
-            <h1 class="text-2xl xl:text-[40px] font-bold">Contact Us</h1>
-            <span class="text-base xl:text-2xl mt-2 text-center">Lorem ipsum dolor sit amet consectetur.</span>
+        <img src="img/contact-us.png" alt="Contact Us Banner" class="mx-auto w-full lg:h-auto h-[177px] object-cover">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
+            <h1 class="text-2xl lg:text-[40px] font-bold lg:mb-3 mb-[6px]">Contact Us</h1>
+            <span class="text-base lg:text-2xl text-center">Lorem ipsum dolor sit amet consectetur.</span>
         </div>
     </div>
 
 
-    <div class="container mx-auto xl:px-16 px-4 mt-7">
+    <div class="container mx-auto lg:px-16 px-4 lg:mt-6 mt-[14px]">
         <div class="flex gap-3 items-center">
-            <span class="text-base text-customGray">Home</span>
+            <a href="/" class="lg:text-base text-sm text-customGray">Home</a>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
-                    fill="#3C3B3B" />
-            </svg>
-            <span class="text-sm text-customGray">Contact Us</span>
+                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z" fill="#3C3B3B"/>
+                </svg>
+                <span class="lg:text-base text-sm text-customGray">Contact Us</span>
         </div>
 
-        <div class="xl:mt-[112px] mt-[56px]">
+        <div class="lg:mt-[112px] mt-[56px]">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray">Get In Touch</h1>
 
             <div class="lg:flex items-center lg:px-24 justify-between lg:mt-[42px] mt-6 space-y-8">
@@ -80,46 +79,48 @@
     <div class="border-b border-[#D9D9D9] lg:mt-6 hidden lg:block"></div>
 
     <div class="container mx-auto lg:px-16 px-4">
-        <div  id="1" class="xl:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
+        <div  id="1" class="lg:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
             <div class="lg:py-[140px] py-[40px]">
                 <h2 class="lg:text-[42px] text-2xl  font-bold text-customGray">Contact us</h2>
                 <p class="lg:text-2xl text-base text-customGray mt-3">Lorem ipsum dolor sit amet consectetur. Libero integer integer
                     viverra enim.</p>
-                <p class="mt-[42px] text-customBorder lg:text-base text-sm">Lorem ipsum dolor sit amet consectetur. Ultricies at morbi
+                <p class="mt-[42px] text-customBorder lg:text-base text-xs">Lorem ipsum dolor sit amet consectetur. Ultricies at morbi
                     at sed. Integer posuere at risus gravida eu.Lorem ipsum dolor sit amet consectetur. Ultricies at morbi
                     at sed. Integer posuere at risus gravida eu.</p>
             </div>
 
             <div >
 
-                <form class="space-y-4  rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-8">
+                <form class="rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-4">
                     <!-- Full Name Input -->
-                    <div>
-                        <input type="text" placeholder="Enter Full name"
-                            class="text-base border border-customGray w-full lg:h-[53px] h-[37px]">
-                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Enter Full name"
+                                class="text-base border border-customGray w-full lg:h-[53px] h-[37px]">
+                        </div>
 
-                    <!-- Email Address Input -->
-                    <div>
-                        <input type="email" placeholder="Email Address"
-                            class="text-base border border-customGray w-full lg:h-[53px] h-[37px]">
-                    </div>
+                        <!-- Email Address Input -->
+                        <div>
+                            <input type="email" placeholder="Email Address"
+                                class="text-base border border-customGray w-full lg:h-[53px] h-[37px]">
+                        </div>
 
-                    <!-- Message Textarea -->
-                    <div>
-                        <textarea rows="4" placeholder="Message" class="text-base border border-customGray w-full lg:h-[140px] h-[81px]"></textarea>
+                        <!-- Message Textarea -->
+                        <div>
+                            <textarea rows="4" placeholder="Message" class="text-base border border-customGray w-full lg:h-[140px] h-[81px]"></textarea>
+                        </div>
                     </div>
 
                     <!-- Terms and Conditions Checkbox -->
-                    <div class="flex items-center">
-                        <input type="checkbox" id="terms" class="mr-2">
-                        <label for="terms" class="text-sm text-gray-600">Please Accept the Terms & Conditions</label>
+                    <div class="flex items-center lg:mt-2 mt-[5px] mb-6">
+                        <input type="checkbox" id="terms" class="mr-2 ">
+                        <label for="terms" class="text-xs text-gray-600">Please Accept the Terms & Conditions</label>
                     </div>
 
                     <!-- Submit Button -->
                     <div class="text-center">
                         <button type="submit"
-                            class="bg-primary text-white font-bold px-6 py-3  opacity-100 hover:bg-primary-400 transition duration-300">
+                            class="bg-primary text-white font-bold px-6 py-3  opacity-100 hover:bg-primary-400 transition duration-300 lg:h-12 h-[44px] ">
                             Send Message
                         </button>
                     </div>
@@ -128,10 +129,10 @@
         </div>
 
         <div class="flex flex-col items-center text-center justify-cente space-y-4">
-            <h3 class="text-2xl lg:text-[40px] font-bold">
+            <h3 class="text-2xl lg:text-[42px] font-bold text-customGray">
                 Lorem ipsum dolor sit
             </h3>
-            <p class="text-lg lg:text-2xl lg:w-[855px] text-[#666666]">
+            <p class="text-sm lg:text-2xl lg:w-[855px] text-[#666666]">
                 Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes urna tempus et a eu in..
             </p>
         </div>

@@ -6,5 +6,9 @@ use Filament\Clusters\Cluster;
 
 class Home extends Cluster
 {
-    protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
+    protected static ?string $navigationIcon = 'heroicon-o-home';
+
+    protected static ?int $navigationSort = 1;
+
+
 }
