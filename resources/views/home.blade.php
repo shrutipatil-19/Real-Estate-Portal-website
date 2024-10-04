@@ -90,16 +90,17 @@
         </section>
 
         <section id="projects">
-            <div class="flex flex-col items-center justify-center lg:mb-6 mb-[14px]">
+            <div class="flex flex-col items-center justify-center ">
+                {{-- lg:mb-6 mb-[14px] --}}
                 <span class="lg:text-[42px] text-2xl font-bold leading-[47.72px] text-center text-customGray">
                     Projects
                 </span>
             </div>
-            <div class="flex items-center justify-center space-x-8">
+            {{-- <div class="flex items-center justify-center space-x-8">
                 <!-- Ongoing tab (active) -->
                 <span class="relative text-customGray lg:text-base text-sm cursor-pointer">
                     Ongoing
-                    <span class="absolute left-0 right-0 -bottom-1 h-1 bg-[#FBB249]"></span>
+                    <span class="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#FBB249]"></span>
                     <!-- Underline for active tab -->
                 </span>
 
@@ -112,7 +113,7 @@
                 <span class="relative text-customBorder lg:text-base text-sm cursor-pointer hover:text-customBorder">
                     Upcoming
                 </span>
-            </div>
+            </div> --}}
 
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-y-10 lg:gap-12 lg:mt-0 mt-[32px] lg:mb-0 mb-3 lg:py-[42px]">

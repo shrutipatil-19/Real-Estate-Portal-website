@@ -5,7 +5,7 @@
     <div class="relative">
         <img src="img/testimonials1.png" alt="Testimonials Banner" class="mx-auto w-full lg:h-auto h-[177px] object-cover">
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
-            <h1 class="text-2xl lg:text-[40px] font-bold mb-[6px]">Testimonials</h1>
+            <h2 class="text-2xl lg:text-[40px] font-bold lg:mb-3 mb-[6px]">Testimonials</h2>
             <span class="text-base lg:text-2xl text-center">Lorem ipsum dolor sit amet consectetur.</span>
         </div>
     </div>
@@ -21,7 +21,7 @@
 
 
         <div class="text-center lg:mt-28 mt-14 lg:w-[530px] w-[293px] px-4">
-            <h2 class="text-2xl lg:text-[42px] font-bold text-customGray text-left lg:leading-[47.72px] leading-[27.27px]">Lorem ipsum dolor sit amet consectetur.</h2>
+            <h1 class="text-2xl lg:text-[42px] font-bold text-customGray text-left lg:leading-[47.72px] leading-[27.27px]">{{ $testimonial->heading }}</h1>
         </div>
 
         <!-- Swiper Slider -->
@@ -39,7 +39,7 @@
 
                             <!-- Testimonial Details -->
                             <div class="lg:flex-grow p-4 lg:p-20">
-                                <p class="text-customGray text-base lg:text-2xl leading-8 lg:mb-[38px] mb-5">Lorem ipsum dolor sit amet consectetur. Morbi facilisi et sem enim vulputate vestibulum vitae aliquet elit. Magnis aliquet sed amet neque. Morbi facilisi et sem enim vulputate vestibulum vitae</p>
+                                <p class="text-customGray text-base lg:text-2xl leading-8 lg:mb-[38px] mb-5">{{ $item['description'] }}</p>
                                 <div class="border-b border-customBorder opacity-15"></div>
 
                                 <!-- Testimonial Author -->

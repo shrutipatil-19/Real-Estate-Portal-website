@@ -21,7 +21,9 @@ class AchievementResource extends Resource
 {
     protected static ?string $model = Achievement::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-trophy';
+
+    protected static ?int $navigationSort = 5;
 
     protected static ?string $cluster = Home::class;
 

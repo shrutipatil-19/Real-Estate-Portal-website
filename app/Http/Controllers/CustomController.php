@@ -26,7 +26,12 @@ class CustomController extends Controller
 
     public function ProjectsIndex()
     {
-        $projects = Project::paginate(3);
+        $projects = Project::whereIn('priority', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+            ->orderByRaw("FIELD(priority, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) DESC") // Show priority 10 first, then 9, and so on
+            ->orderBy('created_at', 'desc') // Within those priorities, show the latest created_at first
+            ->paginate(3);
+
+
         return view('project', compact('projects'));
     }
 
@@ -51,8 +56,8 @@ class CustomController extends Controller
     public function MediaView(Request $request)
     {
 
-       $media =  Media::find($request->media_id);
+        $media =  Media::find($request->media_id);
 
-        return view('media-view',compact('media'));
+        return view('media-view', compact('media'));
     }
 }

@@ -19,9 +19,11 @@ class AboutUsResource extends Resource
 {
     protected static ?string $model = AboutUs::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $cluster = Home::class;
+
+    protected static ?int $navigationSort = 2;
 
     // protected static ?string $navigationLabel = 'About Us';
     // protected static ?string $modelLabel = 'About';

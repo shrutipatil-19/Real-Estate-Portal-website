@@ -18,7 +18,11 @@ class HomeController extends Controller
     {
         $banner = Banner::first();
         $about_us = AboutUs::first();
-        $projects = Project::get();
+        $projects = Project::whereIn('priority', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+            ->orderByRaw("FIELD(priority, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) DESC")
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get();
         $parallaxEffect = ParallaxEffect::first();
         $achievement = Achievement::first();
         $testimonial = Testimonial::first();

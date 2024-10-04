@@ -3,32 +3,31 @@
 @section('content')
 
     <div class="relative">
-        <img src="img/buyers_guide.png" alt="Buyers Guide Banner" class="mx-auto w-full h-auto object-cover">
+        <img src="img/buyers_guide.png" alt="Buyers Guide Banner" class="mx-auto w-full lg:h-auto h-[177px] object-cover">
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 space-y-[6px]">
-            <h1 class="text-2xl xl:text-[40px] font-bold">Buyers Guide</h1>
-            <span class="text-base xl:text-2xl mt-2 text-center">Lorem ipsum dolor sit amet consectetur.</span>
+            <h1 class="text-2xl xl:text-[40px] font-bold lg:mb-3 mb-[6px]">Buyers Guide</h1>
+            <span class="text-base xl:text-2xl text-center">Lorem ipsum dolor sit amet consectetur.</span>
         </div>
     </div>
 
 
-    <div class="container mx-auto xl:px-16 px-4 mt-7">
+    <div class="container mx-auto xl:px-16 px-4 lg:mt-6 mt-[14px]">
         <div class="flex gap-3 items-center">
-            <span class="text-base text-customGray">Home</span>
+            <a href="/" class="lg:text-base text-sm text-customGray">Home</a>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
-                    fill="#3C3B3B" />
-            </svg>
-            <span class="text-sm text-customGray">Buyers Guide</span>
+                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z" fill="#3C3B3B"/>
+                </svg>
+                <span class="lg:text-base text-sm text-customGray">Buyers Guide</span>
         </div>
 
-        <div class="lg:py-28 py-7 lg:mt-0 mt-7 lg:grid grid-cols-2 gap-8">
+        <div class="lg:py-28 py-14  lg:grid grid-cols-2 gap-8">
 
             <div class="block lg:hidden">
                 <img src="img/buyers_guide-1.png" alt="" class="w-full h-auto">
             </div>
 
 
-            <div class="lg:py-10 py-5 block lg:hidden">
+            <div class="lg:py-10 block lg:hidden">
                 <h1 class="lg:text-[42px] text-2xl font-bold text-customGray  lg:mb-10 mb-3">Choosing The Right Location</h1>
                 <p class="lg:text-base text-sm text-[#666666] leading-7">Lorem ipsum dolor sit amet consectetur. At est facilisis eleifend
                     adipiscing cursus nam. A risus eu feugiat tempor urna quam felis. Id sem ultrices ornare tortor
@@ -45,7 +44,7 @@
             </div>
 
 
-            <div class="py-10 hidden lg:block">
+            <div class="lg:py-10 hidden lg:block">
                 <h1 class="text-[42px] font-bold text-customGray  mb-10">Choosing The Right Location</h1>
                 <p class="text-base text-[#666666] leading-7">Lorem ipsum dolor sit amet consectetur. At est facilisis eleifend
                     adipiscing cursus nam. A risus eu feugiat tempor urna quam felis. Id sem ultrices ornare tortor
@@ -70,22 +69,22 @@
     </div>
 
     <div class="bg-primary text-white lg:mb-28 mb-14 lg:py-6 py-4">
-        <div class="container mx-auto grid  grid-cols-2 lg:grid-cols-4 items-center text-center">
+        <div class="container mx-auto grid  grid-cols-2 lg:grid-cols-4 items-center text-center lg:gap-0 gap-4">
             <div class="flex-1 lg:border-r lg:border-white">
                 <h2 id="experience" class="lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-2 lg:text-2xl text-base font-bold">Year's Of Experience</p>
+                <p class="mt-3 lg:text-2xl text-sm font-bold">Year's Of Experience</p>
             </div>
             <div class="flex-1 lg:border-r lg:border-white">
                 <h2 id="amenities" class=" lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-2 lg:text-2xl text-base font-bold">Amenities</p>
+                <p class="mt-3 lg:text-2xl text-sm font-bold">Amenities</p>
             </div>
             <div class="flex-1 lg:border-r lg:border-white">
                 <h2 id="clients" class=" lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-2 lg:text-2xl text-base font-bold">Happy Clients</p>
+                <p class="mt-3 lg:text-2xl text-sm font-bold">Happy Clients</p>
             </div>
             <div class="flex-1">
                 <h2 id="houses" class=" lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-2 lg:text-2xl text-base font-bold">House Sold</p>
+                <p class="mt-3 lg:text-2xl text-sm font-bold">House Sold</p>
             </div>
         </div>
     </div>
@@ -95,21 +94,21 @@
 
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray mb-3">Home Loan</h1>
 
-            <p class="lg:text-2xl text-base text-customBorder mb-10">
+            <p class="lg:text-2xl text-base text-customBorder lg:mb-[42px] mb-6">
                 Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes urna tempus et a eu in. Purus
                 pretium
                 aenean pulvinar massa donec. Justo proin nam gravida in. Cursus nam in fusce sed purus at euismod ultrices
                 egestas.
             </p>
-            <p class="text-customGray lg:text-xl text-base">Lorem ipsum dolor sit amet,</p>
-            <ul class="list-disc list-inside text-customBorder space-y-3 mt-3">
+            <p class="text-customGray lg:text-xl text-sm">Lorem ipsum dolor sit amet,</p>
+            <ul class="list-disc list-inside text-customBorder space-y-3 mt-3 lg:text-lg text-sm">
                 <li>Lorem Ipsum Dolor Sit Amet</li>
                 <ul class="list-disc list-inside">
                     <li>Lorem Ipsum Dolor Sit Amet</li>
                 </ul>
             </ul>
 
-            <div class="space-y-5 text-customGray mt-3 lg:text-xl text-base">
+            <div class="space-y-5 text-customGray mt-3 lg:text-xl text-sm">
                 <p>Lorem Ipsum Dolor Sit Amet,</p>
                 <p>Lorem Ipsum Dolor Sit Amet, Consectetur</p>
                 <p>Lorem Ipsum Dolor Sit Amet Consectetur..</p>
@@ -123,8 +122,8 @@
 
 
         <div class="lg:py-28 py-14">
-            <h1 class="lg:text-[42px] text-2xl font-bold text-customGray lg:mb-6 mb-3">Tax Benefits</h1>
-            <ul class="list-disc pl-6 space-y-4 text-customBorder lg:text-base text-sm">
+            <h1 class="lg:text-[42px] text-2xl font-bold text-customGray lg:mb-[42px] mb-[14px]">Tax Benefits</h1>
+            <ul class="list-disc pl-6 space-y-4 text-customBorder lg:text-lg text-sm">
                 <li>Lorem ipsum dolor sit amet consectetur. Non leo risus diam id sed scelerisque. Ultricies aliquam
                     habitant diam at tempus nibh. Eget hendrerit velit eu aliquam.</li>
                 <li>Ut commodo massa urna cursus viverra et sit ornare mauris. Aliquam sed sem mauris libero vel massa. Eu
@@ -140,14 +139,14 @@
 
         <div class="lg:mb-28 mb-14" id="LoanCalculator_">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray mb-3">Loan Calculator</h1>
-            <p class="text-customGray mb-6 lg:text-2xl text-base">Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes
+            <p class="text-customGray lg:mb-[42px] mb-6 lg:text-2xl text-sm">Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes
                 urna
                 tempus et a eu in</p>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-6">
                 <!-- Loan Form -->
                 <div>
-                    <form id="loanForm" class="space-y-4 lg:mt-4">
+                    <form id="loanForm" class="space-y-[22px]">
                         <div>
                             <label for="loan" class="block text-customGray font-medium mb-3">Loan</label>
                             <input type="number" id="loan" name="loan"
@@ -173,7 +172,7 @@
                 </div>
 
                 <!-- Result Section -->
-                <div class="border border-[#FBB249]">
+                <div class="border border-[#FBB249] lg:h-[375px]">
                     <div class="lg:p-28 p-5 text-center">
                         <h2 class="text-customGray text-base mb-2">Your Total Payment Will Be</h2>
                         <p id="totalPayment" class="text-4xl text-[#666666]">₹ 0.00</p>
@@ -187,7 +186,7 @@
 
                             <div class="text-center">
                                 <div class="text-gray-600 text-base mb-2">Interest</div>
-                                <div id="interestAmount" class="text-base font-bold text-[#666666]"></div>
+                                <div id="interestAmount" class="text-base font-bold text-[#666666]">% 0</div>
                             </div>
                         </div>
 
@@ -201,8 +200,8 @@
 
         <div class="">
             <!-- NRI Info Section -->
-            <h1 class="lg:text-[42px] text-[28px] font-bold text-customGray lg:mb-10 mb-[14px]">NRI Info</h1>
-            <p class="text-[#666666] lg:text-2xl text-sm">
+            <h1 class="lg:text-[42px] text-[28px] font-bold text-customGray lg:mb-[42px] mb-[14px]">NRI Info</h1>
+            <p class="text-[#666666] lg:text-2xl text-sm lg:mb-0 mb-[14px]">
                 Lorem ipsum dolor sit amet consectetur. Vulputate commodo ullamcorper praesent ac blandit est morbi
                 tincidunt nulla. Elementum interdum bibendum non risus. Venenatis platea ut tristique feugiat sodales
                 facilisi mi neque. Condimentum lacus vel sapien velit aenean accumsan a interdum. Adipiscing commodo pretium
@@ -210,10 +209,10 @@
                 velit libero suscipit dui tempus mi orci. Et dolor vitae mauris morbi a convallis viverra ullamcorper.
             </p>
 
-            <div class="py-[42px]">
+            <div class="lg:py-[56px] lg:mb-0 mb-[33px]">
                 <!-- Documents Required Section -->
-                <h2 class="lg:text-2xl text-xl  text-customGray mb-7">Documents Required for NRIs to Purchase Property</h2>
-                <ul class="list-disc list-inside text-[#666666] mb-8 space-y-4 lg:text-xl text-base">
+                <h2 class="lg:text-2xl text-xl  text-customGray lg:mb-7 mb-[14px]">Documents Required for NRIs to Purchase Property</h2>
+                <ul class="list-disc list-inside text-[#666666] mb-8 space-y-4 lg:text-xl text-sm">
                     <li>Lorem Ipsum Dolor Sit Amet,</li>
                     <li>Lorem Ipsum Dolor Sit Amet,</li>
                     <li>Lorem Ipsum Dolor Sit Amet,</li>
@@ -224,8 +223,8 @@
                 </ul>
 
                 <!-- Payment and Repayment Section -->
-                <h2 class="lg:text-2xl text-xl  text-customGray mb-7">Payment and Repayment</h2>
-                <ul class="list-disc list-inside text-[#666666] space-y-4 lg:text-xl text-base">
+                <h2 class="lg:text-2xl text-xl  text-customGray lg:mb-7 mb-[14px]">Payment and Repayment</h2>
+                <ul class="list-disc list-inside text-[#666666] space-y-4 lg:text-xl text-sm">
                     <li>Lorem Ipsum Dolor Sit Amet Consectetur.
                     </li>
                     <li>Lorem Ipsum Dolor Sit Amet Consectetur.
@@ -237,9 +236,6 @@
                 </ul>
             </div>
         </div>
-
-
-
     </div>
 
 @endsection
@@ -291,7 +287,7 @@
             // Update the UI
             document.getElementById('totalPayment').textContent = `₹ ${total.toFixed(2)}`;
             document.getElementById('principleAmount').textContent = `₹ ${loan.toFixed(2)}`;
-            document.getElementById('interestAmount').textContent = `${interestRate}%`;
+            document.getElementById('interestAmount').textContent = `${interestRate} %`;
         }
     }
 </script>
