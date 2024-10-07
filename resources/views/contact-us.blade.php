@@ -100,10 +100,19 @@
             <div>
 
                 @if(session('success'))
-                <div class="text-green-500">
+                <div id="success-message" class="text-green-500 py-2">
                     {{ session('success') }}
                 </div>
+                <script>
+                    setTimeout(function() {
+                        var successMessage = document.getElementById('success-message');
+                        if (successMessage) {
+                            successMessage.style.display = 'none';
+                        }
+                    }, 5000); // 5 seconds
+                </script>
             @endif
+
 
             <form action="{{ route('contact_us.store') }}" method="POST" class="rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-4">
                 @csrf <!-- Include CSRF token for security -->

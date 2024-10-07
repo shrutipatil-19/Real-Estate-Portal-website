@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
+use App\Models\AboutUsSection;
 use App\Models\Achievement;
+use App\Models\BuyersGuide;
 use App\Models\ContactUs;
 use App\Models\Lead;
 use App\Models\Media;
@@ -15,7 +18,11 @@ class CustomController extends Controller
     public function aboutIndex()
     {
         $achievement = Achievement::first();
-        return view('about-us', compact('achievement'));
+        $aboutUsSection = AboutUsSection::first();
+        $ourMissionImages = json_decode($aboutUsSection->our_mission_image, true);
+
+        // dd(); // This will display the separated array
+        return view('about-us', compact('achievement', 'aboutUsSection','ourMissionImages'));
     }
 
 
@@ -47,19 +54,17 @@ class CustomController extends Controller
     public function ContactUsIndex()
     {
         $contact_us =  ContactUs::first();
-        return view('contact-us',compact('contact_us'));
+        return view('contact-us', compact('contact_us'));
     }
 
     public function ContactUsStore(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:leads,email',
             'message' => 'required|string',
             'terms_conditions' => 'required|integer', // Ensure checkbox is checked
         ]);
-
-        // dd($request->all());
 
         Lead::create($validatedData);
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
@@ -67,7 +72,8 @@ class CustomController extends Controller
 
     public function BuyersGuideIndex()
     {
-        return view('buyers-guide');
+        $buyersGuide  =  BuyersGuide::first();
+        return view('buyers-guide', compact('buyersGuide'));
     }
 
 
