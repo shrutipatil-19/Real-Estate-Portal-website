@@ -4,7 +4,9 @@
             <!-- Company Info -->
             <div class="block lg:hidden">
                 <!-- Company Logo -->
-                <img src="img/adcore logo-2.png" alt="Company Logo" class="lg:mb-6 mb-5 w-40">
+                <a href="/">
+                    <img src="img/adcore logo-2.png" alt="Company Logo" class="lg:mb-6 mb-5 w-40">
+                </a>
                 <!-- Company Info Text -->
                 <p class="text-sm lg:text-base leading-[18.18px] w-[292px]">
                     Lorem ipsum dolor sit amet consectetur. In ut fusce ut odio. Nisl neque ultrices eu amet enim
@@ -56,7 +58,7 @@
                     <input type="email" placeholder="Lorem ipsum"
                         class="w-full h-[42px] bg-transparent border border-white p-2 lg:mb-4 mb-3 text-base placeholder-white focus:outline-none">
                     <button type="submit"
-                        class="w-[154px] h-12 bg-[#FBB249] text-white py-2 px-4 font-sans hover:bg-buttonColor">SUBSCRIBE</button>
+                        class="w-[154px] lg:h-12 h-[44px]  bg-[#FBB249] text-white py-2 px-4 font-sans hover:bg-buttonColor lg:text-base text-sm">SUBSCRIBE</button>
                     <div class="py-4 lg:flex lg:items-center lg:justify-between text-white">
                         <div class="flex items-center  space-x-4 lg:order-2">
                             <a href="#" class="text-white">
@@ -111,7 +113,7 @@
                     <!-- Sitemap Section -->
                     <div class="block lg:hidden">
                         <div class="flex justify-between cursor-pointer" onclick="toggleSection('sitemap')">
-                            <div class="text-lg font-sans mb-4">SITEMAP</div>
+                            <div class="text-lg font-sans mb-2">SITEMAP</div>
                             <div id="sitemap-icon" class="text-2xl font-bold text-white">
                                 <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <line x1="7.5" y1="2.18557e-08" x2="7.5" y2="14" stroke="white"/>
@@ -119,7 +121,7 @@
                                     </svg>
                             </div>
                         </div>
-                        <ul id="sitemap" class="space-y-2 text-sm hidden">
+                        <ul id="sitemap" class="space-y-2 text-base hidden lg:mb-0 mb-8">
                             <li><a href="/" class="hover:underline">Home</a></li>
                             <li><a href="{{ route('about-us.index') }}" class="hover:underline">About Us</a></li>
                             <li><a href="{{ route('projects.index') }}" class="hover:underline">Projects</a></li>
@@ -132,7 +134,7 @@
                     <!-- Important Links Section -->
                     <div class="block lg:hidden">
                         <div class="flex justify-between  cursor-pointer" onclick="toggleSection('important-links')">
-                            <h3 class="text-lg font-sans mb-4">IMPORTANT LINKS</h3>
+                            <h3 class="text-lg font-sans mb-2">IMPORTANT LINKS</h3>
                             <span id="important-links-icon" class="text-2xl font-bold text-white">
                                 <svg width="15" height="14" viewBox="0 0 15 14" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
                                     <line x1="7.5" y1="2.18557e-08" x2="7.5" y2="14" stroke="#FFFFFF"/>
@@ -140,7 +142,7 @@
                                     </svg>
                             </span>
                         </div>
-                        <ul id="important-links" class="space-y-2 text-sm hidden">
+                        <ul id="important-links" class="space-y-2 text-base hidden">
                             <li><a href="buyers-guide#LoanCalculator_" class="hover:underline">Loan Calculator</a></li>
                             <li><a href="{{route('ContactUs.index')}}" class="hover:underline">Contact Us</a></li>
                         </ul>

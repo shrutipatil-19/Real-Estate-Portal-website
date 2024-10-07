@@ -11,7 +11,7 @@
     </div>
 
 
-    <section class="container mx-auto xl:px-16 px-4 mt-7 ">
+    <section class="container mx-auto xl:px-16 px-4 mt-[14px]">
         <div class="flex gap-3 items-center">
             <a href="/" class="lg:text-base text-sm text-customGray">Home</a>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@
             <span class="lg:text-base text-sm text-customGray">Media</span>
         </div>
 
-        <section id="projects" class="xl:mt-[112px] mt-[57px]">
+        <section id="projects" class="xl:mt-[112px] mt-[56px]">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-14">
                 <div class="space-y-6  hidden lg:block">
                     <h1 class="text-[42px] font-bold mb-[42px] text-[#3C3B3B]">Latest Articles</h1>
@@ -29,9 +29,9 @@
                         <div class="bg-white flex gap-3">
                             <img class="w-[100px] h-auto object-cover"
                                 src="{{ Storage::url($mediaValue->image) ?? 'https://via.placeholder.com/150x150' }}"
-                                alt="Media Image">
+                                alt="Media Image" style="height: 90px;">
                             <div class="">
-                                <h4 class="text-xl text-[#3C3B3B]">{{ $mediaValue->title }}</h4>
+                                <h4 class="text-lg text-[#3C3B3B]">{{ $mediaValue->title }}</h4>
                             </div>
                         </div>
                     @endforeach
@@ -65,19 +65,25 @@
 
                 <div class="flex items-center justify-center space-x-10">
                     <!-- Ongoing tab (active) -->
-                    <span class="relative text-[#3C3B3B] text-xs cursor-pointer">
+                    <a href="/media" class="relative text-[#3C3B3B] text-lg cursor-pointer">
                         Media
+                        @if(request('short_by') != 'desc')
                         <span class="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#FBB249]"></span>
+                        @endif
                         <!-- Underline for active tab -->
-                    </span>
+                    </a>
 
                     <!-- Completed tab -->
-                    <span class="relative text-[#3C3B3B] text-xs cursor-pointer hover:text-[#3C3B3B]">
+
+                    <a href="?short_by=desc" class="relative text-[#666666] text-lg cursor-pointer hover:text-[#666666]">
                         Latest Articles
-                    </span>
+                        @if(request('short_by') == 'desc')
+                        <span class="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#FBB249]"></span>
+                        @endif
+                    </a>
                 </div>
 
-                <div class="grid grid-cols-1 gap-4 py-4">
+                <div class="grid grid-cols-1 gap-4 py-6">
                     <h1 class="text-2xl font-bold text-[#3C3B3B]">Media</h1>
                     @foreach ($mediaLimit as $mediaLimitValue)
                         <div class="bg-white">

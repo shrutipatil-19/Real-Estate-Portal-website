@@ -120,10 +120,10 @@
                 @foreach ($projects as $project)
                     <div class="group relative">
                         <!-- Project Image -->
-                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] group-hover:brightness-50 transition duration-500">
+                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] lg:group-hover:brightness-50 lg:transition lg:duration-500">
 
                         <!-- Hidden Info Section for Larger Screens -->
-                        <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700" aria-hidden="true">
+                        <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 lg:group-hover:opacity-100 lg:transition lg:duration-700" aria-hidden="true">
                             <div class="bg-white text-center p-8 h-[194px]">
                                 <span class="block text-[22px] text-customGray">{{ $project->name }}</span>
                                 <div class="flex items-center justify-center gap-1 text-[#727272] text-base my-4">

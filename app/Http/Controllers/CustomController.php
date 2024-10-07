@@ -44,10 +44,15 @@ class CustomController extends Controller
         return view('project', compact('projects'));
     }
 
-    public function MediaIndex()
+    public function MediaIndex(Request $request)
     {
-        $media = Media::latest()->limit(5)->get();
-        $mediaLimit = Media::latest()->paginate(2);
+        $sortOrder = $request->short_by == 'desc' ? 'desc' : 'asc';
+
+        // Limit the latest media based on the sort order
+        $media = Media::orderBy('created_at', $sortOrder)->limit(5)->get();
+
+        // Paginate the media based on the sort order
+        $mediaLimit = Media::orderBy('created_at', $sortOrder)->paginate(2);
         return view('media', compact('media', 'mediaLimit'));
     }
 
