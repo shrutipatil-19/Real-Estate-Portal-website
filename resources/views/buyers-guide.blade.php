@@ -15,54 +15,35 @@
         <div class="flex gap-3 items-center">
             <a href="/" class="lg:text-base text-sm text-customGray">Home</a>
             <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z" fill="#3C3B3B"/>
-                </svg>
-                <span class="lg:text-base text-sm text-customGray">Buyers Guide</span>
+                <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
+                    fill="#3C3B3B" />
+            </svg>
+            <span class="lg:text-base text-sm text-customGray">Buyers Guide</span>
         </div>
 
         <div class="lg:py-28 py-14  lg:grid grid-cols-2 gap-8">
 
             <div class="block lg:hidden">
-                <img src="img/buyers_guide-1.png" alt="" class="w-full h-auto">
+                <img src="{{ Storage::url($buyersGuide->image) }}" alt="" class="w-full h-auto">
             </div>
 
 
             <div class="lg:py-10 block lg:hidden">
-                <h1 class="lg:text-[42px] text-2xl font-bold text-customGray  lg:mb-10 mb-3">Choosing The Right Location</h1>
-                <p class="lg:text-base text-sm text-[#666666] leading-7">Lorem ipsum dolor sit amet consectetur. At est facilisis eleifend
-                    adipiscing cursus nam. A risus eu feugiat tempor urna quam felis. Id sem ultrices ornare tortor
-                    vestibulum. Et facilisis cursus nisl rutrum duis gravida. Quisque massa donec euismod lectus malesuada
-                    risus vel nunc. Cras quis molestie urna dapibus enim scelerisque ut. Turpis at et molestie vitae ut. A
-                    risus eu feugiat tempor urna quam felis. Id sem ultrices ornare tortor vestibulum. Et facilisis cursus
-                    nisl rutrum duis gravida. Quisque massa donec euismod lectus malesuada risus vel nunc.Turpis at et
-                    molestie vitae ut. A risus eu feugiat tempor urna quam felis. Lorem ipsum dolor sit amet consectetur. At
-                    est facilisis eleifend adipiscing cursus nam. A risus eu feugiat tempor urna quam felis. Id sem ultrices
-                    ornare tortor vestibulum. Et facilisis cursus nisl rutrum duis gravida. Quisque massa donec euismod
-                    lectus malesuada risus vel nunc. Cras quis molestie urna dapibus enim scelerisque ut. Turpis at et
-                    molestie vitae ut.
-                </p>
+                <h1 class="lg:text-[42px] text-2xl font-bold text-customGray  lg:mb-10 mb-3">{{ $buyersGuide->title }}</h1>
+                <p class="lg:text-base text-sm text-[#666666] leading-7">{{ $buyersGuide->description }} </p>
             </div>
 
 
             <div class="lg:py-10 hidden lg:block">
-                <h1 class="text-[42px] font-bold text-customGray  mb-10">Choosing The Right Location</h1>
-                <p class="text-base text-[#666666] leading-7">Lorem ipsum dolor sit amet consectetur. At est facilisis eleifend
-                    adipiscing cursus nam. A risus eu feugiat tempor urna quam felis. Id sem ultrices ornare tortor
-                    vestibulum. Et facilisis cursus nisl rutrum duis gravida. Quisque massa donec euismod lectus malesuada
-                    risus vel nunc. Cras quis molestie urna dapibus enim scelerisque ut. Turpis at et molestie vitae ut. A
-                    risus eu feugiat tempor urna quam felis. Id sem ultrices ornare tortor vestibulum. Et facilisis cursus
-                    nisl rutrum duis gravida. Quisque massa donec euismod lectus malesuada risus vel nunc.Turpis at et
-                    molestie vitae ut. A risus eu feugiat tempor urna quam felis. Lorem ipsum dolor sit amet consectetur. At
-                    est facilisis eleifend adipiscing cursus nam. A risus eu feugiat tempor urna quam felis. Id sem ultrices
-                    ornare tortor vestibulum. Et facilisis cursus nisl rutrum duis gravida. Quisque massa donec euismod
-                    lectus malesuada risus vel nunc. Cras quis molestie urna dapibus enim scelerisque ut. Turpis at et
-                    molestie vitae ut.
+                <h1 class="text-[42px] font-bold text-customGray  mb-10">{{ $buyersGuide->title }}</h1>
+                <p class="text-base text-[#666666] leading-7">
+                    {{ $buyersGuide->description }}
                 </p>
             </div>
 
 
             <div>
-                <img src="img/buyers_guide-1.png" alt="" class="w-full h-full hidden lg:block">
+                <img src="{{ Storage::url($buyersGuide->image) }}" alt="" class="w-full h-full hidden lg:block">
             </div>
 
         </div>
@@ -95,28 +76,29 @@
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray mb-3">Home Loan</h1>
 
             <p class="lg:text-2xl text-base text-customBorder lg:mb-[42px] mb-6">
-                Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes urna tempus et a eu in. Purus
-                pretium
-                aenean pulvinar massa donec. Justo proin nam gravida in. Cursus nam in fusce sed purus at euismod ultrices
-                egestas.
+                {{ $buyersGuide->home_loan_title }}
             </p>
-            <p class="text-customGray lg:text-xl text-sm">Lorem ipsum dolor sit amet,</p>
-            <ul class="list-disc list-inside text-customBorder space-y-3 mt-3 lg:text-lg text-sm">
-                <li>Lorem Ipsum Dolor Sit Amet</li>
-                <ul class="list-disc list-inside">
-                    <li>Lorem Ipsum Dolor Sit Amet</li>
-                </ul>
-            </ul>
 
-            <div class="space-y-5 text-customGray mt-3 lg:text-xl text-sm">
-                <p>Lorem Ipsum Dolor Sit Amet,</p>
-                <p>Lorem Ipsum Dolor Sit Amet, Consectetur</p>
-                <p>Lorem Ipsum Dolor Sit Amet Consectetur..</p>
-                <p>Lorem Ipsum Dolor Sit Amet Consectetur. Molestie</p>
-                <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.</p>
-                <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.</p>
-                <p>Lorem Ipsum Dolor Sit Amet Consectetur.</p>
-            </div>
+            @foreach ($buyersGuide->home_loan_details as $home_loan)
+                {{-- Ensure home_loan_heading exists --}}
+                @if (!empty($home_loan['home_loan_heading']))
+                    <div class="text-customGray lg:text-xl text-sm mb-5">{{ $home_loan['home_loan_heading'] }}
+
+                        {{-- Ensure there are sub_headings and loop through them --}}
+                        @if (!empty($home_loan['home_loan_sub_heading']) && is_array($home_loan['home_loan_sub_heading']))
+                            <ul class="list-disc list-inside text-customBorder lg:text-lg text-sm mt-5 space-y-3">
+                                @foreach ($home_loan['home_loan_sub_heading'] as $sub_heading)
+                                    {{-- Check that sub_heading is set --}}
+                                    @if (!empty($sub_heading['home_loan_sub_heading']))
+                                        <li class="">{{ $sub_heading['home_loan_sub_heading'] }}</li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                @endif
+            @endforeach
+
         </div>
 
 
@@ -124,22 +106,18 @@
         <div class="lg:py-28 py-14">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray lg:mb-[42px] mb-[14px]">Tax Benefits</h1>
             <ul class="list-disc pl-6 space-y-4 text-customBorder lg:text-lg text-sm">
-                <li>Lorem ipsum dolor sit amet consectetur. Non leo risus diam id sed scelerisque. Ultricies aliquam
-                    habitant diam at tempus nibh. Eget hendrerit velit eu aliquam.</li>
-                <li>Ut commodo massa urna cursus viverra et sit ornare mauris. Aliquam sed sem mauris libero vel massa. Eu
-                    arcu aliquam feugiat sed.</li>
-                <li>Ultricies aliquam habitant diam at tempus nibh. Eget hendrerit velit eu aliquam. Proin bibendum nunc eu
-                    magna eget felis.</li>
-                <li>Eu arcu aliquam feugiat sed. Amet amet adipiscing ornare ac massa vitae commodo.</li>
-                <li>Eget hendrerit velit eu aliquam. Proin bibendum nunc eu magna eget felis. Ut commodo massa urna cursus
-                    viverra et sit ornare mauris.</li>
+                @foreach ($buyersGuide->tax_benefits_details as $tax_benefits_detail)
+                    <li>{{ $tax_benefits_detail['title'] }}</li>
+                @endforeach
+
             </ul>
         </div>
 
 
         <div class="lg:mb-28 mb-14" id="LoanCalculator_">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray mb-3">Loan Calculator</h1>
-            <p class="text-customGray lg:mb-[42px] mb-6 lg:text-2xl text-sm">Lorem ipsum dolor sit amet consectetur. Amet pellentesque dictum montes
+            <p class="text-customGray lg:mb-[42px] mb-6 lg:text-2xl text-sm">Lorem ipsum dolor sit amet consectetur. Amet
+                pellentesque dictum montes
                 urna
                 tempus et a eu in</p>
 
@@ -202,38 +180,27 @@
             <!-- NRI Info Section -->
             <h1 class="lg:text-[42px] text-[28px] font-bold text-customGray lg:mb-[42px] mb-[14px]">NRI Info</h1>
             <p class="text-[#666666] lg:text-2xl text-sm lg:mb-0 mb-[14px]">
-                Lorem ipsum dolor sit amet consectetur. Vulputate commodo ullamcorper praesent ac blandit est morbi
-                tincidunt nulla. Elementum interdum bibendum non risus. Venenatis platea ut tristique feugiat sodales
-                facilisi mi neque. Condimentum lacus vel sapien velit aenean accumsan a interdum. Adipiscing commodo pretium
-                pharetra pulvinar urna commodo. Purus risus odio tellus lobortis at est risus vitae sagittis. Enim consequat
-                velit libero suscipit dui tempus mi orci. Et dolor vitae mauris morbi a convallis viverra ullamcorper.
+                {{ $buyersGuide->nri_info_title }}
             </p>
 
             <div class="lg:py-[56px] lg:mb-0 mb-[33px]">
                 <!-- Documents Required Section -->
-                <h2 class="lg:text-2xl text-xl  text-customGray lg:mb-7 mb-[14px]">Documents Required for NRIs to Purchase Property</h2>
-                <ul class="list-disc list-inside text-[#666666] mb-8 space-y-4 lg:text-xl text-sm">
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                    <li>Lorem Ipsum Dolor Sit Amet,</li>
-                </ul>
-
-                <!-- Payment and Repayment Section -->
-                <h2 class="lg:text-2xl text-xl  text-customGray lg:mb-7 mb-[14px]">Payment and Repayment</h2>
-                <ul class="list-disc list-inside text-[#666666] space-y-4 lg:text-xl text-sm">
-                    <li>Lorem Ipsum Dolor Sit Amet Consectetur.
-                    </li>
-                    <li>Lorem Ipsum Dolor Sit Amet Consectetur.
-                    </li>
-                    <li>Lorem Ipsum Dolor Sit Amet Consectetur.
-                    </li>
-                    <li>Lorem Ipsum Dolor Sit Amet Consectetur.
-                    </li>
-                </ul>
+                @foreach ($buyersGuide->nri_info_details as $nri_info)
+                    @if (is_array($nri_info) && isset($nri_info['nri_info_heading']))
+                        <div class="lg:text-2xl text-xl text-customGray lg:mb-7 mb-[14px]">
+                            {{ $nri_info['nri_info_heading'] }}
+                            @if (isset($nri_info['nri_info_sub_heading']) && is_array($nri_info['nri_info_sub_heading']))
+                                <ul class="list-disc list-inside text-[#666666] mt-7 space-y-4 lg:text-xl text-sm">
+                                    @foreach ($nri_info['nri_info_sub_heading'] as $sub_heading)
+                                        @if (isset($sub_heading['nri_info_sub_heading']))
+                                            <li>{{ $sub_heading['nri_info_sub_heading'] }}</li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
@@ -248,16 +215,16 @@
         return num >= 1000 ? Math.floor(num / 1000) + 'k+' : num;
     }
 
-    const experience = new CountUp('experience', 7, {
+    const experience = new CountUp('experience', "{{ $buyersGuide->Years_of_experience }}", {
         suffix: '+'
     });
-    const amenities = new CountUp('amenities', 15, {
+    const amenities = new CountUp('amenities', "{{ $buyersGuide->amenities }}", {
         suffix: '+'
     });
-    const clients = new CountUp('clients', 13000, {
+    const clients = new CountUp('clients', "{{ $buyersGuide->happy_clients }}", {
         formattingFn: kFormatter
     });
-    const houses = new CountUp('houses', 15000, {
+    const houses = new CountUp('houses', "{{ $buyersGuide->house_sold }}", {
         formattingFn: kFormatter
     });
 

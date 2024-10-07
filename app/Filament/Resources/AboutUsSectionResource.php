@@ -25,6 +25,7 @@ class AboutUsSectionResource extends Resource
     protected static ?string $pluralModelLabel = 'About Us';
 
     protected static string $relationship = 'meetOurTeam';
+    protected static ?int $navigationSort = 2;
 
     // protected static ?string $navigationLabel = 'About Us';
     protected static ?string $modelLabel = 'About Us';
