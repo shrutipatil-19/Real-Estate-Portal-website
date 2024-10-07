@@ -21,19 +21,19 @@
         <section id="projects" class="xl:mt-[112px] mt-[56px]">
             <div class="flex items-center justify-center lg:space-x-[42px] space-x-6">
                 <!-- Ongoing tab (active) -->
-                <span class="relative text-customGray lg:text-xl text-xs cursor-pointer">
+                <span class="relative text-customGray lg:text-xl text-base cursor-pointer">
                     Ongoing
                     <span class="absolute left-0 right-0 -bottom-1 h-0.5 bg-[#FBB249]"></span>
                     <!-- Underline for active tab -->
                 </span>
 
                 <!-- Completed tab -->
-                <span class="relative text-customBorder lg:text-xl text-xs cursor-pointer hover:text-customBorder">
+                <span class="relative text-customBorder lg:text-xl text-base cursor-pointer hover:text-customBorder">
                     Completed
                 </span>
 
                 <!-- Upcoming tab -->
-                <span class="relative text-customBorder lg:text-xl text-xs cursor-pointer hover:text-customBorder">
+                <span class="relative text-customBorder lg:text-xl text-base cursor-pointer hover:text-customBorder">
                     Upcoming
                 </span>
             </div>

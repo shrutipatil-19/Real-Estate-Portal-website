@@ -24,7 +24,7 @@
         <div class="lg:mt-[112px] mt-[56px]">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray">Get In Touch</h1>
 
-            <div class="lg:flex items-center lg:px-24 justify-between lg:mt-[42px] mt-6 space-y-8">
+            <div class="lg:flex items-center lg:px-24 justify-between lg:mt-[42px] mt-6 lg:space-y-0 space-y-8">
                 <!-- Stat 1 -->
                 <div class="flex items-center">
                     <div class="">
@@ -85,13 +85,13 @@
     <div class="border-b border-[#D9D9D9] lg:mt-6 hidden lg:block"></div>
 
     <div class="container mx-auto lg:px-16 px-4">
-        <div id="1" class="lg:py-[112px] py-[40px] lg:grid grid-cols-2 lg:gap-44">
-            <div class="lg:py-[140px] py-[40px]">
+        <div id="1" class="lg:py-[112px] py-14 lg:grid grid-cols-2 lg:gap-44">
+            <div class="lg:py-[140px]">
                 <h2 class="lg:text-[42px] text-2xl  font-bold text-customGray">Contact us</h2>
                 <p class="lg:text-2xl text-base text-customGray mt-3">Lorem ipsum dolor sit amet consectetur. Libero integer
                     integer
                     viverra enim.</p>
-                <p class="mt-[42px] text-customBorder lg:text-base text-xs">Lorem ipsum dolor sit amet consectetur.
+                <p class="lg:py-[42px] lg:mt-0 mt-6 lg:mb-0 mb-4 text-customBorder lg:text-base text-xs">Lorem ipsum dolor sit amet consectetur.
                     Ultricies at morbi
                     at sed. Integer posuere at risus gravida eu.Lorem ipsum dolor sit amet consectetur. Ultricies at morbi
                     at sed. Integer posuere at risus gravida eu.</p>
@@ -114,7 +114,7 @@
             @endif
 
 
-            <form action="{{ route('contact_us.store') }}" method="POST" class="rounded bg-white shadow-lg shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-4">
+            <form action="{{ route('contact_us.store') }}" method="POST" class=" bg-white shadow-md shadow-[#888C851F]/50 lg:py-16 py-8 lg:px-[46px] px-4">
                 @csrf <!-- Include CSRF token for security -->
 
                 <!-- Full Name Input -->
@@ -156,7 +156,7 @@
                 @enderror
 
                 <!-- Submit Button -->
-                <div class="text-center">
+                <div class="text-center text-sm">
                     <button type="submit"
                         class="bg-primary text-white font-bold px-6 py-3 opacity-100 hover:bg-primary-400 transition duration-300 lg:h-12 h-[44px]">
                         Send Message
@@ -168,7 +168,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col items-center text-center justify-cente space-y-4">
+        <div class="flex flex-col items-center text-center justify-cente space-y-3">
             <h3 class="text-2xl lg:text-[42px] font-bold text-customGray">
                 {{ $contact_us->title }}
             </h3>
@@ -185,7 +185,7 @@
 
 
 
-        <div class="py-[56px]">
+        <div class="lg:py-[42px] py-6">
             <iframe src="https://www.google.com/maps/embed?pb={{ $pb }}" class="w-full lg:h-[565px] h-[264px]"
                 style="border:0;" allowfullscreen="allowfullscreen" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">

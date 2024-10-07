@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="relative">
-        <img src="{{ Storage::url($media->image) }}" alt="Media Banner" class="mx-auto w-full h-[317px] bg-cover">
+        <img src="{{ Storage::url($media->image) }}" alt="Media Banner" class="mx-auto w-screen h-[317px] bg-cover bg-center">
     </div>
 
 

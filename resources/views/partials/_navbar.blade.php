@@ -22,9 +22,9 @@
             </button>
         </div>
 
-        <div>
+        <a href="/">
             <img src="img/adcore-logo.png" alt="Logo" class="h-[52px] w-[148px] object-cover">
-        </div>
+        </a>
 
         <div class="flex items-center">
             <!-- Phone Number for Mobile View -->
@@ -75,17 +75,10 @@
             <!-- Projects with Dropdown -->
             <li x-data="{ open: false }">
                 <!-- Main Projects Link -->
-                <a href="{{ route('projects.index') }}" @click.prevent="open = !open"
+                <a href="/projects" @click="open = !open; if(!open) window.location.href='/projects';"
                     :class="open ? 'bg-[#2A4D69] text-white px-2 py-1.5' : 'text-customGray px-2 py-1.5'"
                     class="w-full text-left flex items-center transition-colors duration-300 focus:outline-none">
                     Projects
-                    <!-- Dropdown Arrow -->
-                    {{-- <svg :class="open ? 'rotate-180 text-white' : ''"
-                         class="w-4 h-4 ml-1 transform transition-transform duration-300"
-                         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                    </svg> --}}
                     <svg :class="open ? 'rotate-90 text-white' : ''"
                         class="w-4 h-4 ml-1 transform transition-transform duration-300"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -93,8 +86,8 @@
                         <path :d="open ? 'M19.5 8.25L12 15.75L4.5 8.25' : 'M8.25 4.5L15.75 12L8.25 19.5'"
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-
                 </a>
+
 
                 <!-- Submenu for Projects -->
                 <ul class="ml-4 mt-2 space-y-2" x-show="open" x-transition @click.away="open = false"
@@ -124,7 +117,8 @@
 
         <div class="absolute bottom-0">
             <div class="border-b border-customBorder"></div>
-            <a href="mailto:info@Loremipsum.com" class="text-customGray flex items-center w-[300px] px-8 py-3 text-center">
+            <a href="mailto:info@Loremipsum.com"
+                class="text-customGray flex items-center w-[300px] px-8 py-3 text-center">
                 <svg class="w-6 w-6 " viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M3.23335 4.87492V4.33325C3.09376 4.33325 2.95989 4.39032 2.86119 4.4919C2.76248 4.59348 2.70703 4.73126 2.70703 4.87492H3.23335ZM22.1807 4.87492H22.707C22.707 4.73126 22.6516 4.59348 22.5529 4.4919C22.4542 4.39032 22.3203 4.33325 22.1807 4.33325V4.87492ZM3.23335 5.41659H22.1807V4.33325H3.23335V5.41659ZM21.6544 4.87492V17.8749H22.707V4.87492H21.6544ZM20.0755 19.4999H5.33861V20.5833H20.0755V19.4999ZM3.75966 17.8749V4.87492H2.70703V17.8749H3.75966ZM5.33861 19.4999C4.91985 19.4999 4.51824 19.3287 4.22213 19.024C3.92602 18.7192 3.75966 18.3059 3.75966 17.8749H2.70703C2.70703 18.5932 2.98429 19.2821 3.4778 19.79C3.97132 20.2979 4.64067 20.5833 5.33861 20.5833V19.4999ZM21.6544 17.8749C21.6544 18.3059 21.488 18.7192 21.1919 19.024C20.8958 19.3287 20.4942 19.4999 20.0755 19.4999V20.5833C20.7734 20.5833 21.4427 20.2979 21.9363 19.79C22.4298 19.2821 22.707 18.5932 22.707 17.8749H21.6544Z"

@@ -4,7 +4,7 @@
 
     <div class="relative">
         <img src="img/buyers_guide.png" alt="Buyers Guide Banner" class="mx-auto w-full lg:h-auto h-[177px] object-cover">
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 space-y-[6px]">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
             <h1 class="text-2xl xl:text-[40px] font-bold lg:mb-3 mb-[6px]">Buyers Guide</h1>
             <span class="text-base xl:text-2xl text-center">Lorem ipsum dolor sit amet consectetur.</span>
         </div>
@@ -23,7 +23,7 @@
 
         <div class="lg:py-28 py-14  lg:grid grid-cols-2 gap-8">
 
-            <div class="block lg:hidden">
+            <div class="block lg:hidden mb-[14px]">
                 <img src="{{ Storage::url($buyersGuide->image) }}" alt="" class="w-full h-auto">
             </div>
 
@@ -35,7 +35,7 @@
 
 
             <div class="lg:py-10 hidden lg:block">
-                <h1 class="text-[42px] font-bold text-customGray  mb-10">{{ $buyersGuide->title }}</h1>
+                <h1 class="text-[42px] font-bold text-customGray mb-10">{{ $buyersGuide->title }}</h1>
                 <p class="text-base text-[#666666] leading-7">
                     {{ $buyersGuide->description }}
                 </p>
@@ -49,23 +49,23 @@
         </div>
     </div>
 
-    <div class="bg-primary text-white lg:mb-28 mb-14 lg:py-6 py-4">
+    <div class="bg-primary text-white lg:mb-28 mb-14 lg:py-7 py-4 lg:px-0 px-4">
         <div class="container mx-auto grid  grid-cols-2 lg:grid-cols-4 items-center text-center lg:gap-0 gap-4">
             <div class="flex-1 lg:border-r lg:border-white">
                 <h2 id="experience" class="lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-3 lg:text-2xl text-sm font-bold">Year's Of Experience</p>
+                <p class=" lg:text-2xl text-sm font-bold">Year's Of Experience</p>
             </div>
             <div class="flex-1 lg:border-r lg:border-white">
                 <h2 id="amenities" class=" lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-3 lg:text-2xl text-sm font-bold">Amenities</p>
+                <p class=" lg:text-2xl text-sm font-bold">Amenities</p>
             </div>
             <div class="flex-1 lg:border-r lg:border-white">
                 <h2 id="clients" class=" lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-3 lg:text-2xl text-sm font-bold">Happy Clients</p>
+                <p class=" lg:text-2xl text-sm font-bold">Happy Clients</p>
             </div>
             <div class="flex-1">
                 <h2 id="houses" class=" lg:text-[40px] text-[32px]"></h2>
-                <p class="mt-3 lg:text-2xl text-sm font-bold">House Sold</p>
+                <p class=" lg:text-2xl text-sm font-bold">House Sold</p>
             </div>
         </div>
     </div>
@@ -82,11 +82,11 @@
             @foreach ($buyersGuide->home_loan_details as $home_loan)
                 {{-- Ensure home_loan_heading exists --}}
                 @if (!empty($home_loan['home_loan_heading']))
-                    <div class="text-customGray lg:text-xl text-sm mb-5">{{ $home_loan['home_loan_heading'] }}
+                    <div class="text-customGray lg:text-xl text-sm">{{ $home_loan['home_loan_heading'] }}
 
                         {{-- Ensure there are sub_headings and loop through them --}}
                         @if (!empty($home_loan['home_loan_sub_heading']) && is_array($home_loan['home_loan_sub_heading']))
-                            <ul class="list-disc list-inside text-customBorder lg:text-lg text-sm mt-5 space-y-3">
+                            <ul class="list-disc list-inside text-customBorder lg:text-lg text-sm py-5 space-y-3">
                                 @foreach ($home_loan['home_loan_sub_heading'] as $sub_heading)
                                     {{-- Check that sub_heading is set --}}
                                     @if (!empty($sub_heading['home_loan_sub_heading']))
@@ -114,7 +114,7 @@
         </div>
 
 
-        <div class="lg:mb-28 mb-14" id="LoanCalculator_">
+        <div class="lg:mb-[96] mb-14" id="LoanCalculator_">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray mb-3">Loan Calculator</h1>
             <p class="text-customGray lg:mb-[42px] mb-6 lg:text-2xl text-sm">Lorem ipsum dolor sit amet consectetur. Amet
                 pellentesque dictum montes
@@ -153,24 +153,22 @@
                 <div class="border border-[#FBB249] lg:h-[375px]">
                     <div class="lg:p-28 p-5 text-center">
                         <h2 class="text-customGray text-base mb-2">Your Total Payment Will Be</h2>
-                        <p id="totalPayment" class="text-4xl text-[#666666]">₹ 0.00</p>
+                        <p id="totalPayment" class="lg:text-4xl text-2xl text-[#666666]">₹ 0.00</p>
 
 
                         <div class="flex justify-center gap-12 mt-[53px]">
                             <div class="text-center">
-                                <div class="text-gray-600 text-base mb-2">Principle Amount</div>
+                                <div class="text-customGray text-base mb-2">Principle Amount</div>
                                 <div id="principleAmount" class="text-base font-bold text-[#666666]">₹ 0.00</div>
                             </div>
 
                             <div class="text-center">
-                                <div class="text-gray-600 text-base mb-2">Interest</div>
+                                <div class="text-customGray text-base mb-2">Interest</div>
                                 <div id="interestAmount" class="text-base font-bold text-[#666666]">% 0</div>
                             </div>
                         </div>
 
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -183,14 +181,14 @@
                 {{ $buyersGuide->nri_info_title }}
             </p>
 
-            <div class="lg:py-[56px] lg:mb-0 mb-[33px]">
+            <div class="lg:py-[42px] lg:mb-0 mb-7">
                 <!-- Documents Required Section -->
                 @foreach ($buyersGuide->nri_info_details as $nri_info)
                     @if (is_array($nri_info) && isset($nri_info['nri_info_heading']))
-                        <div class="lg:text-2xl text-xl text-customGray lg:mb-7 mb-[14px]">
+                        <div class="lg:text-2xl text-xl text-customGray">
                             {{ $nri_info['nri_info_heading'] }}
                             @if (isset($nri_info['nri_info_sub_heading']) && is_array($nri_info['nri_info_sub_heading']))
-                                <ul class="list-disc list-inside text-[#666666] mt-7 space-y-4 lg:text-xl text-sm">
+                                <ul class="list-disc list-inside text-[#666666] space-y-4 lg:text-xl text-sm py-4">
                                     @foreach ($nri_info['nri_info_sub_heading'] as $sub_heading)
                                         @if (isset($sub_heading['nri_info_sub_heading']))
                                             <li>{{ $sub_heading['nri_info_sub_heading'] }}</li>
