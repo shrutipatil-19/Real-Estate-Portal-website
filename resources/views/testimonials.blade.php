@@ -25,7 +25,7 @@
         </div>
 
         <!-- Swiper Slider -->
-        <div class="swiper swiper_testimonial lg:py-[42px] py-7">
+        <div class="swiper swiper_testimonial lg:py-14 py-7">
             <div class="swiper-wrapper">
                 @foreach ($testimonial->testimonial_images_details as $item)
                     <div class="swiper-slide bg-white">
@@ -45,7 +45,7 @@
                                 <!-- Testimonial Author -->
                                 <div class="flex  justify-between items-center lg:items-start lg:mt-[38px] mt-5">
                                     <div>
-                                        <span class="font-semibold text-sm lg:text-xl">{{ $item['name'] }}</span><br>
+                                        <span class="font-semibold text-sm lg:text-xl text-customGray">{{ $item['name'] }}</span><br>
                                         <span class="text-[#666666] text-xs lg:text-base">{{ $item['occupation'] }}</span>
                                     </div>
 
