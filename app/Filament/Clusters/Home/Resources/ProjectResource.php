@@ -50,10 +50,12 @@ class ProjectResource extends Resource
                                 'Upcoming' => 'Upcoming',
                             ])
                             ->native(false),
-                            Forms\Components\FileUpload::make('image')
-                                ->required()
-                                ->columnSpanFull(),
-                            Select::make('priority')
+                        Forms\Components\FileUpload::make('image')
+                            ->directory('project_image')
+                            ->image()
+                            ->required()
+                            ->columnSpanFull(),
+                        Select::make('priority')
                             ->options([
                                 '1' => '1',
                                 '2' => '2',

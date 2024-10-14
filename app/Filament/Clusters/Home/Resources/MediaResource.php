@@ -31,6 +31,7 @@ class MediaResource extends Resource
                 ->description('')
                 ->schema([
                     Forms\Components\FileUpload::make('image')
+                    ->directory('media_image')
                     ->required()
                     ->image()
                     ->columnSpanFull(),

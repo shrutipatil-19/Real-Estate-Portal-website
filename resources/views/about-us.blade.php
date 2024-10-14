@@ -42,12 +42,12 @@
          <div class="relative lg:px-24 md:mb-0 mb-24">
              <!-- First image -->
              @if(isset($ourMissionImages[0]))
-             <img src="{{ Storage::url($ourMissionImages[0]) }}" alt="Our Mission Image 1"
+             <img src="{{ asset('storage/' . $ourMissionImages[0]) }}" alt="Our Mission Image 1"
                   class="object-cover h-[256px] w-[216px] lg:h-[335px] lg:w-[262px] z-10">
          @endif
              <!-- Second image overlapping the first -->
              @if(isset($ourMissionImages[1]))
-             <img src="{{ Storage::url($ourMissionImages[1]) }}" alt="Our Mission Image 2"
+             <img src="{{ asset('storage/' . $ourMissionImages[1]) }}" alt="Our Mission Image 2"
                   class="drop-shadow-lg object-cover h-[256px] w-[216px] lg:h-[335px] lg:w-[262px] absolute lg:left-[300px] left-[80px] top-[70px] z-20">
                   @endif
                 </div>
@@ -74,9 +74,9 @@
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-4">
-                <img src="{{ Storage::url($aboutUsSection->our_vision_image[0]) }}" alt="Our Vision Image 1" class="w-full h-auto object-cover">
-                <img src="{{ Storage::url($aboutUsSection->our_vision_image[1]) }}" alt="Our Vision Image 2" class="w-full h-auto object-cover">
-                <img src="{{ Storage::url($aboutUsSection->our_vision_image[2]) }}" alt="Our Vision Image 3" class="w-full col-span-2 h-auto object-cover">
+                <img src="{{ asset('storage/' . $aboutUsSection->our_vision_image[0]) }}" alt="Our Vision Image 1" class="w-full h-auto object-cover">
+                <img src="{{ asset('storage/' . $aboutUsSection->our_vision_image[1]) }}" alt="Our Vision Image 2" class="w-full h-auto object-cover">
+                <img src="{{ asset('storage/' . $aboutUsSection->our_vision_image[2]) }}" alt="Our Vision Image 3" class="w-full col-span-2 h-auto object-cover">
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
 <section class="lg:mb-28 mb-14">
     @if(isset($aboutUsSection->parallax_effect_image))
     <div class="w-full lg:h-[586px] h-[208px] bg-fixed bg-no-repeat bg-cover flex items-center justify-center"
-        style="background-image: url({{ Storage::url($aboutUsSection->parallax_effect_image) }});">
+        style="background-image: url({{ asset('storage/' . $aboutUsSection->parallax_effect_image) }});">
         <div class="text-center text-white">
             <p class="text-base lg:text-[42px] lg:w-[922px] w-[322px] lg:leading-[47.72px] leading-[18.18px]">
                 {{ $aboutUsSection->parallax_effect_heading }}
@@ -116,7 +116,7 @@
                 <div class="swiper-slide flex flex-col items-center justify-center">
                     <!-- Image wrapped in a circle -->
                     <div class="w-[216px] h-[216px] rounded-full bg-gray-300 flex items-center justify-center">
-                        <img src="{{ Storage::url($meet_our_team['images']) }}" alt="{{ $meet_our_team['images'] }}"
+                        <img src="{{ asset('storage/' . $meet_our_team['images']) }}" alt="{{ $meet_our_team['images'] }}"
                             class="w-full h-full object-cover rounded-full">
                     </div>
                     <!-- Title -->

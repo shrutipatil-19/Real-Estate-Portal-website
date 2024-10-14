@@ -41,6 +41,7 @@ class AchievementResource extends Resource
                         Repeater::make('achievement_images_details')
                             ->schema([
                                 Forms\Components\FileUpload::make('image')
+                                ->directory('achievement_images')
                                     ->image()
                                     ->required(),
                                 TextInput::make('image_title')
