@@ -40,7 +40,9 @@ class BuyersGuideResource extends Resource
                             ->maxLength(65535)
                             ->columnSpanFull(),
                         Forms\Components\FileUpload::make('image')
+                        ->image()
                             ->required()
+                            ->directory('buyers_guide_image')
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('Years_of_experience')
                             ->required()

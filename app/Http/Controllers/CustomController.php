@@ -19,7 +19,7 @@ class CustomController extends Controller
     {
         $achievement = Achievement::first();
         $aboutUsSection = AboutUsSection::first();
-        $ourMissionImages = json_decode($aboutUsSection->our_mission_image, true);
+        $ourMissionImages = $aboutUsSection->our_mission_image;
 
         // dd(); // This will display the separated array
         return view('about-us', compact('achievement', 'aboutUsSection','ourMissionImages'));

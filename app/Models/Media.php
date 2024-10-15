@@ -17,7 +17,7 @@ class Media extends Model
     ];
 
 
-    public function setMediaImageAttribute($value)
+    public function setImageAttribute($value)
     {
 
          // Check if this is an update (i.e., the model already exists in the database)

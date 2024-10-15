@@ -47,7 +47,7 @@ class TestimonialResource extends Resource
                 ->label('Testimonial Details')
                     ->schema([
                         FileUpload::make('image')
-                        ->directory('testimonial_images_detail')
+                        ->directory('testimonial_images_details')
                         ->image(),
                         Textarea::make('description'),
                         TextInput::make('name'),
