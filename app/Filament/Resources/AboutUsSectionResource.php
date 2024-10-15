@@ -57,12 +57,13 @@ class AboutUsSectionResource extends Resource
                     ->description('')
                     ->schema([
 
-                        Forms\Components\FileUpload::make('our_Mission_image')
+                        Forms\Components\FileUpload::make('our_mission_image')
+                        ->directory('our_mission_image')
                             ->required()
                             ->multiple()
                             ->image()
                             ->columnSpanFull(),
-                        Forms\Components\Textarea::make('our_Mission_description')
+                        Forms\Components\Textarea::make('our_mission_description')
                             ->required()
                             ->maxLength(65535)
                             ->columnSpanFull(),
@@ -76,6 +77,7 @@ class AboutUsSectionResource extends Resource
                             ->maxLength(65535)
                             ->columnSpanFull(),
                         Forms\Components\FileUpload::make('our_vision_image')
+                        ->directory('our_vision_image')
                             ->required()
                             ->image()
                             ->multiple()
@@ -86,6 +88,7 @@ class AboutUsSectionResource extends Resource
                     ->description('')
                     ->schema([
                         Forms\Components\FileUpload::make('parallax_effect_image')
+                        ->directory('about_us_parallax_effect_image')
                             ->image()
                             ->required(),
                         Forms\Components\TextInput::make('parallax_effect_heading')
@@ -96,12 +99,12 @@ class AboutUsSectionResource extends Resource
                     ->description('')
                     ->schema([
                         Forms\Components\TextInput::make('meet_our_team_heading')
-
                             ->required(),
                         Repeater::make('meet_our_team_details')
                             ->label('Meet Our Team create')
                             ->schema([
                                 Forms\Components\FileUpload::make('images')
+                                ->directory('meet_our_team_details_image')
                                     ->image()
                                     ->required(),
                                 Forms\Components\TextInput::make('name')

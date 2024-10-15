@@ -46,7 +46,7 @@
 
                     <div class="group relative">
                         <!-- Project Image -->
-                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] group-hover:brightness-50 transition duration-500">
+                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] group-hover:brightness-50 transition duration-500">
 
                         <!-- Hidden Info Section for Larger Screens -->
                         <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700" aria-hidden="true">

@@ -37,7 +37,9 @@ class BannerResource extends Resource
                 Section::make('Publishing')
                     ->description('Settings for publishing this post.')
                     ->schema([
-                        FileUpload::make('banner_image'),
+                        FileUpload::make('banner_image')
+                        ->directory('banner_images')
+                        ->image(),
                         TextInput::make('heading'),
                         TextInput::make('sub_heading'),
                     ])

@@ -53,7 +53,9 @@ class AboutUsResource extends Resource
                             ->required()
                             ->maxLength(255),
                         Forms\Components\FileUpload::make('aboutUsImage')
-                            ->required(),
+                        ->directory('aboutUsImages')
+                        ->image()
+                        ->required(),
                     ]),
             ]);
     }

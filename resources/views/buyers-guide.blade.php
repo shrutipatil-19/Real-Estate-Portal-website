@@ -24,7 +24,7 @@
         <div class="lg:py-28 py-14  lg:grid grid-cols-2 gap-8">
 
             <div class="block lg:hidden mb-[14px]">
-                <img src="{{ Storage::url($buyersGuide->image) }}" alt="" class="w-full h-auto">
+                <img src="{{ asset('storage/' . $buyersGuide->image) }}" alt="" class="w-full h-auto">
             </div>
 
 
@@ -43,7 +43,7 @@
 
 
             <div>
-                <img src="{{ Storage::url($buyersGuide->image) }}" alt="" class="w-full h-full hidden lg:block">
+                <img src="{{ asset('storage/' . $buyersGuide->image) }}" alt="" class="w-full h-full hidden lg:block">
             </div>
 
         </div>

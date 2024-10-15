@@ -46,7 +46,9 @@ class TestimonialResource extends Resource
                 Repeater::make('testimonial_images_details')
                 ->label('Testimonial Details')
                     ->schema([
-                        FileUpload::make('image'),
+                        FileUpload::make('image')
+                        ->directory('testimonial_images_details')
+                        ->image(),
                         Textarea::make('description'),
                         TextInput::make('name'),
                         TextInput::make('occupation'),

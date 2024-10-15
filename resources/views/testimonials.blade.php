@@ -33,7 +33,7 @@
                         <div class="flex flex-col lg:flex-row items-center lg:items-start">
                             <!-- Testimonial Image (circle) -->
                             <div class="w-[180px] h-[180px] lg:w-[371px] lg:h-[371px] rounded-full border-4 border-white overflow-hidden flex-shrink-0">
-                                <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}" class="w-full h-full object-cover">
+                                <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}" class="w-full h-full object-cover">
                             </div>
 
 

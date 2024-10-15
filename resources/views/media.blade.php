@@ -28,7 +28,7 @@
                     @foreach ($media as $mediaValue)
                         <div class="bg-white flex gap-3">
                             <img class="w-[100px] h-auto object-cover"
-                                src="{{ Storage::url($mediaValue->image) ?? 'https://via.placeholder.com/150x150' }}"
+                                src="{{ asset('storage/' . $mediaValue->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image" style="height: 90px;">
                             <div class="">
                                 <h4 class="text-lg text-[#3C3B3B]">{{ $mediaValue->title }}</h4>
@@ -42,7 +42,7 @@
                     @foreach ($mediaLimit as $mediaLimitValue)
                         <div class="bg-white flex gap-5">
                             <img class="w-full h-[166px] object-cover"
-                                src="{{ Storage::url($mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
+                                src="{{ asset('storage/' . $mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image">
                             <div class="">
                                 <h4 class="text-2xl text-[#3C3B3B] mb-2">{{ $mediaLimitValue->title }}</h4>
@@ -88,7 +88,7 @@
                     @foreach ($mediaLimit as $mediaLimitValue)
                         <div class="bg-white">
                             <img class="w-full h-44 object-cover"
-                                src="{{ Storage::url($mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
+                                src="{{ asset('storage/' . $mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image">
 
                             <h4 class="text-lg mb-2 text-[#3C3B3B]">{{ $mediaLimitValue->title }}</h4>

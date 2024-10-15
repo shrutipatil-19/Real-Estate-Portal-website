@@ -5,7 +5,7 @@
 
     <section id="banner" class="relative lg:h-screen  h-[800px] overflow-hidden">
         <!-- Background Image -->
-        <img src="{{ Storage::url($banner->banner_image) }}" alt="banner" class="w-full h-full object-cover">
+        <img src="{{ asset('storage/' . $banner->banner_image) }}" alt="banner" class="w-full h-full object-cover">
 
         <!-- Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/70">
@@ -31,7 +31,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-[42px] items-center">
                 <!-- Image Section -->
                 <div>
-                    <img src="{{ Storage::url($about_us->aboutUsImage) }}" alt="About Us Image" class="w-full lg:h-[574px] h-[387px]">
+                    <img src="{{ asset('storage/' . $about_us->aboutUsImage) }}" alt="About Us Image" class="w-full lg:h-[574px] h-[387px]">
                 </div>
 
                 <!-- Content Section -->
@@ -120,7 +120,7 @@
                 @foreach ($projects as $project)
                     <div class="group relative">
                         <!-- Project Image -->
-                        <img src="{{ Storage::url($project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] lg:group-hover:brightness-50 lg:transition lg:duration-500">
+                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] lg:group-hover:brightness-50 lg:transition lg:duration-500">
 
                         <!-- Hidden Info Section for Larger Screens -->
                         <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 lg:group-hover:opacity-100 lg:transition lg:duration-700" aria-hidden="true">
@@ -175,7 +175,7 @@
 
     <section class="lg:mt-28 mt-14">
         <div class="w-full lg:h-[586px] h-[208px] bg-fixed bg-no-repeat bg-cover"
-            style="background-image: url({{ Storage::url($parallaxEffect->image) }});">
+            style="background-image: url({{ asset('storage/' . $parallaxEffect->image) }});">
             <div class="flex flex-col items-center text-center justify-center text-white lg:space-y-6 space-y-3">
                 <h1 class="text-base lg:text-[42px] font-bold lg:mt-56 mt-[66px]">
                     {{ $parallaxEffect->heading }}
@@ -206,7 +206,7 @@
                     <div class="swiper-slide flex flex-col items-center justify-center">
                         <!-- Image wrapped in a circle -->
                         <div class="w-[216px] h-[216px] rounded-full  flex items-center justify-center">
-                            <img src="{{ Storage::url($achievement['image']) }}" alt="{{ $achievement['image_title'] }}"
+                            <img src="{{ asset('storage/' . $achievement['image']) }}" alt="{{ $achievement['image_title'] }}"
                                 class="w-full h-full object-cover rounded-full">
                         </div>
                         <!-- Title -->
@@ -242,7 +242,7 @@
                     <div class="swiper-slide bg-white lg:p-10 p-2 lg:space-x-10 space-x-8 space-y-[18px] relative">
                         <!-- Testimonial Image (circle) -->
                         <div class="lg:w-28 w-[52px] lg:h-28 h-[52px] rounded-full overflow-hidden  absolute lg:-top-16 -top-[26px]">
-                            <img src="{{ Storage::url($item['image']) }}" alt="{{ $item['name'] }}"
+                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}"
                                 class="w-full h-full object-cover">
                         </div>
 
@@ -299,7 +299,7 @@
                 @foreach ($media as $key => $value)
                     <div class="bg-white  hidden lg:block">
                         <img
-                            src="{{ $value->image ? Storage::url($value->image) : 'https://via.placeholder.com/600x400' }}"
+                            src="{{ $value->image ? asset('storage/' . $value->image) : 'https://via.placeholder.com/600x400' }}"
                             alt="Media Image" class="w-full  h-[300px]">
 
                         <div class="mt-4">
@@ -315,7 +315,7 @@
 
                     <div class="bg-white block lg:hidden">
                         <img
-                            src="{{ $media[0]->image ? Storage::url($media[0]->image) : 'https://via.placeholder.com/600x400' }}"
+                            src="{{ $media[0]->image ? asset('storage/' . $media[0]->image) : 'https://via.placeholder.com/600x400' }}"
                             alt="Media Image" class="w-full  h-[300px]">
 
                         <div class="mt-4">
@@ -334,7 +334,7 @@
                     @foreach ($mediaLimit as $mediaLimitValue)
                         <div class="bg-white flex space-x-4">
                             <img class="w-36 lg:h-36 lg:[111px] object-cover"
-                                src="{{ Storage::url($mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
+                                src="{{ asset('storage/' . $mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image">
                             <div class="">
                                 <h4 class="text-lg mb-2 text-customGray">{{ Str::limit($mediaLimitValue->title, 40) }}</h4>
@@ -350,7 +350,7 @@
                     {{-- @foreach ($mediaLimit1 as $mediaLimitValue) --}}
                         <div class="bg-white flex space-x-4">
                             <img class="w-36 lg:h-36 h-[111px] object-cover"
-                                src="{{ Storage::url($mediaLimit1->image) ?? 'https://via.placeholder.com/150x150' }}"
+                                src="{{ asset('storage/' . $mediaLimit1->image) ?? 'https://via.placeholder.com/150x150' }}"
                                 alt="Media Image">
                             <div class="">
                                 <h4 class="text-base mb-2 text-customGray">{{ Str::limit($mediaLimit1->title, 30) }}</h4>

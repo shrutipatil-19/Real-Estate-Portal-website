@@ -34,6 +34,7 @@ class ParallaxEffectResource extends Resource
                     ->description('')
                     ->schema([
                         Forms\Components\FileUpload::make('image')
+                            ->directory('parallax_effect_image')
                             ->image()
                             ->required(),
                         Forms\Components\Textarea::make('heading')
