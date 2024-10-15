@@ -2,8 +2,15 @@
 @section('title', 'Media Details')
 @section('content')
 
-    <div class="relative">
+    {{-- <div class="relative">
         <img src="{{ asset('storage/' . $media->image) }}" alt="Media Banner" class="mx-auto w-screen h-[317px] bg-cover bg-center">
+    </div> --}}
+    <div class="relative">
+        <img src="img/Media.png" alt="Media Banner" class="mx-auto w-full lg:h-auto h-[177px] object-cover">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
+            <h1 class="text-2xl xl:text-[40px] font-bold lg:mb-3 mb-[6px]">Media</h1>
+            <span class="text-base xl:text-2xl text-center">Lorem ipsum dolor sit amet consectetur.</span>
+        </div>
     </div>
 
 
@@ -14,7 +21,7 @@
                 <path d="M6.66667 6.9852L0 13.3488L0.651163 14L8 6.9852L0.651163 0L0 0.621565L6.66667 6.9852Z"
                     fill="#3C3B3B" />
             </svg>
-            <span class="lg:text-base text-sm text-customGray">Media Details</span>
+            <span class="lg:text-base text-sm text-customGray">Media</span>
         </div>
 
         <div class="mt-14 xl:mt-28">
