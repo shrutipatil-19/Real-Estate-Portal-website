@@ -85,10 +85,10 @@
 
 <section class="lg:mb-28 mb-14">
     @if(isset($aboutUsSection->parallax_effect_image))
-    <div class="w-full lg:h-[586px] h-[208px] bg-fixed bg-no-repeat bg-cover flex items-center justify-center"
-        style="background-image: url({{ asset('storage/' . $aboutUsSection->parallax_effect_image) }});">
+    <div class="w-full lg:h-[586px] h-[300px] bg-fixed bg-no-repeat bg-cover flex items-center justify-center"
+        style="background-image: url({{ asset('storage/' . $aboutUsSection->parallax_effect_image) }}); padding: 50px;">
         <div class="text-center text-white">
-            <p class="text-base lg:text-[42px] lg:w-[922px] w-[322px] lg:leading-[47.72px] leading-[18.18px]">
+            <p class="text-base lg:text-[35px] lg:w-[1122px] w-[322px] lg:leading-[47.72px] leading-[18.18px]">
                 {{ $aboutUsSection->parallax_effect_heading }}
             </p>
         </div>
@@ -98,48 +98,48 @@
 
 
 
-<section id="Achievements" class="container mx-auto lg:px-16 px-4">
-    <div class="flex flex-col items-center justify-center">
-        <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray mb-3">
-            Meet Our Team
-        </span>
-        <div class="flex items-center justify-center text-center text-[#666666] lg:text-2xl text-base lg:mb-[42px] mb-6">
-            {{ $aboutUsSection->meet_our_team_heading ?? '' }}
-        </div>
-    </div>
-    <div class="swiper lg:mb-14 mb-7">
+<!--<section id="Achievements" class="container mx-auto lg:px-16 px-4">-->
+<!--    <div class="flex flex-col items-center justify-center">-->
+<!--        <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray mb-3">-->
+<!--            Meet Our Team-->
+<!--        </span>-->
+<!--        <div class="flex items-center justify-center text-center text-[#666666] lg:text-2xl text-base lg:mb-[42px] mb-6">-->
+<!--            {{ $aboutUsSection->meet_our_team_heading ?? '' }}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="swiper lg:mb-14 mb-7">-->
         <!-- Wrapper -->
-        <div class="swiper-wrapper">
+<!--        <div class="swiper-wrapper">-->
             <!-- Slides -->
 
-            @foreach ($aboutUsSection->meet_our_team_details as $meet_our_team)
-                <div class="swiper-slide flex flex-col items-center justify-center">
+<!--            @foreach ($aboutUsSection->meet_our_team_details as $meet_our_team)-->
+<!--                <div class="swiper-slide flex flex-col items-center justify-center">-->
                     <!-- Image wrapped in a circle -->
-                    <div class="w-[216px] h-[216px] rounded-full bg-gray-300 flex items-center justify-center">
-                        <img src="{{ asset('storage/' . $meet_our_team['images']) }}" alt="{{ $meet_our_team['images'] }}"
-                            class="w-full h-full object-cover rounded-full">
-                    </div>
+<!--                    <div class="w-[216px] h-[216px] rounded-full bg-gray-300 flex items-center justify-center">-->
+<!--                        <img src="{{ asset('storage/' . $meet_our_team['images']) }}" alt="{{ $meet_our_team['images'] }}"-->
+<!--                            class="w-full h-full object-cover rounded-full">-->
+<!--                    </div>-->
                     <!-- Title -->
-                    <span class="mt-3 mb-[6px] text-lg font-semibold text-customGray">{{ $meet_our_team['name'] }}</span>
+<!--                    <span class="mt-3 mb-[6px] text-lg font-semibold text-customGray">{{ $meet_our_team['name'] }}</span>-->
                     <!-- Subtitle -->
-                    <span class="text-[#666666]">{{ $meet_our_team['designation'] }}</span>
-                </div>
-            @endforeach
+<!--                    <span class="text-[#666666]">{{ $meet_our_team['designation'] }}</span>-->
+<!--                </div>-->
+<!--            @endforeach-->
 
-        </div>
+<!--        </div>-->
         <!-- Navigation buttons -->
-        <div class="flex justify-center items-center mt-10 space-x-10 block lg:hidden">
-            <div class="swiper-button-prev bg-white border border-primary cursor-pointer">
+<!--        <div class="flex justify-center items-center mt-10 space-x-10 block lg:hidden">-->
+<!--            <div class="swiper-button-prev bg-white border border-primary cursor-pointer">-->
                 <!-- Previous button content -->
-            </div>
-            <div class="swiper-button-next bg-white border border-primary cursor-pointer">
+<!--            </div>-->
+<!--            <div class="swiper-button-next bg-white border border-primary cursor-pointer">-->
                 <!-- Next button content -->
-            </div>
-        </div>
+<!--            </div>-->
+<!--        </div>-->
 
-    </div>
+<!--    </div>-->
 
-</section>
+<!--</section>-->
 
 
 

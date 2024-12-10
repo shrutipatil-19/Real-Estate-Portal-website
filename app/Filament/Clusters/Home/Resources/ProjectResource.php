@@ -2,19 +2,16 @@
 
 namespace App\Filament\Clusters\Home\Resources;
 
-use App\Filament\Clusters\Home;
-use App\Filament\Clusters\Home\Resources\ProjectResource\Pages;
-use App\Filament\Clusters\Home\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
+use App\Filament\Clusters\Home\Resources\ProjectResource\Pages;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProjectResource extends Resource
 {
@@ -24,97 +21,104 @@ class ProjectResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-
-    // protected static ?string $cluster = Home::class;
-
-    public static function form(Form $form): Form
+    public static function form(Forms\Form $form): Forms\Form
     {
-        return $form
-            ->schema([
-                Section::make('Project')
-                    ->description('')
-                    ->schema([
-                        Forms\Components\TextInput::make('name')
-                            ->required()
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('location')
-                            ->required()
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('price')
-                            ->required()
-                            ->maxLength(255),
-                        Select::make('status')
-                            ->options([
-                                'Ongoing' => 'Ongoing',
-                                'Completed' => 'Completed',
-                                'Upcoming' => 'Upcoming',
-                            ])
-                            ->native(false),
-                        Forms\Components\FileUpload::make('image')
-                            ->directory('project_image')
-                            ->image()
-                            ->required()
-                            ->columnSpanFull(),
+        return $form->schema([
+            Section::make('Project')
+                ->description('Manage project details')
+                ->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->label('Project Name')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\TextInput::make('location')
+                        ->label('Location')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\TextInput::make('link')
+                        ->label('Project Link')
+                        ->url()
+                        ->placeholder('https://example.com')
+                        ->maxLength(255),
+                    Forms\Components\TextInput::make('price')
+                        ->label('Price')
+                        ->maxLength(255),
+                    Select::make('status')
+                        ->label('Status')
+                        ->options([
+                            'Ongoing' => 'Ongoing',
+                            'Completed' => 'Completed',
+                            'Upcoming' => 'Upcoming',
+                        ])
+                        ->native(false),
                         Select::make('priority')
-                            ->options([
-                                '1' => '1',
-                                '2' => '2',
-                                '3' => '3',
-                                '4' => '4',
-                                '5' => '5',
-                                '6' => '6',
-                                '7' => '7',
-                                '8' => '8',
-                                '9' => '9',
-                                '10' => '10',
-                            ])
-                            ->native(false),
-
-                    ])
-                    ->columns(2),
-            ]);
+                        ->label('Priority')
+                        ->options(array_combine(range(1, 10), range(1, 10)))
+                        ->native(false),
+                    Repeater::make('images')
+                        ->label('Project Images')
+                        ->schema([
+                            FileUpload::make('image')
+                                ->label('Image')
+                                ->directory('project_images')
+                                ->image()
+                                ->required()
+                                // ->maxSize(2048), // Optional: Limit size to 2MB
+                        ])
+                        ->columns(1)
+                        ->collapsible()
+                        
+                    
+                ])->columns(2),
+        ]);
     }
 
     public static function table(Table $table): Table
     {
-        return $table
-            ->columns([
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('location')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('price')
-                    ->searchable(),
-                // Tables\Columns\TextColumn::make('priority')
-                //     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+        return $table->columns([
+           Tables\Columns\ImageColumn::make('images')
+    ->label('Images')
+    ->getStateUsing(fn($record) => 
+        !empty($record->images) && isset($record->images[0]['image']) 
+        ? asset('storage/' . $record->images[0]['image']) 
+        : asset('storage/default-image.png')
+    ),
+            Tables\Columns\TextColumn::make('name')
+                ->label('Project Name')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('location')
+                ->label('Location')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('link')
+                ->label('Link')
+                ->url(fn ($record) => $record->link) // Make it clickable
+                ->openUrlInNewTab(),
+            Tables\Columns\TextColumn::make('price')
+                ->label('Price')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('created_at')
+                ->label('Created At')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+            Tables\Columns\TextColumn::make('updated_at')
+                ->label('Updated At')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+        ])
+        ->filters([])
+        ->actions([
+            Tables\Actions\EditAction::make(),
+        ])
+        ->bulkActions([
+            Tables\Actions\DeleteBulkAction::make(),
+        ]);
     }
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

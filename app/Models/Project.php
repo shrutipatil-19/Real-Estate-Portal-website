@@ -10,17 +10,32 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'price', 'location', 'status', 'image', 'priority'];
+   
+    protected $fillable = ['name', 'price', 'location', 'link', 'status','images', 'priority'];
 
-    public function setImageAttribute($value)
-    {
-        // Check if this is an update (i.e., the model already exists in the database)
-        if ($this->exists && $this->image && $value !== $this->image) {
-            // Delete the old image, making sure to include the correct path
-            Storage::disk('public')->delete($this->image);
-        }
+    // Ensure the 'images' field is treated as an array
+    protected $casts = [
+        'images' => 'array', // Cast to array for easy handling
+    ];
 
-        // Save the new image path (only the filename is stored in the database)
-        $this->attributes['image'] = $value;
-    }
+    // Optional: Handle the uploading/deletion of images when updating
+    // public function setImagesAttribute($value)
+    // {
+    //     if ($this->exists && isset($this->attributes['images'])) {
+    //         // If this is an update, we check if the images have changed
+    //         $oldImages = $this->images;
+
+    //         // Delete old images if new images are uploaded
+    //         if ($oldImages) {
+    //             foreach ($oldImages as $image) {
+    //                 if (Storage::disk('public')->exists($image)) {
+    //                     Storage::disk('public')->delete($image);
+    //                 }
+    //             }
+    //         }
+    //     }
+
+    //     // Store the new images (assuming the repeater field returns an array of image paths)
+    //     $this->attributes['images'] = $value;
+    // }
 }

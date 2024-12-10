@@ -24,9 +24,9 @@
         <div class="lg:mt-[112px] mt-[56px]">
             <h1 class="lg:text-[42px] text-2xl font-bold text-customGray">Get In Touch</h1>
 
-            <div class="lg:flex items-center lg:px-24 justify-between lg:mt-[42px] mt-6 lg:space-y-0 space-y-8">
+            <div class="lg:flex lg:px-24 justify-between lg:mt-[42px] mt-6 lg:space-y-0 space-y-8">
                 <!-- Stat 1 -->
-                <div class="flex items-center">
+                <div class="flex" style="width:250px">
                     <div class="">
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@
                 </div>
 
                 <!-- Stat 2 -->
-                <div class="flex items-center">
+                <div class="flex" style="width:250px">
                     <div class="">
                         <svg width="21" height="28" viewBox="0 0 21 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
                 </div>
 
                 <!-- Stat 3 -->
-                <div class="flex items-center">
+                <div class="flex" style="width:250px">
                     <div class="">
                         <svg width="27" height="22" viewBox="0 0 27 22" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

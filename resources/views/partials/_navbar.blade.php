@@ -9,7 +9,7 @@
                 <path d="M3.23438 5.4165L12.7081 15.1665L22.1817 5.4165" stroke="#3C3B3B" stroke-linecap="round"
                     stroke-linejoin="round" />
             </svg>
-            <a href="mailto:info@Loremipsum.com">info@Loremipsum.com</a>
+            <a href="mailto:info@adcoredevelopers.com">info@adcoredevelopers.com</a>
         </div>
 
         <!-- Mobile Menu Toggle Button -->
@@ -28,7 +28,8 @@
 
         <div class="flex items-center">
             <!-- Phone Number for Mobile View -->
-            <a href="tel:+917408215579" class="hidden lg:block text-xl text-customGray">(+91) 740 821 55 79</a>
+            <a href="tel: +912266332229" class="hidden lg:block text-xl text-customGray">(+91) 22 66332229
+</a>
 
             <!-- SVG Icon, shown on desktop view -->
             <a href="tel:+917408215579">
@@ -99,18 +100,24 @@
             </li>
 
             <!-- Buyer's Guide Link -->
-            <li class="{{ request()->routeIs('buyers_guide.index') ? 'bg-[#2A4D69] px-2 py-2' : 'px-2 py-1.5' }}">
-                <a href="{{ route('buyers_guide.index') }}"
-                    class="{{ request()->routeIs('buyers_guide.index') ? 'text-white px-1 py-8' : 'text-customGray hover:text-customGray' }}">
-                    Buyer's Guide
-                </a>
-            </li>
+            <!--<li class="{{ request()->routeIs('buyers_guide.index') ? 'bg-[#2A4D69] px-2 py-2' : 'px-2 py-1.5' }}">-->
+            <!--    <a href="{{ route('buyers_guide.index') }}"-->
+            <!--        class="{{ request()->routeIs('buyers_guide.index') ? 'text-white px-1 py-8' : 'text-customGray hover:text-customGray' }}">-->
+            <!--        Buyer's Guide-->
+            <!--    </a>-->
+            <!--</li>-->
 
             <!-- Media Link -->
             <li class="{{ request()->routeIs('media.index') ? 'bg-[#2A4D69] px-2 py-1.5' : 'px-2 py-1.5' }}">
-                <a href="{{ route('media.index') }}"
+                <a href=""
                     class="{{ request()->routeIs('media.index') ? 'text-white px-1 py-8' : 'text-customGray hover:text-customGray' }}">
-                    Media
+                    Gallery
+                </a>
+            </li>
+             <li class="{{ request()->routeIs('media.index') ? 'bg-[#2A4D69] px-2 py-1.5' : 'px-2 py-1.5' }}">
+                <a href=""
+                    class="{{ request()->routeIs('media.index') ? 'text-white px-1 py-8' : 'text-customGray hover:text-customGray' }}">
+                    Contact 
                 </a>
             </li>
         </ul>
@@ -126,7 +133,7 @@
                     <path d="M3.23438 5.4165L12.7081 15.1665L22.1817 5.4165" stroke="#3C3B3B" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span class="text-center">info@Loremipsum.com</span>
+                <span class="text-center"> info@adcoredevelopers.com</span>
             </a>
         </div>
     </div>
@@ -152,9 +159,9 @@
             </div>
         </div>
         <div class="relative">
-            <a href="{{ route('buyers_guide.index') }}"
+            <a href=""
                 class="text-customGray hover:text-customGray-900 inline-flex items-center">
-                Buyers Guide
+                Gallery
             </a>
             <!-- Dropdown -->
             <div class="absolute hidden bg-white shadow-lg mt-2 py-2 w-40 text-sm text-customGray">
@@ -162,7 +169,7 @@
                 <a href="#" class="block px-4 py-2 hover:bg-gray-100">Guide 2</a>
             </div>
         </div>
-        <a href="{{ route('media.index') }}" class="text-customGray hover:text-customGray-900">Media</a>
+        <a href="{{route('ContactUs.index')}}" class="text-customGray hover:text-customGray-900">Contact </a>
     </div>
 
 

@@ -10,18 +10,18 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('location');
-            $table->string('price');
-            $table->string('status')->nullable();
-            $table->text('image');
-            $table->timestamps();
-        });
-    }
-
+{
+    Schema::create('projects', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('location');
+        $table->string('link')->nullable(); // Add link column here
+        $table->string('price')->nullable();
+        $table->string('status')->nullable();
+        $table->json('image')->nullable(); // Store multiple image URLs
+        $table->timestamps();
+    });
+}
     /**
      * Reverse the migrations.
      */

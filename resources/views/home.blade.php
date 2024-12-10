@@ -51,40 +51,40 @@
 
 
                     <!-- Stats Section -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-1 gap-3">
+                    <!--<div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-1 gap-3">-->
                         <!-- Stat 1 -->
-                        <div class="flex items-center">
-                            <div class="lg:w-16 w-12 lg:h-16 h-12">
-                                <img src="img/recommendation2.png" alt="" class="bg-center">
-                            </div>
-                            <div class="ml-4 text-customGray font-bold">
-                                <p class="lg:text-[32px] text-2xl font-bold">{{ $about_us->year_of_experience }} +</p>
-                                <p class="text-sm">Years of Experience</p>
-                            </div>
-                        </div>
+                    <!--    <div class="flex items-center">-->
+                    <!--        <div class="lg:w-16 w-12 lg:h-16 h-12">-->
+                    <!--            <img src="img/recommendation2.png" alt="" class="bg-center">-->
+                    <!--        </div>-->
+                    <!--        <div class="ml-4 text-customGray font-bold">-->
+                    <!--            <p class="lg:text-[32px] text-2xl font-bold">{{ $about_us->year_of_experience }} +</p>-->
+                    <!--            <p class="text-sm">Years of Experience</p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
 
                         <!-- Stat 2 -->
-                        <div class="flex items-center">
-                            <div class="lg:w-16 w-12 lg:h-16 h-12">
-                                <img src="img/customer-service2.png" alt="" class=" bg-center">
-                            </div>
-                            <div class="ml-4 text-customGray font-bold">
-                                <p class="lg:text-[32px] text-2xl font-bold text-customGray">{{ $about_us->projects_completed }} +</p>
-                                <p class="text-sm">Projects Completed</p>
-                            </div>
-                        </div>
+                    <!--    <div class="flex items-center">-->
+                    <!--        <div class="lg:w-16 w-12 lg:h-16 h-12">-->
+                    <!--            <img src="img/customer-service2.png" alt="" class=" bg-center">-->
+                    <!--        </div>-->
+                    <!--        <div class="ml-4 text-customGray font-bold">-->
+                    <!--            <p class="lg:text-[32px] text-2xl font-bold text-customGray">{{ $about_us->projects_completed }} +</p>-->
+                    <!--            <p class="text-sm">Projects Completed</p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
 
                         <!-- Stat 3 -->
-                        <div class="flex items-center">
-                            <div class="lg:w-16 w-12 lg:h-16 h-12">
-                                <img src="img/sold.png" alt="" class="bg-center">
-                            </div>
-                            <div class="ml-4 text-customGray font-bold">
-                                <p class="lg:text-[32px] text-2xl font-bold">{{ $about_us->awards_won }} +</p>
-                                <p class="text-sm">Awards Won</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!--    <div class="flex items-center">-->
+                    <!--        <div class="lg:w-16 w-12 lg:h-16 h-12">-->
+                    <!--            <img src="img/sold.png" alt="" class="bg-center">-->
+                    <!--        </div>-->
+                    <!--        <div class="ml-4 text-customGray font-bold">-->
+                    <!--            <p class="lg:text-[32px] text-2xl font-bold">{{ $about_us->awards_won }} +</p>-->
+                    <!--            <p class="text-sm">Awards Won</p>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
                 </div>
             </div>
         </section>
@@ -116,60 +116,99 @@
             </div> --}}
 
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-y-10 lg:gap-12 lg:mt-0 mt-[32px] lg:mb-0 mb-3 lg:py-[42px]">
-                @foreach ($projects as $project)
-                    <div class="group relative">
-                        <!-- Project Image -->
-                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] lg:group-hover:brightness-50 lg:transition lg:duration-500">
 
-                        <!-- Hidden Info Section for Larger Screens -->
-                        <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 lg:group-hover:opacity-100 lg:transition lg:duration-700" aria-hidden="true">
-                            <div class="bg-white text-center p-8 h-[194px]">
-                                <span class="block text-[22px] text-customGray">{{ $project->name }}</span>
-                                <div class="flex items-center justify-center gap-1 text-[#727272] text-base my-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                                    </svg>
-                                    {{ $project->location }}
-                                </div>
-                                <span class="block text-xl text-customGray font-bold flex items-center justify-center gap-1">
-                                    <span class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Info Section for Smaller Screens -->
-                    <div class="block md:hidden w-full bg-white text-center mt-3 mb-4">
-                        <span class="block text-xl text-customGray">{{ $project->name }}</span>
-                        <div class="flex items-center justify-center gap-1 text-customBorder text-sm">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-y-10 lg:gap-10 lg:mt-0 mt-[32px] lg:mb-0 mb-3 lg:py-[42px]">
+    @foreach ($projects as $key => $project)
+        <div class="group relative">
+            <!-- Project Image -->
+            <a 
+                href="{{ $project->link ? $project->link : 'javascript:void(0);' }}" 
+                class="group relative block img-height cursor-pointer"
+                onclick="{{ !$project->link ? 'openPopup(' . $project->id . ', ' . json_encode($project->images) . ', \'' . $project->name . '\', \'' . $project->location . '\', \'' . $project->price . '\')' : '' }}"
+            >
+                @if(count($project->images) > 0)
+                    <img src="{{ asset('storage/' . $project->images[0]['image'] )}}" alt="{{ $project->location }}" class="object-cover object-center w-full lg:h-auto h-[255px] lg:group-hover:brightness-50 lg:transition lg:duration-500">
+                @else
+                    <img src="{{ asset('storage/default-image.jpg') }}" alt="Default Project Image" class="object-cover object-center w-full lg:h-auto h-[255px] lg:group-hover:brightness-50 lg:transition lg:duration-500">
+                @endif
+                <!-- Hidden Info Section for Larger Screens -->
+                <div class="hidden md:flex absolute inset-0 items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700" aria-hidden="true">
+                    <div class="bg-white text-center p-8 h-[194px]">
+                        <span class="block text-[22px] text-customGray">{{ $project->name }}</span>
+                        <div class="flex items-center justify-center gap-1 text-customBorder text-base my-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                             </svg>
                             {{ $project->location }}
                         </div>
-                        <span class="block text-base text-customGray font-bold flex items-center justify-center gap-1">
-                            <span class="mt-1 font-normal">₹</span>{{ $project->price ? $project->price . ' onwards' : '' }}
+                        <span class="block text-xl text-customGray font-bold flex items-center justify-center gap-1">
+                            <span class="mt-1 font-normal"></span>{{ $project->price ? $project->price . ' onwards' : '' }}
                         </span>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            </a>
+        </div>
+    @endforeach
+</div>
 
-            <div class="flex flex-col items-center justify-center">
-                <a href="/projects"
-                    class="bg-primary text-white lg:h-[48px] h-[44px] font-bold px-6 flex lg:text-base text-sm items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
-                    View All Properties
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M11.6804 0.743386C11.8412 0.587538 12.059 0.5 12.2862 0.5C12.5133 0.5 12.7312 0.587538 12.8919 0.743386L19.7493 7.40115C19.9098 7.55719 20 7.76872 20 7.98925C20 8.20979 19.9098 8.42132 19.7493 8.57736L12.8919 15.2351C12.8134 15.3169 12.7188 15.3825 12.6137 15.428C12.5085 15.4734 12.395 15.4979 12.2799 15.4999C12.1648 15.5018 12.0505 15.4813 11.9438 15.4394C11.837 15.3976 11.7401 15.3353 11.6587 15.2562C11.5773 15.1772 11.5131 15.0831 11.47 14.9795C11.4269 14.8758 11.4057 14.7648 11.4078 14.6531C11.4098 14.5414 11.435 14.4312 11.4818 14.3291C11.5287 14.227 11.5962 14.1351 11.6804 14.0589L17.0749 8.82148H0.857175C0.629838 8.82148 0.411812 8.7338 0.251061 8.57772C0.0903092 8.42165 0 8.20997 0 7.98925C0 7.76854 0.0903092 7.55686 0.251061 7.40079C0.411812 7.24471 0.629838 7.15703 0.857175 7.15703H17.0749L11.6804 1.91959C11.5199 1.76355 11.4298 1.55203 11.4298 1.33149C11.4298 1.11095 11.5199 0.899427 11.6804 0.743386Z"
-                            fill="white" />
-                    </svg>
 
-                </a>
+<!-- Popup Modal -->
+<div id="projectPopup" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+   <div class="relative bg-white p-4 pt-0 max-w-[40rem] w-full mx-auto w-[1000px] h-[600px]">
+     
+        <button 
+            class="absolute top-2 right-2 text-gray-600 text-4xl leading-6" style="line-height: 1.5rem !important; margin-top:-9px; margin-right:-10px;"
+            onclick="closePopup()"
+        >
+            &times;
+        </button>
+   
+        <!-- Image Slider -->
+        <div class="relative">
+           <img id="popupImage" src="" alt="Project Image" class="w-full h-[90%] p-[17px]">
+
+            <!-- Slider Controls -->
+            <button onclick="prevImage()" class="absolute left-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-800 p-2" style="margin-left:-12px;">
+                &lt;
+            </button>
+            <button onclick="nextImage()" class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white bg-gray-800 p-2" style="margin-right:-12px;">
+                &gt;
+            </button>
+           
+        </div>
+    <!-- Image Thumbnails -->
+         <div class="flex mt-4 mb-4 justify-center space-x-4 absolute -bottom-[7px]">
+            <div id="thumbnailContainer" class="flex space-x-4 ml-[18]">
+                <!-- Thumbnails will be dynamically added here -->
             </div>
+         </div>
+        <!-- Project Details -->
+        <div class="text-center mt-4">
+            <h3 id="popupName" class="text-2xl font-bold text-gray-800"></h3>
+            <p id="popupLocation" class="text-gray-600 mt-2"></p>
+            <p id="popupPrice" class="text-lg text-gray-800 font-bold mt-4"></p>
+        </div>
+
+     
+    </div>
+</div>
+
+
+
+            <!--<div class="flex flex-col items-center justify-center">-->
+            <!--    <a href="/projects"-->
+            <!--        class="bg-primary text-white lg:h-[48px] h-[44px] font-bold px-6 flex lg:text-base text-sm items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">-->
+            <!--        View All Properties-->
+            <!--        <svg width="20" height="16" viewBox="0 0 20 16" fill="none"-->
+            <!--            xmlns="http://www.w3.org/2000/svg">-->
+            <!--            <path fill-rule="evenodd" clip-rule="evenodd"-->
+            <!--                d="M11.6804 0.743386C11.8412 0.587538 12.059 0.5 12.2862 0.5C12.5133 0.5 12.7312 0.587538 12.8919 0.743386L19.7493 7.40115C19.9098 7.55719 20 7.76872 20 7.98925C20 8.20979 19.9098 8.42132 19.7493 8.57736L12.8919 15.2351C12.8134 15.3169 12.7188 15.3825 12.6137 15.428C12.5085 15.4734 12.395 15.4979 12.2799 15.4999C12.1648 15.5018 12.0505 15.4813 11.9438 15.4394C11.837 15.3976 11.7401 15.3353 11.6587 15.2562C11.5773 15.1772 11.5131 15.0831 11.47 14.9795C11.4269 14.8758 11.4057 14.7648 11.4078 14.6531C11.4098 14.5414 11.435 14.4312 11.4818 14.3291C11.5287 14.227 11.5962 14.1351 11.6804 14.0589L17.0749 8.82148H0.857175C0.629838 8.82148 0.411812 8.7338 0.251061 8.57772C0.0903092 8.42165 0 8.20997 0 7.98925C0 7.76854 0.0903092 7.55686 0.251061 7.40079C0.411812 7.24471 0.629838 7.15703 0.857175 7.15703H17.0749L11.6804 1.91959C11.5199 1.76355 11.4298 1.55203 11.4298 1.33149C11.4298 1.11095 11.5199 0.899427 11.6804 0.743386Z"-->
+            <!--                fill="white" />-->
+            <!--        </svg>-->
+
+            <!--    </a>-->
+            <!--</div>-->
         </section>
     </div>
 
@@ -180,7 +219,7 @@
                 <h1 class="text-base lg:text-[42px] font-bold lg:mt-56 mt-[66px]">
                     {{ $parallaxEffect->heading }}
                 </h1>
-                <p class="text-xs lg:text-2xl lg:w-[475.63px] w-[300px]">
+                <p class="text-xs lg:text-2xl lg:w-4/5 w-[300px]">
                     {{ $parallaxEffect->sub_heading }}
                 </p>
             </div>
@@ -188,202 +227,300 @@
     </section>
 
 
-    <section id="Achievements" class="container mx-auto lg:px-5 px-4 lg:py-28 py-14">
-        <div class="flex flex-col items-center justify-center mb-3">
-            <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray lg:mb-6 mb-[14px]">
-                Achievements
-            </span>
-            <div class="flex items-center justify-center text-center text-customGray lg:w-[604px] lg:text-2xl text-base">
-                {{ $achievement->heading }}
-            </div>
-        </div>
+    <!--<section id="Achievements" class="container mx-auto lg:px-5 px-4 lg:py-28 py-14">-->
+    <!--    <div class="flex flex-col items-center justify-center mb-3">-->
+    <!--        <span class="lg:text-[42px] text-2xl font-bold leading-tight tracking-tight text-center text-customGray lg:mb-6 mb-[14px]">-->
+    <!--            Achievements-->
+    <!--        </span>-->
+    <!--        <div class="flex items-center justify-center text-center text-customGray lg:w-[604px] lg:text-2xl text-base">-->
+    <!--            {{ $achievement->heading }}-->
+    <!--        </div>-->
+    <!--    </div>-->
 
-        <div class="swiper mt-[42px]">
+    <!--    <div class="swiper mt-[42px]">-->
             <!-- Wrapper -->
-            <div class="swiper-wrapper">
+    <!--        <div class="swiper-wrapper">-->
                 <!-- Slides -->
-                @foreach ($achievement->achievement_images_details as $achievement)
-                    <div class="swiper-slide flex flex-col items-center justify-center">
+    <!--            @foreach ($achievement->achievement_images_details as $achievement)-->
+    <!--                <div class="swiper-slide flex flex-col items-center justify-center">-->
                         <!-- Image wrapped in a circle -->
-                        <div class="w-[216px] h-[216px] rounded-full  flex items-center justify-center">
-                            <img src="{{ asset('storage/' . $achievement['image']) }}" alt="{{ $achievement['image_title'] }}"
-                                class="w-full h-full object-cover rounded-full">
-                        </div>
+    <!--                    <div class="w-[216px] h-[216px] rounded-full  flex items-center justify-center">-->
+    <!--                        <img src="{{ asset('storage/' . $achievement['image']) }}" alt="{{ $achievement['image_title'] }}"-->
+    <!--                            class="w-full h-full object-cover rounded-full">-->
+    <!--                    </div>-->
                         <!-- Title -->
-                        <span class="mt-3 lg:text-lg text-base font-semibold text-customGray">{{ $achievement['image_title'] }}</span>
+    <!--                    <span class="mt-3 lg:text-lg text-base font-semibold text-customGray">{{ $achievement['image_title'] }}</span>-->
                         <!-- Subtitle -->
-                        <span class="text-customBorder mt-[6px] lg:text-base text-sm">{{ $achievement['image_sub_title'] }}</span>
-                    </div>
-                @endforeach
-            </div>
+    <!--                    <span class="text-customBorder mt-[6px] lg:text-base text-sm">{{ $achievement['image_sub_title'] }}</span>-->
+    <!--                </div>-->
+    <!--            @endforeach-->
+    <!--        </div>-->
             <!-- Navigation buttons -->
-            <div class="flex justify-center items-center mt-14 space-x-10">
-                <div class="swiper-button-prev bg-white border border-primary  cursor-pointer">
+    <!--        <div class="flex justify-center items-center mt-14 space-x-10">-->
+    <!--            <div class="swiper-button-prev bg-white border border-primary  cursor-pointer">-->
 
-                </div>
-                <div class="swiper-button-next bg-white border border-primary  cursor-pointer">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--            </div>-->
+    <!--            <div class="swiper-button-next bg-white border border-primary  cursor-pointer">-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
 
-    <section id="Testimonials" class="bg-cover bg-center overflow-hidden h-531 md:h-auto"
-        style="background-image: url('{{ asset('img/testimonial.png') }}');">
+    <!--<section id="Testimonials" class="bg-cover bg-center overflow-hidden h-531 md:h-auto"-->
+    <!--    style="background-image: url('{{ asset('img/testimonial.png') }}');">-->
 
-        <div class="text-center mt-[61px]">
-            <h2 class="lg:text-[42px] text-2xl font-bold text-customGray">Testimonials</h2>
-            <p class="mt-6 text-customGray lg:w-[1214px] mx-auto lg:text-2xl text-base">{{ $testimonial->heading }}</p>
-        </div>
+    <!--    <div class="text-center mt-[61px]">-->
+    <!--        <h2 class="lg:text-[42px] text-2xl font-bold text-customGray">Testimonials</h2>-->
+    <!--        <p class="mt-6 text-customGray lg:w-[1214px] mx-auto lg:text-2xl text-base">{{ $testimonial->heading }}</p>-->
+    <!--    </div>-->
 
         <!-- Swiper Slider -->
-        <div class="swiper swiper_testimonial lg:py-28 py-12 container mx-auto lg:px-16 px-4">
-            <div class="swiper-wrapper">
-                @foreach ($testimonial->testimonial_images_details as $item)
-                    <div class="swiper-slide bg-white lg:p-10 p-2 lg:space-x-10 space-x-8 space-y-[18px] relative">
+    <!--    <div class="swiper swiper_testimonial lg:py-28 py-12 container mx-auto lg:px-16 px-4">-->
+    <!--        <div class="swiper-wrapper">-->
+    <!--            @foreach ($testimonial->testimonial_images_details as $item)-->
+    <!--                <div class="swiper-slide bg-white lg:p-10 p-2 lg:space-x-10 space-x-8 space-y-[18px] relative">-->
                         <!-- Testimonial Image (circle) -->
-                        <div class="lg:w-28 w-[52px] lg:h-28 h-[52px] rounded-full overflow-hidden  absolute lg:-top-16 -top-[26px]">
-                            <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}"
-                                class="w-full h-full object-cover">
-                        </div>
+    <!--                    <div class="lg:w-28 w-[52px] lg:h-28 h-[52px] rounded-full overflow-hidden  absolute lg:-top-16 -top-[26px]">-->
+    <!--                        <img src="{{ asset('storage/' . $item['image']) }}" alt="{{ $item['name'] }}"-->
+    <!--                            class="w-full h-full object-cover">-->
+    <!--                    </div>-->
 
                         <!-- Testimonial Content -->
-                        <p class="text-customGray lg:text-lg text-xs leading-8">{{ $item['description'] }}</p>
+    <!--                    <p class="text-customGray lg:text-lg text-xs leading-8">{{ $item['description'] }}</p>-->
 
-                        <div class="border-b  border-customBorder opacity-15"></div>
+    <!--                    <div class="border-b  border-customBorder opacity-15"></div>-->
 
                         <!-- Testimonial Author -->
-                        <div class="flex justify-between pb-5 items-center">
-                            <div>
-                                <span class="font-semibold lg:text-base text-sm text-customGray mb-1">{{ $item['name'] }}</span><br>
-                                <span class="text-customBorder lg:text-sm text-xs">{{ $item['occupation'] }}</span>
-                            </div>
+    <!--                    <div class="flex justify-between pb-5 items-center">-->
+    <!--                        <div>-->
+    <!--                            <span class="font-semibold lg:text-base text-sm text-customGray mb-1">{{ $item['name'] }}</span><br>-->
+    <!--                            <span class="text-customBorder lg:text-sm text-xs">{{ $item['occupation'] }}</span>-->
+    <!--                        </div>-->
 
                             <!-- Rating -->
-                            <div class="items-center">
-                                @for ($i = 1; $i <= 5; $i++)
-                                    @if ($i <= $item['star'])
-                                        <span class="text-yellow-400 lg:text-xl text-sm">★</span>
-                                    @else
-                                        <span class="text-gray-300 lg:text-xl text-sm">★</span>
-                                    @endif
-                                @endfor
-                            </div>
+    <!--                        <div class="items-center">-->
+    <!--                            @for ($i = 1; $i <= 5; $i++)-->
+    <!--                                @if ($i <= $item['star'])-->
+    <!--                                    <span class="text-yellow-400 lg:text-xl text-sm">★</span>-->
+    <!--                                @else-->
+    <!--                                    <span class="text-gray-300 lg:text-xl text-sm">★</span>-->
+    <!--                                @endif-->
+    <!--                            @endfor-->
+    <!--                        </div>-->
 
-                        </div>
+    <!--                    </div>-->
 
 
-                    </div>
-                @endforeach
-            </div>
+    <!--                </div>-->
+    <!--            @endforeach-->
+    <!--        </div>-->
 
             <!-- Navigation Buttons -->
-            <div class="flex justify-center items-center py-14 space-x-10">
-                <div class="swiper-button-prev bg-white border border-primary  cursor-pointer">
-                </div>
-                <div class="swiper-button-next bg-white border border-primary  cursor-pointer">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--        <div class="flex justify-center items-center py-14 space-x-10">-->
+    <!--            <div class="swiper-button-prev bg-white border border-primary  cursor-pointer">-->
+    <!--            </div>-->
+    <!--            <div class="swiper-button-next bg-white border border-primary  cursor-pointer">-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
 
-    <section>
-        <div class="container mx-auto lg:mt-28 mt-[30px] lg:px-16 px-4">
+    <!--<section>-->
+    <!--    <div class="container mx-auto lg:mt-28 mt-[30px] lg:px-16 px-4">-->
             <!-- Section Title -->
-            <h2 class="text-center text-3xl font-bold text-customGray">Media</h2>
+    <!--        <h2 class="text-center text-3xl font-bold text-customGray">Media</h2>-->
 
             <!-- Media Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:py-[42px] py-[22px]">
+    <!--        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:py-[42px] py-[22px]">-->
                 <!-- Left Column: Two Large Media Cards -->
 
                 <!-- First Large Media Card -->
-                @foreach ($media as $key => $value)
-                    <div class="bg-white  hidden lg:block">
-                        <img
-                            src="{{ $value->image ? asset('storage/' . $value->image) : 'https://via.placeholder.com/600x400' }}"
-                            alt="Media Image" class="w-full  h-[300px]">
+    <!--            @foreach ($media as $key => $value)-->
+    <!--                <div class="bg-white  hidden lg:block">-->
+    <!--                    <img-->
+    <!--                        src="{{ $value->image ? asset('storage/' . $value->image) : 'https://via.placeholder.com/600x400' }}"-->
+    <!--                        alt="Media Image" class="w-full  h-[300px]">-->
 
-                        <div class="mt-4">
-                            <h3 class="text-xl text-customGray mb-2">{{ $value->title }}</h3>
-                            <p class="text-customBorder text-sm mb-4">
-                                {{ Str::limit($value->description, 196) }}
-                                <a href="{{ route('media.view',['media_id' => $value->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
-                            </p>
-                        </div>
-                    </div>
-                @endforeach
+    <!--                    <div class="mt-4">-->
+    <!--                        <h3 class="text-xl text-customGray mb-2">{{ $value->title }}</h3>-->
+    <!--                        <p class="text-customBorder text-sm mb-4">-->
+    <!--                            {{ Str::limit($value->description, 196) }}-->
+    <!--                            <a href="{{ route('media.view',['media_id' => $value->id]) }}" class="text-primary hover:underline font-bold">Read More</a>-->
+    <!--                        </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            @endforeach-->
 
 
-                    <div class="bg-white block lg:hidden">
-                        <img
-                            src="{{ $media[0]->image ? asset('storage/' . $media[0]->image) : 'https://via.placeholder.com/600x400' }}"
-                            alt="Media Image" class="w-full  h-[300px]">
+    <!--                <div class="bg-white block lg:hidden">-->
+    <!--                    <img-->
+    <!--                        src="{{ $media[0]->image ? asset('storage/' . $media[0]->image) : 'https://via.placeholder.com/600x400' }}"-->
+    <!--                        alt="Media Image" class="w-full  h-[300px]">-->
 
-                        <div class="mt-4">
-                            <h3 class="text-xl text-customGray mb-2">{{ $media[0]->title }}</h3>
-                            <p class="text-customBorder text-sm mb-4">
-                                {{ Str::limit($media[0]->description, 196) }}
-                                <a href="{{ route('media.view',['media_id' => $media[0]->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
-                            </p>
-                        </div>
-                    </div>
+    <!--                    <div class="mt-4">-->
+    <!--                        <h3 class="text-xl text-customGray mb-2">{{ $media[0]->title }}</h3>-->
+    <!--                        <p class="text-customBorder text-sm mb-4">-->
+    <!--                            {{ Str::limit($media[0]->description, 196) }}-->
+    <!--                            <a href="{{ route('media.view',['media_id' => $media[0]->id]) }}" class="text-primary hover:underline font-bold">Read More</a>-->
+    <!--                        </p>-->
+    <!--                    </div>-->
+    <!--                </div>-->
 
 
                 <!-- Right Column: Four Small Media Cards -->
-                {{-- https://via.placeholder.com/150x150 --}}
-                <div class="space-y-6 hidden lg:block">
-                    @foreach ($mediaLimit as $mediaLimitValue)
-                        <div class="bg-white flex space-x-4">
-                            <img class="w-36 lg:h-36 lg:[111px] object-cover"
-                                src="{{ asset('storage/' . $mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"
-                                alt="Media Image">
-                            <div class="">
-                                <h4 class="text-lg mb-2 text-customGray">{{ Str::limit($mediaLimitValue->title, 40) }}</h4>
-                                <p class="text-customBorder text-sm">
-                                    {{ Str::limit($mediaLimitValue->description, 100) }}
-                                    <a href="{{ route('media.view',['media_id' => $mediaLimitValue->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="space-y-6 block lg:hidden">
-                    {{-- @foreach ($mediaLimit1 as $mediaLimitValue) --}}
-                        <div class="bg-white flex space-x-4">
-                            <img class="w-36 lg:h-36 h-[111px] object-cover"
-                                src="{{ asset('storage/' . $mediaLimit1->image) ?? 'https://via.placeholder.com/150x150' }}"
-                                alt="Media Image">
-                            <div class="">
-                                <h4 class="text-base mb-2 text-customGray">{{ Str::limit($mediaLimit1->title, 30) }}</h4>
-                                <p class="text-customBorder text-xs">
-                                    {{ Str::limit($mediaLimit1->description, 85) }}
-                                    <a href="{{ route('media.view',['media_id' => $mediaLimit1->id]) }}" class="text-primary hover:underline font-bold">Read More</a>
-                                </p>
-                            </div>
-                        </div>
-                    {{-- @endforeach --}}
-                </div>
-            </div>
+    <!--            {{-- https://via.placeholder.com/150x150 --}}-->
+    <!--            <div class="space-y-6 hidden lg:block">-->
+    <!--                @foreach ($mediaLimit as $mediaLimitValue)-->
+    <!--                    <div class="bg-white flex space-x-4">-->
+    <!--                        <img class="w-36 lg:h-36 lg:[111px] object-cover"-->
+    <!--                            src="{{ asset('storage/' . $mediaLimitValue->image) ?? 'https://via.placeholder.com/150x150' }}"-->
+    <!--                            alt="Media Image">-->
+    <!--                        <div class="">-->
+    <!--                            <h4 class="text-lg mb-2 text-customGray">{{ Str::limit($mediaLimitValue->title, 40) }}</h4>-->
+    <!--                            <p class="text-customBorder text-sm">-->
+    <!--                                {{ Str::limit($mediaLimitValue->description, 100) }}-->
+    <!--                                <a href="{{ route('media.view',['media_id' => $mediaLimitValue->id]) }}" class="text-primary hover:underline font-bold">Read More</a>-->
+    <!--                            </p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                @endforeach-->
+    <!--            </div>-->
+    <!--            <div class="space-y-6 block lg:hidden">-->
+    <!--                {{-- @foreach ($mediaLimit1 as $mediaLimitValue) --}}-->
+    <!--                    <div class="bg-white flex space-x-4">-->
+    <!--                        <img class="w-36 lg:h-36 h-[111px] object-cover"-->
+    <!--                            src="{{ asset('storage/' . $mediaLimit1->image) ?? 'https://via.placeholder.com/150x150' }}"-->
+    <!--                            alt="Media Image">-->
+    <!--                        <div class="">-->
+    <!--                            <h4 class="text-base mb-2 text-customGray">{{ Str::limit($mediaLimit1->title, 30) }}</h4>-->
+    <!--                            <p class="text-customBorder text-xs">-->
+    <!--                                {{ Str::limit($mediaLimit1->description, 85) }}-->
+    <!--                                <a href="{{ route('media.view',['media_id' => $mediaLimit1->id]) }}" class="text-primary hover:underline font-bold">Read More</a>-->
+    <!--                            </p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                {{-- @endforeach --}}-->
+    <!--            </div>-->
+    <!--        </div>-->
 
             <!-- View All Button -->
-            <div class="flex flex-col items-center justify-center lg:pb-14 pb-7">
-                <a href="/media"
-                    class="bg-primary lg:h-12 h-[44px] text-white font-bold px-6 lg:text-base text-sm  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">
-                    View All
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M11.6804 0.743386C11.8412 0.587538 12.059 0.5 12.2862 0.5C12.5133 0.5 12.7312 0.587538 12.8919 0.743386L19.7493 7.40115C19.9098 7.55719 20 7.76872 20 7.98925C20 8.20979 19.9098 8.42132 19.7493 8.57736L12.8919 15.2351C12.8134 15.3169 12.7188 15.3825 12.6137 15.428C12.5085 15.4734 12.395 15.4979 12.2799 15.4999C12.1648 15.5018 12.0505 15.4813 11.9438 15.4394C11.837 15.3976 11.7401 15.3353 11.6587 15.2562C11.5773 15.1772 11.5131 15.0831 11.47 14.9795C11.4269 14.8758 11.4057 14.7648 11.4078 14.6531C11.4098 14.5414 11.435 14.4312 11.4818 14.3291C11.5287 14.227 11.5962 14.1351 11.6804 14.0589L17.0749 8.82148H0.857175C0.629838 8.82148 0.411812 8.7338 0.251061 8.57772C0.0903092 8.42165 0 8.20997 0 7.98925C0 7.76854 0.0903092 7.55686 0.251061 7.40079C0.411812 7.24471 0.629838 7.15703 0.857175 7.15703H17.0749L11.6804 1.91959C11.5199 1.76355 11.4298 1.55203 11.4298 1.33149C11.4298 1.11095 11.5199 0.899427 11.6804 0.743386Z"
-                            fill="white" />
-                    </svg>
+    <!--        <div class="flex flex-col items-center justify-center lg:pb-14 pb-7">-->
+    <!--            <a href="/media"-->
+    <!--                class="bg-primary lg:h-12 h-[44px] text-white font-bold px-6 lg:text-base text-sm  py-2 flex items-center justify-center gap-2 opacity-100 hover:bg-primary transition duration-300">-->
+    <!--                View All-->
+    <!--                <svg width="20" height="16" viewBox="0 0 20 16" fill="none"-->
+    <!--                    xmlns="http://www.w3.org/2000/svg">-->
+    <!--                    <path fill-rule="evenodd" clip-rule="evenodd"-->
+    <!--                        d="M11.6804 0.743386C11.8412 0.587538 12.059 0.5 12.2862 0.5C12.5133 0.5 12.7312 0.587538 12.8919 0.743386L19.7493 7.40115C19.9098 7.55719 20 7.76872 20 7.98925C20 8.20979 19.9098 8.42132 19.7493 8.57736L12.8919 15.2351C12.8134 15.3169 12.7188 15.3825 12.6137 15.428C12.5085 15.4734 12.395 15.4979 12.2799 15.4999C12.1648 15.5018 12.0505 15.4813 11.9438 15.4394C11.837 15.3976 11.7401 15.3353 11.6587 15.2562C11.5773 15.1772 11.5131 15.0831 11.47 14.9795C11.4269 14.8758 11.4057 14.7648 11.4078 14.6531C11.4098 14.5414 11.435 14.4312 11.4818 14.3291C11.5287 14.227 11.5962 14.1351 11.6804 14.0589L17.0749 8.82148H0.857175C0.629838 8.82148 0.411812 8.7338 0.251061 8.57772C0.0903092 8.42165 0 8.20997 0 7.98925C0 7.76854 0.0903092 7.55686 0.251061 7.40079C0.411812 7.24471 0.629838 7.15703 0.857175 7.15703H17.0749L11.6804 1.91959C11.5199 1.76355 11.4298 1.55203 11.4298 1.33149C11.4298 1.11095 11.5199 0.899427 11.6804 0.743386Z"-->
+    <!--                        fill="white" />-->
+    <!--                </svg>-->
 
-                </a>
-            </div>
-        </div>
-    <section>
+    <!--            </a>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--<section>-->
 
         @endsection
 
+<script>
+  let currentImageIndex = 0;
+let projectImages = [];
 
+function openPopup(id, images, name, location, price) {
+    // Store images as an array
+    projectImages = images;
+    currentImageIndex = 0; // Start from the first image
+
+    // Update the popup content
+    // document.getElementById('popupName').innerText = name;
+    // document.getElementById('popupLocation').innerText = location;
+    // document.getElementById('popupPrice').innerText = price ? `₹ ${price} onwards` : 'Price not available';
+
+    // Check if images exist and update the popup image
+    if (projectImages.length > 0) {
+        document.getElementById('popupImage').src = "{{ asset('storage/') }}/" + projectImages[currentImageIndex].image;
+    } else {
+        document.getElementById('popupImage').src = "{{ asset('storage/default-image.jpg') }}";
+    }
+
+    // Create thumbnails and display them below the main image
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    thumbnailContainer.innerHTML = ''; // Clear any previous thumbnails
+
+    projectImages.forEach((image, index) => {
+        const thumb = document.createElement('img');
+        thumb.src = "{{ asset('storage/') }}/" + image.image;
+        thumb.alt = "Project Thumbnail";
+        thumb.classList.add('w-20', 'h-20', 'object-cover', 'cursor-pointer', 'transition', 'transform', 'duration-200', 'hover:scale-110');
+        if (index === currentImageIndex) {
+            thumb.classList.add('border-2', 'border-customGray'); // Highlight active thumbnail
+        }
+
+        thumb.onclick = function() {
+            currentImageIndex = index;
+            updatePopupImage();
+        };
+
+        thumbnailContainer.appendChild(thumb);
+    });
+
+    // Show the popup with animation
+    const popup = document.getElementById('projectPopup');
+    popup.classList.remove('hidden', 'modal-hide');
+    popup.classList.add('modal-show');
+}
+
+function closePopup() {
+    const popup = document.getElementById('projectPopup');
+
+    // Add the hide class for animation
+    popup.classList.add('modal-hide');
+    popup.classList.remove('modal-show');
+
+    // Wait for the animation to complete before hiding
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 300); // Match the transition duration
+}
+
+// Handle Escape key to close the popup
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closePopup();
+    }
+});
+
+// Slider controls
+function nextImage() {
+    if (currentImageIndex < projectImages.length - 1) {
+        currentImageIndex++;
+        updatePopupImage();
+    }
+}
+
+function prevImage() {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updatePopupImage();
+    }
+}
+
+// Update the main image and highlight the active thumbnail
+function updatePopupImage() {
+    document.getElementById('popupImage').src = "{{ asset('storage/') }}/" + projectImages[currentImageIndex].image;
+
+    // Highlight active thumbnail
+    const thumbnails = document.querySelectorAll('#thumbnailContainer img');
+    thumbnails.forEach((thumb, index) => {
+        if (index === currentImageIndex) {
+            thumb.classList.add('border-2', 'border-customGray');
+        } else {
+            thumb.classList.remove('border-2', 'border-customGray');
+        }
+    });
+}
+
+</script>
         <script type="module">
             import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
@@ -458,6 +595,7 @@
                 },
                 spaceBetween: 100, // Add some spacing between slides if necessary
             });
+            
         </script>
         <style>
             .swiper-button-next,
@@ -516,4 +654,37 @@
                 line-height: 1;
                 font-size: 18px !important;
             }
+            .img-height{
+                height: 330px;
+            }
+            .img-height img{
+                height: 100%;
+               object-fit: fill;
+            }
+            .h-\[194px\]{
+                width: 200px;
+            }
+             .img-height{
+        height:330px;
+    }
+     .img-height img{
+        height:100%;
+    }
+  #projectPopup {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease-in-out;
+        pointer-events: none; /* Prevent interaction when hidden */
+    }
+
+    #projectPopup.modal-show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto; /* Allow interaction when visible */
+    }
+
+    #projectPopup.modal-hide {
+        opacity: 0;
+        transform: translateY(20px);
+    }
         </style>

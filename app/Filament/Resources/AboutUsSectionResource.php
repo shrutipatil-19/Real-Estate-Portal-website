@@ -39,7 +39,6 @@ class AboutUsSectionResource extends Resource
                     ->description('')
                     ->schema([
                         Forms\Components\TextInput::make('overview_title')
-                            ->required()
                             ->columnSpanFull(),
                         Forms\Components\Textarea::make('overview_description')
                             ->label('Overview description 1')
@@ -93,7 +92,7 @@ class AboutUsSectionResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('parallax_effect_heading')
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(65535),
                     ]),
                 Section::make('Meet Our Team')
                     ->description('')

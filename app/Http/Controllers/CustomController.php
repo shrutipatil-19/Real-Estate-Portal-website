@@ -33,16 +33,27 @@ class CustomController extends Controller
     }
 
 
-    public function ProjectsIndex()
-    {
-        $projects = Project::whereIn('priority', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-            ->orderByRaw("FIELD(priority, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) DESC") // Show priority 10 first, then 9, and so on
-            ->orderBy('created_at', 'desc') // Within those priorities, show the latest created_at first
-            ->paginate(3);
+   public function ProjectsIndex(Request $request)
+{
+    // Retrieve the status from the query string; default to 'Ongoing' if not provided
+    $status = $request->query('status', 'Ongoing');
 
+    // Fetch projects filtered by status
+    $projects = Project::where('status', $status)
+        ->whereBetween('priority', [0, 10]) // Only priorities between 0 and 10
+        ->orderBy('priority', 'desc') // Higher priority first
+        ->orderBy('created_at', 'desc') // Within priority, newest projects first
+        ->paginate(10);
 
-        return view('project', compact('projects'));
-    }
+    // Pass both projects and status to the view
+    return view('project', compact('projects', 'status'));
+}
+   public function ProjectsDetails($id)
+{
+    $project = Project::findOrFail($id); // Get the project by ID
+ 
+    return view('project-details', compact('project'));
+}
 
     public function MediaIndex(Request $request)
     {

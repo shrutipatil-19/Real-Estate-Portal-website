@@ -16,6 +16,12 @@ class HomeController extends Controller
 {
     public function index()
     {
+        return view('coming_soon_page');
+    }
+    
+    
+    public function home()
+    {
         $banner = Banner::first();
         $about_us = AboutUs::first();
         $projects = Project::whereIn('priority', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
